@@ -34,11 +34,13 @@
   },
   "name":"VPet",
   "resources":[
+    {"id":{"name":"obj_btn_feed","path":"objects/obj_btn_feed/obj_btn_feed.yy",},},
     {"id":{"name":"obj_pet_parent","path":"objects/obj_pet_parent/obj_pet_parent.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"chimHappy","path":"sprites/chimHappy/chimHappy.yy",},},
     {"id":{"name":"chimIdle","path":"sprites/chimIdle/chimIdle.yy",},},
     {"id":{"name":"Sprite3","path":"sprites/Sprite3/Sprite3.yy",},},
+    {"id":{"name":"Sprite4","path":"sprites/Sprite4/Sprite4.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
