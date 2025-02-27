@@ -34,6 +34,7 @@
   },
   "name":"VPet",
   "resources":[
+    {"id":{"name":"obj_bar_hunger","path":"objects/obj_bar_hunger/obj_bar_hunger.yy",},},
     {"id":{"name":"obj_btn_feed","path":"objects/obj_btn_feed/obj_btn_feed.yy",},},
     {"id":{"name":"obj_pet_parent","path":"objects/obj_pet_parent/obj_pet_parent.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
