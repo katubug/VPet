@@ -1,15 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"obj_shop_food",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":true,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"obj_button_inventory",
+  "eventList":[],
   "managed":true,
-  "name":"obj_shop_food",
+  "name":"obj_button_inventory",
   "overriddenProperties":[],
   "parent":{
-    "name":"Room Objects",
-    "path":"folders/Objects/Room Objects.yy",
+    "name":"Buttons",
+    "path":"folders/Objects/Buttons.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -29,7 +27,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"sprite_button_inventory",
+    "path":"sprites/sprite_button_inventory/sprite_button_inventory.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

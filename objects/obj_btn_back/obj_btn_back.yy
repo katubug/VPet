@@ -29,7 +29,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"sprite_button_back",
+    "path":"sprites/sprite_button_back/sprite_button_back.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }
