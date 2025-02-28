@@ -1,15 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"obj_bar_hunger",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":true,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"obj_food_taco",
+  "eventList":[],
   "managed":true,
-  "name":"obj_bar_hunger",
+  "name":"obj_food_taco",
   "overriddenProperties":[],
   "parent":{
-    "name":"Game Control",
-    "path":"folders/Objects/Game Control.yy",
+    "name":"Food Types",
+    "path":"folders/Objects/Food Types.yy",
   },
   "parentObjectId":null,
   "persistent":false,

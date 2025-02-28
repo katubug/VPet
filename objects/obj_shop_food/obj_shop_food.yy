@@ -1,15 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"obj_bar_hunger",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":true,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"obj_shop_food",
+  "eventList":[],
   "managed":true,
-  "name":"obj_bar_hunger",
+  "name":"obj_shop_food",
   "overriddenProperties":[],
   "parent":{
-    "name":"Game Control",
-    "path":"folders/Objects/Game Control.yy",
+    "name":"Room Objects",
+    "path":"folders/Objects/Room Objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,
