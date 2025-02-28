@@ -1,11 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"obj_button_inventory",
+  "%Name":"obj_button_shop",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":4,"eventType":6,"isDnD":true,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_button_inventory",
+  "name":"obj_button_shop",
   "overriddenProperties":[],
   "parent":{
     "name":"Buttons",
@@ -30,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sprite_button_inventory",
-    "path":"sprites/sprite_button_inventory/sprite_button_inventory.yy",
+    "name":"sprite_button_shop",
+    "path":"sprites/sprite_button_shop/sprite_button_shop.yy",
   },
   "spriteMaskId":null,
   "visible":true,

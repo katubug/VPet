@@ -25,9 +25,9 @@ if(temp_corns >= 5){	/// @DnDAction : YoYo Games.Common.Variable
 	/// @DnDVersion : 1
 	/// @DnDHash : 3A867DAD
 	/// @DnDParent : 51F03A4F
-	/// @DnDArgument : "var" "inventory"
+	/// @DnDArgument : "var" "global.inventory"
 	/// @DnDArgument : "value" "obj_food_taco"
-	ds_list_add(inventory, obj_food_taco);
+	ds_list_add(global.inventory, obj_food_taco);
 
 	/// @DnDAction : YoYo Games.Common.Set_Global
 	/// @DnDVersion : 1
