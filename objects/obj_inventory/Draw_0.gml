@@ -35,5 +35,17 @@ for(var i = 0; i < ds_list_size(global.inventory); i += 1) {	/// @DnDAction : Y
 	/// @DnDArgument : "x_relative" "1"
 	/// @DnDArgument : "y" "30 + (i * 20)"
 	/// @DnDArgument : "y_relative" "1"
+	/// @DnDArgument : "caption" ""Item Owned: ""
 	/// @DnDArgument : "var" "string(item_name)"
-	draw_text(x + 10, y + 30 + (i * 20), string("Caption: ") + string(string(item_name)));}
+	draw_text(x + 10, y + 30 + (i * 20), string("Item Owned: ") + string(string(item_name)));
+
+	/// @DnDAction : YoYo Games.Drawing.Draw_Sprite
+	/// @DnDVersion : 1
+	/// @DnDHash : 6AF6303C
+	/// @DnDParent : 53E75AE6
+	/// @DnDArgument : "x" "20"
+	/// @DnDArgument : "x_relative" "1"
+	/// @DnDArgument : "y" "30 + (i * 20)"
+	/// @DnDArgument : "y_relative" "1"
+	/// @DnDArgument : "sprite" "item.sprite_index"
+	draw_sprite(item.sprite_index, 0, x + 20, y + 30 + (i * 20));}
