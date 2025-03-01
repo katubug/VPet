@@ -1,18 +1,18 @@
 {
   "$GMObject":"",
-  "%Name":"game_controller_object",
+  "%Name":"HUD",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":true,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"game_controller_object",
+  "name":"HUD",
   "overriddenProperties":[],
   "parent":{
-    "name":"Game Control",
-    "path":"folders/Objects/Game Control.yy",
+    "name":"Objects",
+    "path":"folders/Objects.yy",
   },
   "parentObjectId":null,
-  "persistent":true,
+  "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
   "physicsFriction":0.2,
