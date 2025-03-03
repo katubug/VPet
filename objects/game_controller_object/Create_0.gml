@@ -27,3 +27,16 @@ global.corns = 100;
 global.hunger = 20;
 global.health = 20;
 global.happiness = 20;
+
+/// @DnDAction : YoYo Games.Common.Variable
+/// @DnDVersion : 1
+/// @DnDHash : 032598A9
+/// @DnDArgument : "expr" "false"
+/// @DnDArgument : "var" "petIsDead"
+petIsDead = false;
+
+/// @DnDAction : YoYo Games.Instances.Set_Alarm
+/// @DnDVersion : 1
+/// @DnDHash : 1DF86357
+/// @DnDArgument : "steps" "60"
+alarm_set(0, 60);
