@@ -40,6 +40,7 @@
   "resources":[
     {"id":{"name":"game_controller_object","path":"objects/game_controller_object/game_controller_object.yy",},},
     {"id":{"name":"HUD","path":"objects/HUD/HUD.yy",},},
+    {"id":{"name":"obj_bar_health","path":"objects/obj_bar_health/obj_bar_health.yy",},},
     {"id":{"name":"obj_bar_hunger","path":"objects/obj_bar_hunger/obj_bar_hunger.yy",},},
     {"id":{"name":"obj_btn_back","path":"objects/obj_btn_back/obj_btn_back.yy",},},
     {"id":{"name":"obj_btn_feed","path":"objects/obj_btn_feed/obj_btn_feed.yy",},},
