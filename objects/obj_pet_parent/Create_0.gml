@@ -18,8 +18,11 @@ move_speed = 1;
 /// @DnDAction : YoYo Games.Instances.Set_Alarm
 /// @DnDVersion : 1
 /// @DnDHash : 031B2BB5
-/// @DnDInput : 2
+/// @DnDInput : 3
 /// @DnDArgument : "steps" "60*20"
+/// @DnDArgument : "steps_2" "60*20"
 /// @DnDArgument : "alarm_1" "1"
+/// @DnDArgument : "alarm_2" "3"
 alarm_set(0, 60*20);
 alarm_set(1, 30);
+alarm_set(3, 60*20);
