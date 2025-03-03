@@ -1,15 +1,19 @@
 /// @DnDAction : YoYo Games.Common.Get_Global
 /// @DnDVersion : 1
 /// @DnDHash : 0ED608B3
-/// @DnDInput : 2
+/// @DnDInput : 3
 /// @DnDArgument : "output" "temp_hunger"
 /// @DnDArgument : "output_temp" "1"
 /// @DnDArgument : "output_1" "temp_health"
 /// @DnDArgument : "output_temp_1" "1"
+/// @DnDArgument : "output_2" "temp_happiness"
+/// @DnDArgument : "output_temp_2" "1"
 /// @DnDArgument : "var" "hunger"
 /// @DnDArgument : "var_1" "health"
+/// @DnDArgument : "var_2" "happiness"
 var temp_hunger = global.hunger;
 var temp_health = global.health;
+var temp_happiness = global.happiness;
 
 /// @DnDAction : YoYo Games.Common.If_Variable
 /// @DnDVersion : 1
@@ -51,6 +55,27 @@ else{	/// @DnDAction : YoYo Games.Common.Variable
 	/// @DnDArgument : "value" "temp_health"
 	/// @DnDArgument : "var" "health"
 	global.health = temp_health;}
+
+/// @DnDAction : YoYo Games.Common.If_Variable
+/// @DnDVersion : 1
+/// @DnDHash : 2647767A
+/// @DnDArgument : "var" "temp_happiness"
+/// @DnDArgument : "op" "2"
+if(temp_happiness > 0){	/// @DnDAction : YoYo Games.Common.Variable
+	/// @DnDVersion : 1
+	/// @DnDHash : 7A54B59C
+	/// @DnDParent : 2647767A
+	/// @DnDArgument : "expr" "max(temp_happiness-1,0)"
+	/// @DnDArgument : "var" "temp_happiness"
+	temp_happiness = max(temp_happiness-1,0);
+
+	/// @DnDAction : YoYo Games.Common.Set_Global
+	/// @DnDVersion : 1
+	/// @DnDHash : 2B1317A1
+	/// @DnDParent : 2647767A
+	/// @DnDArgument : "value" "temp_happiness"
+	/// @DnDArgument : "var" "happiness"
+	global.happiness = temp_happiness;}
 
 /// @DnDAction : YoYo Games.Instances.Set_Alarm
 /// @DnDVersion : 1
