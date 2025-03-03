@@ -1,30 +1,21 @@
 /// @DnDAction : YoYo Games.Common.Variable
 /// @DnDVersion : 1
 /// @DnDHash : 55FF544C
-/// @DnDInput : 9
+/// @DnDInput : 6
 /// @DnDArgument : "expr" "10"
 /// @DnDArgument : "expr_1" "10"
-/// @DnDArgument : "expr_2" "10"
-/// @DnDArgument : "expr_3" "10"
-/// @DnDArgument : "expr_4" "10"
-/// @DnDArgument : "expr_5" "x"
-/// @DnDArgument : "expr_6" "y"
-/// @DnDArgument : "expr_7" "layer_tilemap_get_id("Tiles_Col")"
-/// @DnDArgument : "expr_8" "1"
+/// @DnDArgument : "expr_2" "x"
+/// @DnDArgument : "expr_3" "y"
+/// @DnDArgument : "expr_4" "layer_tilemap_get_id("Tiles_Col")"
+/// @DnDArgument : "expr_5" "1"
 /// @DnDArgument : "var" "hunger"
 /// @DnDArgument : "var_1" "happiness"
-/// @DnDArgument : "var_2" "thirst"
-/// @DnDArgument : "var_3" "energy"
-/// @DnDArgument : "var_4" "temperature"
-/// @DnDArgument : "var_5" "target_x"
-/// @DnDArgument : "var_6" "target_y"
-/// @DnDArgument : "var_7" "tilemap"
-/// @DnDArgument : "var_8" "move_speed"
+/// @DnDArgument : "var_2" "target_x"
+/// @DnDArgument : "var_3" "target_y"
+/// @DnDArgument : "var_4" "tilemap"
+/// @DnDArgument : "var_5" "move_speed"
 hunger = 10;
 happiness = 10;
-thirst = 10;
-energy = 10;
-temperature = 10;
 target_x = x;
 target_y = y;
 tilemap = layer_tilemap_get_id("Tiles_Col");

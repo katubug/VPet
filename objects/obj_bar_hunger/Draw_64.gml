@@ -4,8 +4,8 @@
 /// @DnDArgument : "x_relative" "1"
 /// @DnDArgument : "y_relative" "1"
 /// @DnDArgument : "caption" ""Hunger: ""
-/// @DnDArgument : "var" "obj_pet_parent.hunger"
-draw_text(x + 0, y + 0, string("Hunger: ") + string(obj_pet_parent.hunger));
+/// @DnDArgument : "var" "global.hunger"
+draw_text(x + 0, y + 0, string("Hunger: ") + string(global.hunger));
 
 /// @DnDAction : YoYo Games.Drawing.Draw_Rectangle
 /// @DnDVersion : 1
@@ -14,9 +14,9 @@ draw_text(x + 0, y + 0, string("Hunger: ") + string(obj_pet_parent.hunger));
 /// @DnDArgument : "x1_relative" "1"
 /// @DnDArgument : "y1" "50"
 /// @DnDArgument : "y1_relative" "1"
-/// @DnDArgument : "x2" "50+(200*(obj_pet_parent.hunger/20))"
+/// @DnDArgument : "x2" "50+(200*(global.hunger/20))"
 /// @DnDArgument : "x2_relative" "1"
 /// @DnDArgument : "y2" "70"
 /// @DnDArgument : "y2_relative" "1"
 /// @DnDArgument : "fill" "1"
-draw_rectangle(x + 50, y + 50, x + 50+(200*(obj_pet_parent.hunger/20)), y + 70, 0);
+draw_rectangle(x + 50, y + 50, x + 50+(200*(global.hunger/20)), y + 70, 0);
