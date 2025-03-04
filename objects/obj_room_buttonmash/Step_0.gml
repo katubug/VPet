@@ -1,6 +1,4 @@
-time_left = time_source_get_time_remaining(button_mash_timer);
-
-draw_text(0, 0, string("Time Left: ") + string(time_left));
+draw_text(x+0, y+0,string("Time Remaining: ")+string(time_left))
 
 var click_increment;
 with(all) click_increment = mouse_check_button_pressed(mb_left);
