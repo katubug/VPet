@@ -1,6 +1,17 @@
+/// @DnDAction : YoYo Games.Drawing.Draw_Value
+/// @DnDVersion : 1
+/// @DnDHash : 2B5C3B37
+/// @DnDArgument : "x" "20"
+/// @DnDArgument : "x_relative" "1"
+/// @DnDArgument : "y" "20"
+/// @DnDArgument : "y_relative" "1"
+/// @DnDArgument : "caption" ""Clicks: ""
+/// @DnDArgument : "var" "click_count"
+draw_text(x + 20, y + 20, string("Clicks: ") + string(click_count));
+
 /// @DnDAction : YoYo Games.Drawing.Draw_Sprite
 /// @DnDVersion : 1
-/// @DnDHash : 7CE39C1A
+/// @DnDHash : 0AD593D2
 /// @DnDArgument : "x_relative" "1"
 /// @DnDArgument : "y_relative" "1"
 /// @DnDArgument : "sprite" "bar_border"
@@ -14,7 +25,7 @@ draw_sprite(bar_border, 0, x + 0, y + 0);
 /// @DnDArgument : "x_relative" "1"
 /// @DnDArgument : "y" "2"
 /// @DnDArgument : "y_relative" "1"
-/// @DnDArgument : "xscale" "click_count/max_clicks"
+/// @DnDArgument : "xscale" "1+(200*(click_count/max_clicks))"
 /// @DnDArgument : "sprite" "bar_stretch"
 /// @DnDSaveInfo : "sprite" "bar_stretch"
-draw_sprite_ext(bar_stretch, 0, x + 2, y + 2, click_count/max_clicks, 1, 0, $FFFFFF & $ffffff, 1);
+draw_sprite_ext(bar_stretch, 0, x + 2, y + 2, 1+(200*(click_count/max_clicks)), 1, 0, $FFFFFF & $ffffff, 1);
