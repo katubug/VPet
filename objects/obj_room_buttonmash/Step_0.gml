@@ -1,10 +1,10 @@
-draw_text(x+0, y+0,string("Time Remaining: ")+string(time_left))
+time_left = time_source_get_time_remaining(button_mash_timer);
 
 var click_increment;
 with(all) click_increment = mouse_check_button_pressed(mb_left);
 if (click_increment)
 {
-	if(click_count <= max_clicks)
+	if(click_count <= max_clicks && game_on = true && time_left !=0)
 {
 	click_count += 1;
 }
