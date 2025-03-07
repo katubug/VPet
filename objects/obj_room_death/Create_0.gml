@@ -1,6 +1,0 @@
-/// @DnDAction : YoYo Games.Common.Set_Global
-/// @DnDVersion : 1
-/// @DnDHash : 47BC1E0B
-/// @DnDArgument : "value" "true"
-/// @DnDArgument : "var" "petIsDead"
-global.petIsDead = true;

@@ -1,15 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"HUD",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":true,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"obj_btn_death_yes",
+  "eventList":[],
   "managed":true,
-  "name":"HUD",
+  "name":"obj_btn_death_yes",
   "overriddenProperties":[],
   "parent":{
-    "name":"Game Control",
-    "path":"folders/Objects/Game Control.yy",
+    "name":"Buttons",
+    "path":"folders/Objects/Buttons.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -29,7 +27,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_yes",
+    "path":"sprites/spr_yes/spr_yes.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

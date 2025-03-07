@@ -17,7 +17,6 @@ list_inventory = ds_list_create();
 /// @DnDArgument : "value_2" "20"
 /// @DnDArgument : "value_3" "20"
 /// @DnDArgument : "value_4" "20"
-/// @DnDArgument : "value_5" "false"
 /// @DnDArgument : "var" "inventory"
 /// @DnDArgument : "var_1" "corns"
 /// @DnDArgument : "var_2" "hunger"
@@ -29,4 +28,4 @@ global.corns = 100;
 global.hunger = 20;
 global.health = 20;
 global.happiness = 20;
-global.petIsDead = false;
+global.petIsDead = 0;
