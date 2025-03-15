@@ -56,6 +56,7 @@
     {"id":{"name":"obj_food_taco","path":"objects/obj_food_taco/obj_food_taco.yy",},},
     {"id":{"name":"obj_inventory","path":"objects/obj_inventory/obj_inventory.yy",},},
     {"id":{"name":"obj_pantry","path":"objects/obj_pantry/obj_pantry.yy",},},
+    {"id":{"name":"obj_pet_chimchee","path":"objects/obj_pet_chimchee/obj_pet_chimchee.yy",},},
     {"id":{"name":"obj_pet_parent","path":"objects/obj_pet_parent/obj_pet_parent.yy",},},
     {"id":{"name":"obj_room_buttonmash","path":"objects/obj_room_buttonmash/obj_room_buttonmash.yy",},},
     {"id":{"name":"obj_room_death","path":"objects/obj_room_death/obj_room_death.yy",},},

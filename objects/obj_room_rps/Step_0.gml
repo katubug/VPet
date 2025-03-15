@@ -14,6 +14,7 @@ if(games_on == 1){
   
     if (player_choice !=-1)
     {
+        randomize();
         computer_choice = irandom_range(0, 2);
       
       if (computer_choice == player_choice) {
@@ -21,7 +22,7 @@ if(games_on == 1){
           var_result = "Draw";
       }
       else {
-      var_result = (computer_choice == (player_choice +1) mod 3)?"Lose":"Win";
+      var_result = (computer_choice == (player_choice +1) mod 3)?"Lose":"Win"; 
         games_on = 0;
       } 
     }
