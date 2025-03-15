@@ -37,8 +37,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"chimIdle",
-    "path":"sprites/chimIdle/chimIdle.yy",
+    "name":"spr_chimchee_idle_right",
+    "path":"sprites/spr_chimchee_idle_right/spr_chimchee_idle_right.yy",
   },
   "spriteMaskId":null,
   "visible":true,
