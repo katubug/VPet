@@ -26,9 +26,9 @@ if(dragged == 0){	/// @DnDAction : YoYo Games.Collisions.If_Object_At
 			/// @DnDVersion : 1
 			/// @DnDHash : 4C10ADC8
 			/// @DnDParent : 6BC0B95A
-			/// @DnDArgument : "expr" ""joy""
+			/// @DnDArgument : "expr" "seed_type"
 			/// @DnDArgument : "var" "obj_garden_plot.plot_seed_type"
-			obj_garden_plot.plot_seed_type = "joy";
+			obj_garden_plot.plot_seed_type = seed_type;
 		
 			/// @DnDAction : YoYo Games.Instances.Destroy_Instance
 			/// @DnDVersion : 1

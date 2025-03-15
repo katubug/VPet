@@ -61,7 +61,6 @@
     {"id":{"name":"obj_pantry","path":"objects/obj_pantry/obj_pantry.yy",},},
     {"id":{"name":"obj_pet_chimchee","path":"objects/obj_pet_chimchee/obj_pet_chimchee.yy",},},
     {"id":{"name":"obj_pet_parent","path":"objects/obj_pet_parent/obj_pet_parent.yy",},},
-    {"id":{"name":"obj_plain_seed","path":"objects/obj_plain_seed/obj_plain_seed.yy",},},
     {"id":{"name":"obj_room_buttonmash","path":"objects/obj_room_buttonmash/obj_room_buttonmash.yy",},},
     {"id":{"name":"obj_room_death","path":"objects/obj_room_death/obj_room_death.yy",},},
     {"id":{"name":"obj_room_rps","path":"objects/obj_room_rps/obj_room_rps.yy",},},

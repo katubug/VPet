@@ -7,8 +7,8 @@ draw_self();
 /// @DnDVersion : 1
 /// @DnDHash : 43B413CD
 /// @DnDArgument : "var" "plot_seed_type"
-/// @DnDArgument : "value" ""joy""
-if(plot_seed_type == "joy"){	/// @DnDAction : YoYo Games.Drawing.Draw_Gradient_Ellipse
+/// @DnDArgument : "value" ""obj_seed_joy""
+if(plot_seed_type == "obj_seed_joy"){	/// @DnDAction : YoYo Games.Drawing.Draw_Gradient_Ellipse
 	/// @DnDVersion : 1
 	/// @DnDHash : 7B60A5A3
 	/// @DnDParent : 43B413CD
@@ -25,8 +25,8 @@ if(plot_seed_type == "joy"){	/// @DnDAction : YoYo Games.Drawing.Draw_Gradient
 /// @DnDVersion : 1
 /// @DnDHash : 2AE71C3A
 /// @DnDArgument : "var" "plot_seed_type"
-/// @DnDArgument : "value" ""plain""
-if(plot_seed_type == "plain"){	/// @DnDAction : YoYo Games.Drawing.Draw_Gradient_Ellipse
+/// @DnDArgument : "value" ""obj_seed_plain""
+if(plot_seed_type == "obj_seed_plain"){	/// @DnDAction : YoYo Games.Drawing.Draw_Gradient_Ellipse
 	/// @DnDVersion : 1
 	/// @DnDHash : 3DCB5B6E
 	/// @DnDParent : 2AE71C3A
