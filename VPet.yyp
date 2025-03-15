@@ -76,6 +76,7 @@
     {"id":{"name":"rm_main","path":"rooms/rm_main/rm_main.yy",},},
     {"id":{"name":"rm_rps","path":"rooms/rm_rps/rm_rps.yy",},},
     {"id":{"name":"rm_shop","path":"rooms/rm_shop/rm_shop.yy",},},
+    {"id":{"name":"save_load","path":"scripts/save_load/save_load.yy",},},
     {"id":{"name":"background_rm_main","path":"sprites/background_rm_main/background_rm_main.yy",},},
     {"id":{"name":"bar_border","path":"sprites/bar_border/bar_border.yy",},},
     {"id":{"name":"bar_stretch","path":"sprites/bar_stretch/bar_stretch.yy",},},
