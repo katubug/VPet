@@ -8,14 +8,7 @@ dragged = 0;
 /// @DnDVersion : 1
 /// @DnDHash : 18A39B64
 /// @DnDArgument : "var" "dragged"
-if(dragged == 0){	/// @DnDAction : YoYo Games.Drawing.Draw_Value
-	/// @DnDVersion : 1
-	/// @DnDHash : 4120D73C
-	/// @DnDParent : 18A39B64
-	/// @DnDArgument : "var" "obj_garden_plot.plot_seed_type"
-	draw_text(0, 0, string("Caption: ") + string(obj_garden_plot.plot_seed_type));
-
-	/// @DnDAction : YoYo Games.Collisions.If_Object_At
+if(dragged == 0){	/// @DnDAction : YoYo Games.Collisions.If_Object_At
 	/// @DnDVersion : 1.1
 	/// @DnDHash : 577ADCA9
 	/// @DnDParent : 18A39B64
@@ -27,9 +20,9 @@ if(dragged == 0){	/// @DnDAction : YoYo Games.Drawing.Draw_Value
 		/// @DnDVersion : 1
 		/// @DnDHash : 6BC0B95A
 		/// @DnDParent : 577ADCA9
-		/// @DnDArgument : "var" "plot_seed_type"
+		/// @DnDArgument : "var" "obj_garden_plot.plot_seed_type"
 		/// @DnDArgument : "value" ""none""
-		if(plot_seed_type == "none"){	/// @DnDAction : YoYo Games.Common.Variable
+		if(obj_garden_plot.plot_seed_type == "none"){	/// @DnDAction : YoYo Games.Common.Variable
 			/// @DnDVersion : 1
 			/// @DnDHash : 4C10ADC8
 			/// @DnDParent : 6BC0B95A
