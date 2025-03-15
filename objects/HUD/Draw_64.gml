@@ -36,3 +36,13 @@ draw_text(x + 0, y + 40, string("Are Dead: ") + string(global.petIsDead));
 /// @DnDArgument : "caption" ""Current Room: ""
 /// @DnDArgument : "var" "string(room_get_name(room))"
 draw_text(x + 0, y + 60, string("Current Room: ") + string(string(room_get_name(room))));
+
+/// @DnDAction : YoYo Games.Drawing.Draw_Value
+/// @DnDVersion : 1
+/// @DnDHash : 4A0A4988
+/// @DnDArgument : "x_relative" "1"
+/// @DnDArgument : "y" "80"
+/// @DnDArgument : "y_relative" "1"
+/// @DnDArgument : "caption" ""Pet Type: ""
+/// @DnDArgument : "var" "string(global.pet_type)"
+draw_text(x + 0, y + 80, string("Pet Type: ") + string(string(global.pet_type)));
