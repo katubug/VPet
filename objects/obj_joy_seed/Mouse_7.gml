@@ -41,10 +41,4 @@ if(dragged == 0){	/// @DnDAction : YoYo Games.Drawing.Draw_Value
 			/// @DnDVersion : 1
 			/// @DnDHash : 656F2965
 			/// @DnDParent : 6BC0B95A
-			instance_destroy();}
-	
-		/// @DnDAction : YoYo Games.Common.Else
-		/// @DnDVersion : 1
-		/// @DnDHash : 38B2BC6C
-		/// @DnDParent : 577ADCA9
-		else{}}}
+			instance_destroy();}}}
