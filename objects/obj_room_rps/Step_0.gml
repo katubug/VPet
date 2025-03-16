@@ -18,11 +18,14 @@ if(games_on == 1){
       
       if (computer_choice == player_choice) {
         games_on = 0;
-          var_result = "Draw";
+        var_result = "Draw";
       }
       else {
       var_result = (computer_choice == (player_choice +1) mod 3)?"Lose":"Win"; 
         games_on = 0;
+        round_number++;
+        if (var_result == "Win") player_score++;
+        else if (var_result == "Lose") computer_score++;    
       } 
     }
 }

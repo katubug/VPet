@@ -51,7 +51,7 @@
     {"id":{"name":"obj_btn_feed","path":"objects/obj_btn_feed/obj_btn_feed.yy",},},
     {"id":{"name":"obj_btn_gameroom","path":"objects/obj_btn_gameroom/obj_btn_gameroom.yy",},},
     {"id":{"name":"obj_btn_joy","path":"objects/obj_btn_joy/obj_btn_joy.yy",},},
-    {"id":{"name":"obj_btn_start_buttonmash","path":"objects/obj_btn_start_buttonmash/obj_btn_start_buttonmash.yy",},},
+    {"id":{"name":"obj_btn_start_game","path":"objects/obj_btn_start_game/obj_btn_start_game.yy",},},
     {"id":{"name":"obj_btn_taco","path":"objects/obj_btn_taco/obj_btn_taco.yy",},},
     {"id":{"name":"obj_button_inventory","path":"objects/obj_button_inventory/obj_button_inventory.yy",},},
     {"id":{"name":"obj_button_shop","path":"objects/obj_button_shop/obj_button_shop.yy",},},
