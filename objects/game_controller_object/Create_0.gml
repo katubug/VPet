@@ -3,6 +3,8 @@ list_inventory = ds_list_create();
 
 }
 
+randomize();
+
 global.inventory = list_inventory;
 global.corns = 100;
 global.hunger = 20;
