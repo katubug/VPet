@@ -1,3 +1,9 @@
+/// @DnDAction : YoYo Games.Data Structures.List_IndexOf
+/// @DnDVersion : 1
+/// @DnDHash : 3F6ADBB9
+/// @DnDArgument : "var" "list_inventory"
+variable = ds_list_find_index(list_inventory, 0);
+
 /// @DnDAction : YoYo Games.Common.Get_Global
 /// @DnDVersion : 1
 /// @DnDHash : 1532591F

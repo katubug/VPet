@@ -5,8 +5,7 @@ function save_game()
         corns: global.corns,
         health: global.health,
         happiness: global.happiness,
-        pet_type: global.pet_type
-        
+        pet_type: global.pet_type,
     };
     
     var _string = json_stringify(_struct);

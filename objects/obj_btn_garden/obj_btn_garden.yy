@@ -1,11 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"obj_btn_gameroom",
+  "%Name":"obj_btn_garden",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":4,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_btn_gameroom",
+  "name":"obj_btn_garden",
   "overriddenProperties":[],
   "parent":{
     "name":"Buttons",
@@ -30,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_btn_game",
-    "path":"sprites/spr_btn_game/spr_btn_game.yy",
+    "name":"spr_btn_garden",
+    "path":"sprites/spr_btn_garden/spr_btn_garden.yy",
   },
   "spriteMaskId":null,
   "visible":true,

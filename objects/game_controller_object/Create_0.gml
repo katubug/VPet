@@ -12,3 +12,10 @@ global.health = 20;
 global.happiness = 20;
 global.petIsDead = 0;
 global.pet_type = "none";
+//access with global.pet.joy++ etc
+global.pet = {
+    joy: 0,
+    nonsense: 0,
+    selfesteem: 0,
+    enthusiasm: 0,
+};
