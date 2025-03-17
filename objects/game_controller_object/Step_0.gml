@@ -1,11 +1,11 @@
-var temp_health = global.health;
+var temp_health = global.pet.health;
 
 if(temp_health <= 0)
 {
-    global.petIsDead = true;
+    global.pet.living = false;
 }
 
-if(room != rm_death && global.petIsDead = true)
+if(room != rm_death && global.pet.living = false)
 {
     room_goto(rm_death);
 }

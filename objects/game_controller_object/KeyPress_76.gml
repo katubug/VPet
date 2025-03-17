@@ -1,1 +1,1 @@
-load_game();
+load_game(save_data.txt);

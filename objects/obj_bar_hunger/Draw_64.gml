@@ -1,21 +1,3 @@
-/// @DnDAction : YoYo Games.Drawing.Draw_Value
-/// @DnDVersion : 1
-/// @DnDHash : 1368892D
-/// @DnDArgument : "x_relative" "1"
-/// @DnDArgument : "y_relative" "1"
-/// @DnDArgument : "caption" ""Hunger: ""
-/// @DnDArgument : "var" "global.hunger"
-draw_text(x + 0, y + 0, string("Hunger: ") + string(global.hunger));
+draw_text(x + 0, y + 0, string("Hunger: ") + string(global.pet.hunger));
 
-/// @DnDAction : YoYo Games.Drawing.Draw_Rectangle
-/// @DnDVersion : 1
-/// @DnDHash : 7241BD34
-/// @DnDArgument : "x1_relative" "1"
-/// @DnDArgument : "y1" "20"
-/// @DnDArgument : "y1_relative" "1"
-/// @DnDArgument : "x2" "0+(200*(global.hunger/20))"
-/// @DnDArgument : "x2_relative" "1"
-/// @DnDArgument : "y2" "40"
-/// @DnDArgument : "y2_relative" "1"
-/// @DnDArgument : "fill" "1"
-draw_rectangle(x + 0, y + 20, x + 0+(200*(global.hunger/20)), y + 40, 0);
+draw_rectangle(x + 0, y + 20, x + 0+(200*(global.pet.hunger/20)), y + 40, 0);

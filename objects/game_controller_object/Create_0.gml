@@ -6,14 +6,14 @@ list_inventory = ds_list_create();
 randomize();
 
 global.inventory = list_inventory;
-global.corns = 100;
-global.hunger = 20;
-global.health = 20;
-global.happiness = 20;
 global.petIsDead = 0;
-global.pet_type = "none";
 //access with global.pet.joy++ etc
 global.pet = {
+    living: 1,
+    corns: 100,
+    hunger: 20,
+    health: 20,
+    happiness: 20,
     joy: 0,
     nonsense: 0,
     selfesteem: 0,
