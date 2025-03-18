@@ -1,1 +1,1 @@
-global.petIsDead = 1;
+global.pet.living = 0;

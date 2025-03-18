@@ -4,11 +4,11 @@ if (round_number >=1){
     draw_text(100,90, string("Round Number: ") + string(round_number))
     }
 
-if(games_on == 1){ 
+if(game_on == 1){ 
     draw_text(x+0,y+0, string("Game Begin. Press R for Rock, P for Paper, or S for Scissors."));
 }
 
-if(games_on != 1){
+if(game_on != 1){
     
     if (_game_complete == 1) {
         if (player_score > computer_score) draw_text(x+0,y+50, string("You have won your pet back!")+ "");

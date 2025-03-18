@@ -6,8 +6,8 @@ obj_room_buttonmash.outcome = "none";
 
 if (room == rm_rps)
 {
-    if (obj_room_rps.round_number <=2){
-    obj_room_rps.games_on = 1;
+    if (obj_room_rps.round_number <=3){
+    obj_room_rps.game_on = 1;
     obj_room_rps.player_choice = -1;
     }
     else {

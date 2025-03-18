@@ -9,6 +9,7 @@ global.inventory = list_inventory;
 global.petIsDead = 0;
 //access with global.pet.joy++ etc
 global.pet = {
+    ownername: "Bub",
     living: 1,
     corns: 100,
     hunger: 20,
