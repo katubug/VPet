@@ -1,11 +1,11 @@
-with(game_controller_object) {
+/*with(game_controller_object) {
 list_inventory = ds_list_create();
 
-}
+}*/
 
 randomize();
 
-global.inventory = list_inventory;
+//global.inventory = list_inventory;
 global.petIsDead = 0;
 //access with global.pet.joy++ etc
 global.pet = {
@@ -20,3 +20,4 @@ global.pet = {
     selfesteem: 0,
     enthusiasm: 0,
 };
+alarm[0] = 30;

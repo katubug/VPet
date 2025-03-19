@@ -1,1 +1,0 @@
-load_game(save_data.txt);

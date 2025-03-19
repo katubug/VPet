@@ -1,2 +1,0 @@
-
-save_game(global.pet, save_data.txt);
