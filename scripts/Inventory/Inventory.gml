@@ -80,6 +80,10 @@ function Inventory() constructor {
         array_delete(_inventory_items, _index, 1);
     }
     
+    item_get = function(){
+        return _inventory_items;
+    }
+    
     toString = function() {
         return json_stringify(_inventory_items);
     }
