@@ -1,4 +1,4 @@
-var temp_pet_living = global.pet.living;
+var temp_pet_living = global.game.living;
 
 if(temp_pet_living == 0)
 {

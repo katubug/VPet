@@ -8,4 +8,7 @@ if alarm[0]{
 }
 }
 else draw_text(250, 250, playername)
+    
+
+
 

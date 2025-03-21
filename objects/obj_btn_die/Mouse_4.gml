@@ -1,1 +1,1 @@
-global.pet.living = 0;
+global.game.living = 0;
