@@ -1,11 +1,6 @@
-/*with(game_controller_object) {
-list_inventory = ds_list_create();
-
-}*/
 
 randomize();
 
-//global.inventory = list_inventory;
 //access with global.pet.joy++ etc
 global.game = {
     ownername: "Bub",
@@ -14,6 +9,7 @@ global.game = {
     hunger: 20,
     health: 20,
     happiness: 20,
+    clutter_exists: 0,
 }
 global.pet = {
     joy: 0,
@@ -21,4 +17,7 @@ global.pet = {
     selfesteem: 0,
     enthusiasm: 0,
 };
+
 alarm[0] = 30;
+alarm[1] = 30;
+alarm[2] = 60 * 20;

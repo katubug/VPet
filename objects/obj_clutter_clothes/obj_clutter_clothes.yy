@@ -1,17 +1,20 @@
 {
   "$GMObject":"",
-  "%Name":"obj_bar_health",
+  "%Name":"obj_clutter_clothes",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":4,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_bar_health",
+  "name":"obj_clutter_clothes",
   "overriddenProperties":[],
   "parent":{
-    "name":"Game Control",
-    "path":"folders/Objects/Game Control.yy",
+    "name":"Objects",
+    "path":"folders/Objects.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_clutter_parent",
+    "path":"objects/obj_clutter_parent/obj_clutter_parent.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -29,7 +32,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_clutter_clothes",
+    "path":"sprites/spr_clutter_clothes/spr_clutter_clothes.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

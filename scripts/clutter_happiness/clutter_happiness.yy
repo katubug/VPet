@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"clutter_happiness",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"clutter_happiness",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
