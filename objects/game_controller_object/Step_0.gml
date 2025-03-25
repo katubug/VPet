@@ -11,6 +11,5 @@ if(room != rm_death && global.game.living = false)
 }
 
 
-
 //if (input_check_pressed("jump")) room_goto(rm_dev_room);
     

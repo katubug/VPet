@@ -1,3 +1,25 @@
+function pre_save(){
+    //Ensure we save the end-of-session date and time so they can be properly calculated on load.
+    save_date();
+    //Save current session time.
+    global.game.previous_total_time = global.game.banked_time;
+    global.game.session_time = (current_time/1000);
+    //Bank the current time played.
+    global.game.banked_time = (global.game.previous_total_time + global.game.session_time);
+    show_debug_message($"banking previous total time ({global.game.previous_total_time}) plus current session time ({global.game.session_time}), equalling {global.game.banked_time}");
+        
+    
+    
+    //Then get ready to save
+    var _dataToSave = {
+        game: global.game,
+        pet: global.pet,
+    };
+    
+    //And then save.
+    save_game(_dataToSave, string("save_data.txt"));
+}
+
 function save_game(_struct, _filename) {
     
     // We stringify the struct itself into JSON formatting
@@ -14,7 +36,25 @@ function save_game(_struct, _filename) {
     buffer_delete(_buff);
     }
     
-    function load_game(_filename) {
+function pre_load(){
+    //Check if there's a save file
+    if file_exists("save_data.txt"){
+        
+    //load the save data into a variable
+    var _data = load_game("save_data.txt");
+    
+    //parse that data into our global variables
+    global.game = _data.game;
+    global.pet = _data.pet; 
+        
+    //time for time!
+    show_debug_message($"Previous game session time was {global.game.session_time} seconds. Setting to 0 now.")
+    global.game.session_time = 0;
+    date_time();
+    }
+}
+
+function load_game(_filename) {
     // We load in the file
     var _buff = buffer_load(_filename);
     // We get the json from the buffer

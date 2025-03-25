@@ -17,8 +17,11 @@
         hour: current_hour,
         minute: current_minute,
         second: current_second,
+        //because current time is in milliseconds, we divide it by 1000 to change it to seconds
         session_time: (current_time/1000),
-        total_time: 0,
+        previous_total_time: 0,
+        running_time: 0,
+        banked_time: 0,
     }
     global.pet = {
         joy: 0,
