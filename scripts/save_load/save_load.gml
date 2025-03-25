@@ -9,6 +9,10 @@ function pre_save(){
     show_debug_message($"banking previous total time ({global.game.previous_total_time}) plus current session time ({global.game.session_time}), equalling {global.game.banked_time}");
         
     
+    //TODO: i think if i just do an "if" statement where i compare previous_total_time 
+    //and banked_time and if they're the same then i don't re-bank it? idk, 
+    //brain too scattered
+    
     
     //Then get ready to save
     var _dataToSave = {
