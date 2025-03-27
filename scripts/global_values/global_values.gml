@@ -22,6 +22,7 @@
         previous_total_time: 0,
         running_time: 0,
         banked_time: 0,
+        last_saved_time: 0,
     }
     global.pet = {
         joy: 0,

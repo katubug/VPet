@@ -26,6 +26,8 @@ function date_time()
     var new_total_time = _banked_time + time_elapsed;
     //bank previous banked time plus time elapsed
     global.game.banked_time = new_total_time;
+    //Also make sure the previous total time is correct for this play session
+    global.game.previous_total_time = global.game.banked_time;
     //now i need to make sure that the banked time stays banked, and the current time 
     //is a combination of the banked time and the session time
     //since the current running time should only really exist temporarily during play sessions,
