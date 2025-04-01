@@ -1,11 +1,11 @@
 draw_set_font(fnt_Quicksand);
-fontSize = font_get_size(fnt_Quicksand);
-BUFFER = cell(fontSize/2);
+var fontSize = font_get_size(fnt_Quicksand);
+var BUFFER = cell(fontSize/2);
 
 #region DRAW LETTERS
 
-startX = 200;
-startY = 60;
+var startX = 200;
+var startY = 60;
 var charCount = 1;
 
 for (var yy = 0; yy < yLetters; yy++){

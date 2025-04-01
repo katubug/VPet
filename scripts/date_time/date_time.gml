@@ -47,3 +47,24 @@ function save_date()
     global.game.second = current_second;
 
 }
+
+function time_reset()
+{
+    global.game.year = current_year;
+    global.game.month = current_month;
+    global.game.day = current_day;
+    global.game.hour = current_hour;
+    global.game.minute = current_minute;
+    global.game.second = current_second;
+    //because current time is in milliseconds; we divide it by 1000 to change it to seconds
+    global.game.session_time = 0;
+    global.game.previous_total_time = 0;
+    global.game.running_time = 0;
+    global.game.banked_time = 0;
+    global.game.last_saved_time = 0;
+    var _dataToSave = {
+            game: global.game,
+            pet: global.pet,
+        };
+    save_game(_dataToSave, string("save_data.txt"));
+}

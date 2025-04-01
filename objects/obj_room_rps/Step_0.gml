@@ -29,3 +29,15 @@ if(game_on == 1){
       } 
     }
 }
+
+if (_game_complete == 1) {
+        if (player_score > computer_score) {
+            global.game.living = 1;
+            room_goto(rm_main);
+        }
+        else if (player_score < computer_score) {
+            time_reset();
+            room_goto(rm_initial);
+        }
+    }
+

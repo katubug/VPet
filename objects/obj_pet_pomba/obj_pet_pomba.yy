@@ -12,8 +12,8 @@
   "name":"obj_pet_pomba",
   "overriddenProperties":[],
   "parent":{
-    "name":"Pets",
-    "path":"folders/Objects/Pets.yy",
+    "name":"Babies",
+    "path":"folders/Objects/Pets/Babies.yy",
   },
   "parentObjectId":{
     "name":"obj_pet_parent",
@@ -37,8 +37,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"del_spr_pomba",
-    "path":"sprites/del_spr_pomba/del_spr_pomba.yy",
+    "name":"spr_baby_pomba",
+    "path":"sprites/spr_baby_pomba/spr_baby_pomba.yy",
   },
   "spriteMaskId":null,
   "visible":true,

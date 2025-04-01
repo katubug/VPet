@@ -12,8 +12,8 @@
   "name":"obj_pet_bedapy_crinoga",
   "overriddenProperties":[],
   "parent":{
-    "name":"Pets",
-    "path":"folders/Objects/Pets.yy",
+    "name":"Adults",
+    "path":"folders/Objects/Pets/Adults.yy",
   },
   "parentObjectId":{
     "name":"obj_pet_parent",
@@ -37,8 +37,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_bedapy_crinoga",
-    "path":"sprites/spr_bedapy_crinoga/spr_bedapy_crinoga.yy",
+    "name":"spr_adult_bedapy_crinoga",
+    "path":"sprites/spr_adult_bedapy_crinoga/spr_adult_bedapy_crinoga.yy",
   },
   "spriteMaskId":null,
   "visible":true,

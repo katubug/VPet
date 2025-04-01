@@ -12,8 +12,8 @@
   "name":"obj_pet_chimchee",
   "overriddenProperties":[],
   "parent":{
-    "name":"Pets",
-    "path":"folders/Objects/Pets.yy",
+    "name":"Adults",
+    "path":"folders/Objects/Pets/Adults.yy",
   },
   "parentObjectId":{
     "name":"obj_pet_parent",

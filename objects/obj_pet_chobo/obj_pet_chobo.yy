@@ -12,8 +12,8 @@
   "name":"obj_pet_chobo",
   "overriddenProperties":[],
   "parent":{
-    "name":"Pets",
-    "path":"folders/Objects/Pets.yy",
+    "name":"Babies",
+    "path":"folders/Objects/Pets/Babies.yy",
   },
   "parentObjectId":{
     "name":"obj_pet_parent",
@@ -37,8 +37,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"del_spr_chobo",
-    "path":"sprites/del_spr_chobo/del_spr_chobo.yy",
+    "name":"spr_baby_chobo",
+    "path":"sprites/spr_baby_chobo/spr_baby_chobo.yy",
   },
   "spriteMaskId":null,
   "visible":true,

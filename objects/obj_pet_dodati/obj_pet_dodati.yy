@@ -12,8 +12,8 @@
   "name":"obj_pet_dodati",
   "overriddenProperties":[],
   "parent":{
-    "name":"Pets",
-    "path":"folders/Objects/Pets.yy",
+    "name":"Babies",
+    "path":"folders/Objects/Pets/Babies.yy",
   },
   "parentObjectId":{
     "name":"obj_pet_parent",
@@ -37,8 +37,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"del_spr_dodati",
-    "path":"sprites/del_spr_dodati/del_spr_dodati.yy",
+    "name":"spr_baby_dodati",
+    "path":"sprites/spr_baby_dodati/spr_baby_dodati.yy",
   },
   "spriteMaskId":null,
   "visible":true,

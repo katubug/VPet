@@ -1,4 +1,30 @@
-function evolution_control() 
+function does_evolve(){
+    
+    //TODO: i should reset total banked time on pet death
+
+    
+    var _time_check = global.game.running_time;
+    
+    if (global.game.evolution_phase != "none"){
+        if (global.game.evolution_phase == "baby"){
+                    if (_time_check >= global.game.evolution_time.child){
+                        evolution_control("child");
+                    }
+                }
+        if (global.game.evolution_phase == "child"){
+                    if (_time_check >= global.game.evolution_time.teen){
+                        evolution_control("teen");
+                    }
+                }
+        if (global.game.evolution_phase == "teen"){
+                    if (_time_check >= global.game.evolution_time.adult){
+                        evolution_control("adult");
+                    }
+                }
+    } else return false;
+}
+
+function evolution_control(_phase) 
 {
     var _pool = []; //declare empty array
     //populate array with items from the global.pet struct.
@@ -20,97 +46,185 @@ function evolution_control()
     
     //show_message($"highest stat is {_highest}");
     
-    if (_highest == "selfesteem"){
-        
-        if (evolution_phase = "child"){
-                    pet_evolution = "gnart";
-                }
-            
-        if (evolution_phase = "teen"){
-                if (global.pet.joy > global.pet.nonsense) pet_evolution = "vleesh"; 
-                    else pet_evolution = "goot";
-                }
-        
-        if (evolution_phase = "adult"){
-        //chomly: joy, -enthu
-        //froodle: nonsense, -enthu
-        //grimble: enthu, -joy
-        //tibb: enthu, -nonsense
-        if (_second_highest == "joy" && _lowest == "enthusiasm") pet_evolution = "chomly";
-        if (_second_highest == "nonsense" && _lowest == "enthusiasm") pet_evolution = "froodle";
-        if (_second_highest == "enthusiasm" && _lowest =="joy") pet_evolution = "grimble";
-        if (_second_highest == "enthusiasm" && _lowest =="nonsense") pet_evolution = "tibb";
+if (_highest == "selfesteem"){
+    
+   if (_phase = "child"){
+        pet_evolution = "gnart";
+        global.game.evolution_phase = "child";
+        global.game.current_pet_type = "gnart";
+   }
+   
+   if (_phase = "teen"){
+       if (global.pet.joy > global.pet.nonsense) {
+            pet_evolution = "vleesh"; 
+            global.game.evolution_phase = "teen";
+            global.game.current_pet_type = "vleesh";
+       }
+       else {
+             pet_evolution = "goot";
+             global.game.evolution_phase = "teen";
+             global.game.current_pet_type = "goot";
+       }
+   }
+    
+    if (_phase = "adult"){
+       if (_second_highest == "joy" && _lowest == "enthusiasm") {
+           pet_evolution = "chomly";
+           global.game.evolution_phase = "adult";
+           global.game.current_pet_type = "chomly";
+       }
+       if (_second_highest == "nonsense" && _lowest == "enthusiasm") {
+           pet_evolution = "froodle";
+           global.game.evolution_phase = "adult";
+           global.game.current_pet_type = "froodle";
+       }
+       if (_second_highest == "enthusiasm" && _lowest =="joy") {
+           pet_evolution = "grimble";
+           global.game.evolution_phase = "adult";
+           global.game.current_pet_type = "grimble";
+       }
+       if (_second_highest == "enthusiasm" && _lowest =="nonsense") {
+           pet_evolution = "tibb";
+           global.game.evolution_phase = "adult";
+           global.game.current_pet_type = "grimble";
+       }
+    }
+}
+    
+if (_highest == "nonsense"){
+
+   if (_phase = "child"){
+       pet_evolution = "plang";
+       global.game.evolution_phase = "child";
+       global.game.current_pet_type = "plang";
+   }
+
+   if (_phase = "teen"){
+         if (global.pet.enthusiasm > global.pet.selfesteem) {
+             pet_evolution = "blertrand"; 
+             global.game.evolution_phase = "teen";
+             global.game.current_pet_type = "blertrand";
+        }
+         else {
+             pet_evolution = "merm";
+             global.game.evolution_phase = "teen";
+             global.game.current_pet_type = "merm";
         }
     }
+
+    if (_phase = "adult"){
+
+       if (_second_highest == "joy" && _lowest == "selfesteem") {
+            pet_evolution = "bedapy_crinoga";
+            global.game.evolution_phase = "adult";
+            global.game.current_pet_type = "bedapy_crinoga";
+       }
+       if (_second_highest == "enthusiasm" && _lowest == "selfesteem") {
+            pet_evolution = "gluft";
+            global.game.evolution_phase = "adult";
+            global.game.current_pet_type = "gluft";
+       }
+       if (_second_highest == "selfesteem" && _lowest =="enthusiasm") {
+            pet_evolution = "homma";
+            global.game.evolution_phase = "adult";
+            global.game.current_pet_type = "homma";
+       }
+       if (_second_highest == "enthusiasm" && _lowest =="joy") {
+            pet_evolution = "teemb";
+            global.game.evolution_phase = "adult";
+            global.game.current_pet_type = "teemb";
+       }
+    }
+}
     
-    if (_highest == "nonsense"){
-        
-        if (evolution_phase = "child"){
-                pet_evolution = "plang";
-            }
-        
-        if (evolution_phase = "teen"){
-            if (global.pet.enthusiasm > global.pet.selfesteem) pet_evolution = "blertrand"; 
-                            else pet_evolution = "merm";
-            }
-            
-        if (evolution_phase = "adult"){
-        //bedapy crinoga: joy, -self
-        //gluft: enthu, -self
-        //homma: self, -enthu
-        //teemb: enthu, -joy
-        
-        if (_second_highest == "joy" && _lowest == "selfesteem") pet_evolution = "bedapy_crinoga";
-        if (_second_highest == "enthusiasm" && _lowest == "selfesteem") pet_evolution = "gluft";
-        if (_second_highest == "selfesteem" && _lowest =="enthusiasm") pet_evolution = "homma";
-        if (_second_highest == "enthusiasm" && _lowest =="joy") pet_evolution = "teemb";
+if (_highest == "joy"){
+
+   if (_phase = "child"){
+        pet_evolution = "looma";
+        global.game.evolution_phase = "child";
+        global.game.current_pet_type = "looma";
+   }
+
+    if (_phase = "teen"){
+       if (global.pet.enthusiasm > global.pet.nonsense) {
+            pet_evolution = "moof"; 
+            global.game.evolution_phase = "teen";
+            global.game.current_pet_type = "moof";
+       }
+       else {
+            pet_evolution = "yorge";
+            global.game.evolution_phase = "teen";
+            global.game.current_pet_type = "yorge";
+       }
+    }
+
+    if (_phase = "adult"){
+       if (_second_highest == "selfesteem" && _lowest == "nonsense"){
+            pet_evolution = "balbio";
+            global.game.evolution_phase = "adult";
+            global.game.current_pet_type = "balbio";
+        }
+       if (_second_highest == "enthusiasm" && _lowest == "nonsense"){
+            pet_evolution = "chimchee";
+            global.game.evolution_phase = "adult";
+            global.game.current_pet_type = "chimchee";
+        }
+       if (_second_highest == "nonsense" && _lowest == "enthusiasm"){
+            pet_evolution = "elboo";
+            global.game.evolution_phase = "adult";
+            global.game.current_pet_type = "elboo";
+        }
+       if (_second_highest == "nonsense" && _lowest == "selfesteem"){
+            pet_evolution = "nabafee";
+            global.game.evolution_phase = "adult";
+            global.game.current_pet_type = "nabafee";
         }
     }
-    if (_highest == "joy"){
-        
-        if (evolution_phase = "child"){
-                pet_evolution = "looma";
-            }
-        
-        if (evolution_phase = "teen"){
-            if (global.pet.enthusiasm > global.pet.nonsense) pet_evolution = "moof"; 
-                            else pet_evolution = "yorge";
-            }
-        
-        if (evolution_phase = "adult"){
-        //balbio: self, -nonsense
-        //chimchee: enthu, -nonsense
-        //elboo: nonsense, -enthu
-        //nabafee: nonsense, -self
-    
-        if (_second_highest == "selfesteem" && _lowest == "nonsense") pet_evolution = "balbio";
-        if (_second_highest == "enthusiasm" && _lowest == "nonsense") pet_evolution = "chimchee";
-        if (_second_highest == "nonsense" && _lowest == "enthusiasm") pet_evolution = "elboo";
-        if (_second_highest == "nonsense" && _lowest == "selfesteem") pet_evolution = "nabafee";
+}
+
+if (_highest == "enthusiasm"){
+
+    if (_phase = "child"){
+        pet_evolution = "phil";
+        global.game.evolution_phase = "child";
+        global.game.current_pet_type = "phil";
+    }
+
+    if (_phase = "teen"){
+        if (global.pet.joy > global.pet.selfesteem){ 
+            pet_evolution = "pleh"; 
+            global.game.evolution_phase = "teen";
+            global.game.current_pet_type = "pleh";
+        }
+        else {
+            pet_evolution = "teru";
+            global.game.evolution_phase = "teen";
+            global.game.current_pet_type = "teru";
         }
     }
-    
-    if (_highest == "enthusiasm"){
-        
-        if (evolution_phase = "child"){
-                pet_evolution = "phil";
-            }
-        
-        if (evolution_phase = "teen"){
-            if (global.pet.joy > global.pet.selfesteem) pet_evolution = "pleh"; 
-                            else pet_evolution = "teru";
-            }
-        
-        if (evolution_phase = "adult"){
-        //blinko: self, -joy
-        //clup: joy, -self
-        //slof: nonsense, -joy
-        //teedee: joy, -nonsense
-    
-        if (_second_highest == "selfesteem" && _lowest == "joy") pet_evolution = "blinko";
-        if (_second_highest == "joy" && _lowest == "selfesteem") pet_evolution = "clup";
-        if (_second_highest == "nonsense" && _lowest == "joy") pet_evolution = "slof";
-        if (_second_highest == "joy" && _lowest == "nonsense") pet_evolution = "teedee";
+
+   if (_phase = "adult"){
+   
+       if (_second_highest == "selfesteem" && _lowest == "joy") {
+            pet_evolution = "blinko";
+            global.game.evolution_phase = "adult";
+            global.game.current_pet_type = "blinko";
         }
-    }
+       if (_second_highest == "joy" && _lowest == "selfesteem") {
+            pet_evolution = "clup";
+            global.game.evolution_phase = "adult";
+            global.game.current_pet_type = "clup";
+        }
+       if (_second_highest == "nonsense" && _lowest == "joy") {
+            pet_evolution = "slof";
+            global.game.evolution_phase = "adult";
+            global.game.current_pet_type = "slof";
+        }
+       if (_second_highest == "joy" && _lowest == "nonsense") {
+            pet_evolution = "teedee";
+            global.game.evolution_phase = "adult";
+            global.game.current_pet_type = "teedee";
+       }
+    } 
+}
 }

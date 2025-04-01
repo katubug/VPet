@@ -1,8 +1,7 @@
     randomize();
 
-    //access with global.pet.joy++ etc
     global.game = {
-        struct_version: 0.1,
+        struct_version: 0.2,
         ownername: "",
         living: 1,
         corns: 100,
@@ -10,7 +9,6 @@
         health: 20,
         happiness: 20,
         clutter_exists: 0,
-        current_pet_type: "",
         year: current_year,
         month: current_month,
         day: current_day,
@@ -23,7 +21,16 @@
         running_time: 0,
         banked_time: 0,
         last_saved_time: 0,
-    }
+        evolution_phase: "baby",
+        current_pet_type: "",
+    };
+    var _base = 86400; //24 hours in seconds 
+      global.game.evolution_time = {
+            base: _base,
+            child: (_base/2),
+            teen: (_base * 2),
+            adult: (_base * 3),
+      };
     global.pet = {
         joy: 0,
         nonsense: 0,
