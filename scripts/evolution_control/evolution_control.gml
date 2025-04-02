@@ -23,7 +23,7 @@ function does_evolve(){
 
 function evolution_control(_phase) 
 {
-    
+    global.game.previous_pet_type = global.game.current_pet_type;
     show_debug_message($"the evolution script is executing the {_phase} phase");
     var _pool = []; //declare empty array
     //populate array with items from the global.pet struct.
