@@ -513,7 +513,6 @@
     {"id":{"name":"is_between","path":"scripts/is_between/is_between.yy",},},
     {"id":{"name":"save_load","path":"scripts/save_load/save_load.yy",},},
     {"id":{"name":"text_align","path":"scripts/text_align/text_align.yy",},},
-    {"id":{"name":"seq_evolution","path":"sequences/seq_evolution/seq_evolution.yy",},},
     {"id":{"name":"background_blank","path":"sprites/background_blank/background_blank.yy",},},
     {"id":{"name":"background_rm_bathroom","path":"sprites/background_rm_bathroom/background_rm_bathroom.yy",},},
     {"id":{"name":"background_rm_forest_pond","path":"sprites/background_rm_forest_pond/background_rm_forest_pond.yy",},},

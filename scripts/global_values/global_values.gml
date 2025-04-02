@@ -26,8 +26,8 @@
         evolution_queued: 1,
         previous_pet_type: "",
     };
-    var _base = 60; //86400 = 24 hours in seconds 
-      global.game.evolution_time = {
+        var _base = 86400; //86400 = 24 hours in seconds 
+        global.game.evolution_time = {
             base: _base,
             child: (_base/2),
             teen: (_base * 2),
