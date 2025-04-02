@@ -12,8 +12,8 @@
   "name":"obj_pet_phil",
   "overriddenProperties":[],
   "parent":{
-    "name":"Babies",
-    "path":"folders/Objects/Pets/Babies.yy",
+    "name":"Children",
+    "path":"folders/Objects/Pets/Children.yy",
   },
   "parentObjectId":{
     "name":"obj_pet_parent",
@@ -37,8 +37,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_baby_pomba",
-    "path":"sprites/spr_baby_pomba/spr_baby_pomba.yy",
+    "name":"spr_child_phil",
+    "path":"sprites/spr_child_phil/spr_child_phil.yy",
   },
   "spriteMaskId":null,
   "visible":true,

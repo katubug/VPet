@@ -24,7 +24,7 @@
         evolution_phase: "baby",
         current_pet_type: "",
     };
-    var _base = 86400; //24 hours in seconds 
+    var _base = 60; //86400 = 24 hours in seconds 
       global.game.evolution_time = {
             base: _base,
             child: (_base/2),

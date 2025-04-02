@@ -10,5 +10,4 @@ if(room != rm_death && global.game.living = false)
     room_goto(rm_death);
 }
 
-//does_evolve();
-//if does_evolve() alarm[3] = 10;
+does_evolve();

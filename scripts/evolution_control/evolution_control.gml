@@ -1,8 +1,5 @@
 function does_evolve(){
     
-    //TODO: i should reset total banked time on pet death
-
-    
     var _time_check = global.game.running_time;
     
     if (global.game.evolution_phase != "none"){
@@ -21,11 +18,13 @@ function does_evolve(){
                         evolution_control("adult");
                     }
                 }
-    } else return false;
+    }
 }
 
 function evolution_control(_phase) 
 {
+    
+    show_debug_message($"the evolution script is executing the {_phase} phase");
     var _pool = []; //declare empty array
     //populate array with items from the global.pet struct.
     //the "with" functions as a "diy closure" so that the local variables are accessible. 
@@ -52,6 +51,7 @@ if (_highest == "selfesteem"){
         pet_evolution = "gnart";
         global.game.evolution_phase = "child";
         global.game.current_pet_type = "gnart";
+    event_perform(ev_alarm, 3);
    }
    
    if (_phase = "teen"){
@@ -97,6 +97,7 @@ if (_highest == "nonsense"){
        pet_evolution = "plang";
        global.game.evolution_phase = "child";
        global.game.current_pet_type = "plang";
+    event_perform(ev_alarm, 3);
    }
 
    if (_phase = "teen"){
@@ -143,6 +144,7 @@ if (_highest == "joy"){
         pet_evolution = "looma";
         global.game.evolution_phase = "child";
         global.game.current_pet_type = "looma";
+    event_perform(ev_alarm, 3);
    }
 
     if (_phase = "teen"){
@@ -188,6 +190,7 @@ if (_highest == "enthusiasm"){
         pet_evolution = "phil";
         global.game.evolution_phase = "child";
         global.game.current_pet_type = "phil";
+        event_perform(ev_alarm, 3);
     }
 
     if (_phase = "teen"){

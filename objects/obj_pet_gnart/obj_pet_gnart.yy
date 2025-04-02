@@ -37,8 +37,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_child_looma",
-    "path":"sprites/spr_child_looma/spr_child_looma.yy",
+    "name":"spr_child_gnart",
+    "path":"sprites/spr_child_gnart/spr_child_gnart.yy",
   },
   "spriteMaskId":null,
   "visible":true,
