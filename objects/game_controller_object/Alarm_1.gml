@@ -42,5 +42,6 @@ if (clutter_type == 2){
     if (room != rm_main) room_instance_add(rm_main, clutter_x, clutter_y, obj_clutter_paper)
     else instance_create_layer(clutter_x, clutter_y, "Instances", obj_clutter_paper)
 }
-alarm[1] = 60*20;
+// Set Alarm 1 to 20 minutes (i.e. 60 frames per second * 60 seconds per minute * 20 minutes)
+alarm[1] = game_get_speed(gamespeed_fps) * 60 * 20;
     

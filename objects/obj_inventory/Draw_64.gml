@@ -51,7 +51,7 @@ draw_set(c_black, 0.5);
 draw_text(
     ui_padding_x + (ui_border_size * 3) + 4,
     ui_padding_y + (ui_border_size * 4) + 4,
-"Stats"
+"About"
 );
 
 //text main
@@ -59,7 +59,7 @@ draw_set(c_white, 1);
 draw_text(
     ui_padding_x + (ui_border_size * 3),
     ui_padding_y + (ui_border_size * 4),
-"Stats"
+"About"
 );
 
 //text shadow

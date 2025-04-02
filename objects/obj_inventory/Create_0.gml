@@ -1,11 +1,11 @@
 inventory = new Inventory();
 
-inventory_columns = 5;
-inventory_rows = 9;
+inventory_columns = 3;
+inventory_rows = 8;
 
 ui_padding_x = 64;
-ui_padding_y = 64;
-ui_panel_left = 90;
+ui_padding_y = 250;
+ui_panel_left = 250;
 ui_border_size = 8;
 ui_inventory_padding = 48;
 ui_inventory_box = 64;

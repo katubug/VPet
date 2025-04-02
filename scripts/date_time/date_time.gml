@@ -17,7 +17,14 @@ function date_time()
     //because we are calculating hunger and other need degradation as minutes, we convert the seconds
     //elapsed into minutes by dividing by 60.
     var _minutes_elapsed = time_elapsed/60;
-    global.game.hunger -= _minutes_elapsed;
+    //decrement hunger for every 30 minutes gone
+    global.game.hunger -= (_minutes_elapsed/30);
+    //same for happiness, except per hour
+    //happiness drains faster if there was clutter when the player logged off.
+    if (global.game.clutter_exists == true) {
+        global.game.happiness -= (_minutes_elapsed/40);
+    } else 
+    global.game.happiness -= (_minutes_elapsed/60)
     show_debug_message($"total banked time was {global.game.banked_time}.")
     show_debug_message($"time elapsed since logoff was {_minutes_elapsed} minutes aka {time_elapsed} seconds.")
     

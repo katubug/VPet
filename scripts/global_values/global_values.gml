@@ -8,7 +8,7 @@
         hunger: 20,
         health: 20,
         happiness: 20,
-        clutter_exists: 0,
+        clutter_exists: false,
         year: current_year,
         month: current_month,
         day: current_day,
