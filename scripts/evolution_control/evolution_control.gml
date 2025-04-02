@@ -51,7 +51,7 @@ if (_highest == "selfesteem"){
         pet_evolution = "gnart";
         global.game.evolution_phase = "child";
         global.game.current_pet_type = "gnart";
-    event_perform(ev_alarm, 3);
+        event_perform(ev_alarm, 3);
    }
    
    if (_phase = "teen"){
@@ -59,11 +59,13 @@ if (_highest == "selfesteem"){
             pet_evolution = "vleesh"; 
             global.game.evolution_phase = "teen";
             global.game.current_pet_type = "vleesh";
+            event_perform(ev_alarm, 3);
        }
        else {
              pet_evolution = "goot";
              global.game.evolution_phase = "teen";
              global.game.current_pet_type = "goot";
+            event_perform(ev_alarm, 3);
        }
    }
     
@@ -72,21 +74,25 @@ if (_highest == "selfesteem"){
            pet_evolution = "chomly";
            global.game.evolution_phase = "adult";
            global.game.current_pet_type = "chomly";
+        event_perform(ev_alarm, 3);
        }
        if (_second_highest == "nonsense" && _lowest == "enthusiasm") {
            pet_evolution = "froodle";
            global.game.evolution_phase = "adult";
            global.game.current_pet_type = "froodle";
+        event_perform(ev_alarm, 3);
        }
        if (_second_highest == "enthusiasm" && _lowest =="joy") {
            pet_evolution = "grimble";
            global.game.evolution_phase = "adult";
            global.game.current_pet_type = "grimble";
+        event_perform(ev_alarm, 3);
        }
        if (_second_highest == "enthusiasm" && _lowest =="nonsense") {
            pet_evolution = "tibb";
            global.game.evolution_phase = "adult";
            global.game.current_pet_type = "grimble";
+        event_perform(ev_alarm, 3);
        }
     }
 }
@@ -105,11 +111,13 @@ if (_highest == "nonsense"){
              pet_evolution = "blertrand"; 
              global.game.evolution_phase = "teen";
              global.game.current_pet_type = "blertrand";
+            event_perform(ev_alarm, 3);
         }
          else {
              pet_evolution = "merm";
              global.game.evolution_phase = "teen";
              global.game.current_pet_type = "merm";
+            event_perform(ev_alarm, 3);
         }
     }
 
@@ -119,21 +127,25 @@ if (_highest == "nonsense"){
             pet_evolution = "bedapy_crinoga";
             global.game.evolution_phase = "adult";
             global.game.current_pet_type = "bedapy_crinoga";
+        event_perform(ev_alarm, 3);
        }
        if (_second_highest == "enthusiasm" && _lowest == "selfesteem") {
             pet_evolution = "gluft";
             global.game.evolution_phase = "adult";
             global.game.current_pet_type = "gluft";
+        event_perform(ev_alarm, 3);
        }
        if (_second_highest == "selfesteem" && _lowest =="enthusiasm") {
             pet_evolution = "homma";
             global.game.evolution_phase = "adult";
             global.game.current_pet_type = "homma";
+        event_perform(ev_alarm, 3);
        }
        if (_second_highest == "enthusiasm" && _lowest =="joy") {
             pet_evolution = "teemb";
             global.game.evolution_phase = "adult";
             global.game.current_pet_type = "teemb";
+        event_perform(ev_alarm, 3);
        }
     }
 }
@@ -152,11 +164,13 @@ if (_highest == "joy"){
             pet_evolution = "moof"; 
             global.game.evolution_phase = "teen";
             global.game.current_pet_type = "moof";
+        event_perform(ev_alarm, 3);
        }
        else {
             pet_evolution = "yorge";
             global.game.evolution_phase = "teen";
             global.game.current_pet_type = "yorge";
+        event_perform(ev_alarm, 3);
        }
     }
 
@@ -165,21 +179,25 @@ if (_highest == "joy"){
             pet_evolution = "balbio";
             global.game.evolution_phase = "adult";
             global.game.current_pet_type = "balbio";
+        event_perform(ev_alarm, 3);
         }
        if (_second_highest == "enthusiasm" && _lowest == "nonsense"){
             pet_evolution = "chimchee";
             global.game.evolution_phase = "adult";
             global.game.current_pet_type = "chimchee";
+        event_perform(ev_alarm, 3);
         }
        if (_second_highest == "nonsense" && _lowest == "enthusiasm"){
             pet_evolution = "elboo";
             global.game.evolution_phase = "adult";
             global.game.current_pet_type = "elboo";
+        event_perform(ev_alarm, 3);
         }
        if (_second_highest == "nonsense" && _lowest == "selfesteem"){
             pet_evolution = "nabafee";
             global.game.evolution_phase = "adult";
             global.game.current_pet_type = "nabafee";
+        event_perform(ev_alarm, 3);
         }
     }
 }
@@ -198,11 +216,13 @@ if (_highest == "enthusiasm"){
             pet_evolution = "pleh"; 
             global.game.evolution_phase = "teen";
             global.game.current_pet_type = "pleh";
+            event_perform(ev_alarm, 3);
         }
         else {
             pet_evolution = "teru";
             global.game.evolution_phase = "teen";
             global.game.current_pet_type = "teru";
+            event_perform(ev_alarm, 3);
         }
     }
 
@@ -212,21 +232,25 @@ if (_highest == "enthusiasm"){
             pet_evolution = "blinko";
             global.game.evolution_phase = "adult";
             global.game.current_pet_type = "blinko";
+        event_perform(ev_alarm, 3);
         }
        if (_second_highest == "joy" && _lowest == "selfesteem") {
             pet_evolution = "clup";
             global.game.evolution_phase = "adult";
             global.game.current_pet_type = "clup";
+        event_perform(ev_alarm, 3);
         }
        if (_second_highest == "nonsense" && _lowest == "joy") {
             pet_evolution = "slof";
             global.game.evolution_phase = "adult";
             global.game.current_pet_type = "slof";
+        event_perform(ev_alarm, 3);
         }
        if (_second_highest == "joy" && _lowest == "nonsense") {
             pet_evolution = "teedee";
             global.game.evolution_phase = "adult";
             global.game.current_pet_type = "teedee";
+        event_perform(ev_alarm, 3);
        }
     } 
 }
