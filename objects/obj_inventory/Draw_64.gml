@@ -77,6 +77,9 @@ draw_text(
     ui_padding_y + (ui_border_size * 4),
 "Inventory"
 );
+//inventory items
+var mx = device_mouse_x_to_gui(0);
+var my = device_mouse_y_to_gui(0);
 
 var inventory_item = inventory.item_get();
 for (var row = 0; row < inventory_rows; row++){
@@ -106,6 +109,21 @@ for (var row = 0; row < inventory_rows; row++){
                 //draw inventory item
                 draw_sprite(inventory_item[inventory_index].sprite, 0, pos_x, pos_y);
                 }
+        //hover
+        if (is_between(mx, pos_x, pos_x+ui_inventory_box)){
+            if (is_between(my, pos_y, pos_y + ui_inventory_box)){
+                draw_set(color_inventory_highlight, 0.2);
+                draw_rectangle(
+                pos_x,
+                pos_y,
+                pos_x+ui_inventory_box,
+                pos_y+ui_inventory_box,
+                false
+                );
+                draw_reset();
+            }
+        }
+        
         //quantity
         if (inventory_index <= array_length(inventory_item) -1){
                 draw_set(color_border, 1); 

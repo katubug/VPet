@@ -8,7 +8,7 @@ move_and_collide(_hor * move_speed, _ver * move_speed, tilemap);
 if (global.game.evolution_queued == 0){
     // do the evolution dance!
     show_debug_message("attempting to switch pets");
-        
-        alarm[4] = 60;
+        alarm[6] = 10;
+        global.game.evolution_queued = 1;
         }
 

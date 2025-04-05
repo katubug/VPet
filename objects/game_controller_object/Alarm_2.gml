@@ -3,4 +3,8 @@ if (instance_number(obj_clutter_parent) >= 1){
     clutter_happiness(clutter_amount);
     global.game.clutter_exists = true;
 }
+else if (instance_number(obj_clutter_parent) < 1){
+    global.game.clutter_exists = false;
+    show_debug_message("no clutter exists");
+    }
 alarm[2] = 60*20;
