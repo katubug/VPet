@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"__CLASSFUL_JSON_CONFIGS__",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"__CLASSFUL_JSON_CONFIGS__",
+  "parent":{
+    "name":"ClassfulJson",
+    "path":"folders/Libraries_config/ClassfulJson.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

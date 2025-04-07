@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"ClassfulJson_internal",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"ClassfulJson_internal",
+  "parent":{
+    "name":"ClassfulJson",
+    "path":"folders/Libraries/ClassfulJson.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

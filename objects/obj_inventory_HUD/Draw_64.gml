@@ -81,7 +81,7 @@ draw_text(
 var mx = device_mouse_x_to_gui(0);
 var my = device_mouse_y_to_gui(0);
 
-var inventory_item = inventory.item_get();
+var inventory_item = _inventory.item_get();
 for (var row = 0; row < inventory_rows; row++){
     var pos_y = ui_padding_y + (ui_border_size * 13) + (row * (ui_inventory_margin + ui_inventory_box));
     for (var column = 0; column < inventory_columns; column++){

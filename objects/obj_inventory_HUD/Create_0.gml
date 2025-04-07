@@ -1,4 +1,4 @@
-inventory = new Inventory();
+_inventory = global.inventory;
 
 inventory_columns = 3;
 inventory_rows = 8;
@@ -13,9 +13,3 @@ ui_inventory_margin = 16;
 color_border = c_teal;
 color_background = c_dkgray;
 color_inventory_highlight = c_orange;
-
-inventory.item_add("Wood", 3, spr_btn_begin);
-inventory.item_add("Wood", 7, spr_btn_begin);
-inventory.item_add("Strone", 3, spr_btn_begin);
-
-show_debug_message(inventory)

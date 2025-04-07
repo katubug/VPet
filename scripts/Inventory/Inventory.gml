@@ -1,11 +1,11 @@
 // Following this tutorial: https://www.youtube.com/watch?v=3FGMKQ_8bIc
-
+/*
 function Inventory() constructor {
     //Create an empty array.
     _inventory_items = [];
     
     //A function to set the name of the item type, the quantity, and the sprite of the item.
-    item_set = function(_name, _quantity, _sprite) {
+    static item_set = function(_name, _quantity, _sprite) {
         array_push(_inventory_items, {
             name: _name,
             quantity: _quantity,
@@ -15,7 +15,7 @@ function Inventory() constructor {
     
     //Find items in inventory. Accepts the parameter "_name" and iterates over all indexes in the array
     //"_inventory_items." If the name matches, return the index number of the matching items.
-    item_find = function(_name){
+    static item_find = function(_name){
         for (var item_index = 0; item_index < array_length(_inventory_items); item_index++) {
             if (_name == _inventory_items[item_index].name){
                 return item_index;
@@ -25,20 +25,8 @@ function Inventory() constructor {
         return -1;
     }
     
-    /*
-    //testing thing from discord
-            item_find = function(_name) {
-            with ({_name}) {
-                var item_index = array_find_index(_inventory_items, function(element_value) {
-                return element_value.name == _name;
-                });
-            }
-            return item_index;
-            }
-     */
-    
     //Now, a function to add items to the inventory.
-    item_add = function(_name, _quantity, _sprite){
+    static item_add = function(_name, _quantity, _sprite){
         //first, check if it exists in the inventory by passing the item's _name into the item_find 
         //function.
         var index = item_find(_name);
@@ -52,7 +40,7 @@ function Inventory() constructor {
     }
     
     //A function to see if our inventory contains the item we're trying to use.
-    item_has = function(_name, _quantity){
+    static item_has = function(_name, _quantity){
         var index = item_find(_name)
         
         if (index >= 0){
@@ -63,7 +51,7 @@ function Inventory() constructor {
         return false;
     }
     
-    item_subtract = function(_name, _quantity){
+    static item_subtract = function(_name, _quantity){
         var index = item_find(_name)
                 
                 if (index >= 0){
@@ -76,15 +64,16 @@ function Inventory() constructor {
                 }
     }
     
-    item_remove = function(_index){
+    static item_remove = function(_index){
         array_delete(_inventory_items, _index, 1);
     }
     
-    item_get = function(){
+    static item_get = function(){
         return _inventory_items;
     }
     
-    toString = function() {
+    static toString = function() {
         return json_stringify(_inventory_items);
     }
-}
+    
+}  
