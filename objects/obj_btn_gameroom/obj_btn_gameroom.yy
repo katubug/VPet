@@ -29,10 +29,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_btn_game",
-    "path":"sprites/spr_btn_game/spr_btn_game.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

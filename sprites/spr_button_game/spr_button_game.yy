@@ -1,27 +1,27 @@
 {
   "$GMSprite":"",
-  "%Name":"spr_btn_garden",
+  "%Name":"spr_button_game",
   "bboxMode":0,
-  "bbox_bottom":97,
-  "bbox_left":2,
+  "bbox_bottom":82,
+  "bbox_left":1,
   "bbox_right":97,
-  "bbox_top":2,
+  "bbox_top":17,
   "collisionKind":1,
   "collisionTolerance":0,
   "DynamicTexturePage":false,
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"4dd2d97e-4ed0-4996-9137-24a51667ac5d","name":"4dd2d97e-4ed0-4996-9137-24a51667ac5d","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"2e272586-dda7-4a81-8e83-84c1bca835c7","name":"2e272586-dda7-4a81-8e83-84c1bca835c7","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":100,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"3f9bbbad-77e5-4131-a96e-ed6b89762011","blendMode":0,"displayName":"default","isLocked":false,"name":"3f9bbbad-77e5-4131-a96e-ed6b89762011","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"690b6283-dbb8-4d49-b700-ebe40a8874cd","blendMode":0,"displayName":"default","isLocked":false,"name":"690b6283-dbb8-4d49-b700-ebe40a8874cd","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
-  "name":"spr_btn_garden",
+  "name":"spr_button_game",
   "nineSlice":null,
   "origin":0,
   "parent":{
@@ -33,7 +33,7 @@
   "resourceVersion":"2.0",
   "sequence":{
     "$GMSequence":"v1",
-    "%Name":"spr_btn_garden",
+    "%Name":"spr_button_game",
     "autoRecord":true,
     "backdropHeight":768,
     "backdropImageOpacity":0.5,
@@ -57,7 +57,7 @@
       "resourceType":"KeyframeStore<MomentsEventKeyframe>",
       "resourceVersion":"2.0",
     },
-    "name":"spr_btn_garden",
+    "name":"spr_button_game",
     "playback":1,
     "playbackSpeed":30.0,
     "playbackSpeedType":0,
@@ -71,8 +71,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"4dd2d97e-4ed0-4996-9137-24a51667ac5d","path":"sprites/spr_btn_garden/spr_btn_garden.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"34a6925a-511b-4066-8b82-15faf06818dc","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"2e272586-dda7-4a81-8e83-84c1bca835c7","path":"sprites/spr_button_game/spr_button_game.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"2271b6b2-32b6-4185-8c8c-6f5c0df3c6a2","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

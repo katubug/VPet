@@ -9,3 +9,19 @@ alarm[1] = game_get_speed(gamespeed_fps) * 60 * 20;
 alarm[2] = 60 * 20;
 
 global.pantry.item_add("Lemon", "basic", 99, spr_food_basic, 1);
+
+paused = false;
+layer_name = "MainUI"
+
+update_pause = function(){
+    if (paused){
+        instance_deactivate_all(true);
+        instance_activate_object(input_controller_object)
+        layer_set_visible(layer_name, true);
+    } else {
+        instance_activate_all();
+        layer_set_visible(layer_name, false);
+    }
+}
+update_pause();
+
