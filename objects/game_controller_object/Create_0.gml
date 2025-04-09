@@ -8,4 +8,4 @@ alarm[1] = game_get_speed(gamespeed_fps) * 60 * 20;
 //Clutter determining alarm
 alarm[2] = 60 * 20;
 
-global.inventory.item_add("Lemon", 99, spr_food_basic);
+global.pantry.item_add("Lemon", "basic", 99, spr_food_basic, 1);

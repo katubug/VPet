@@ -1,12 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"del_btn_bc",
+  "%Name":"obj_btn_kitchen",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":4,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"del_btn_bc",
+  "name":"obj_btn_kitchen",
   "overriddenProperties":[],
   "parent":{
     "name":"Buttons",
@@ -31,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"del_spr_bc",
-    "path":"sprites/del_spr_bc/del_spr_bc.yy",
+    "name":"spr_btn_kitchen",
+    "path":"sprites/spr_btn_kitchen/spr_btn_kitchen.yy",
   },
   "spriteMaskId":null,
   "visible":true,

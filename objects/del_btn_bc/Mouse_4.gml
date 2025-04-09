@@ -1,1 +1,0 @@
-obj_evolution_control.pet_evolution = "bedapy_crinoga";

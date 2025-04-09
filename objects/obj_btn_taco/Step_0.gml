@@ -1,0 +1,1 @@
+input_check_released(__input_binding_get_label())

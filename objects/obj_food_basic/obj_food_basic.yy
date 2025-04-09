@@ -1,16 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"del_btn_cc",
+  "%Name":"obj_food_basic",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":4,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"del_btn_cc",
+  "name":"obj_food_basic",
   "overriddenProperties":[],
   "parent":{
-    "name":"Buttons",
-    "path":"folders/Objects/Buttons.yy",
+    "name":"Food Types",
+    "path":"folders/Objects/Food Types.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -31,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"del_spr_cc",
-    "path":"sprites/del_spr_cc/del_spr_cc.yy",
+    "name":"spr_food_basic",
+    "path":"sprites/spr_food_basic/spr_food_basic.yy",
   },
   "spriteMaskId":null,
   "visible":true,
