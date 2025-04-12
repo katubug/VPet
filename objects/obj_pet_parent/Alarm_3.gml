@@ -7,4 +7,4 @@ if(global.game.happiness >= 0)
 }
 }
 
-alarm_set(3, 60*20);
+alarm[3] = 60*20;

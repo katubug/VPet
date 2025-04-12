@@ -8,19 +8,28 @@ alarm[1] = game_get_speed(gamespeed_fps) * 60 * 20;
 //Clutter determining alarm
 alarm[2] = 60 * 20;
 
+//Give player some food to start
 global.pantry.item_add("Lemon", "basic", 99, spr_food_basic, 1);
 
+//Set Up Pause Menu
 paused = false;
-layer_name = "MainUI"
+pausemenu = "PauseMenu"
+
+mainUI = "MainUI";
+if (room == rm_death || room = rm_initial){
+    layer_set_visible(mainUI, false);
+} else {
+    layer_set_visible(mainUI, false);
+}
 
 update_pause = function(){
     if (paused){
         instance_deactivate_all(true);
         instance_activate_object(input_controller_object)
-        layer_set_visible(layer_name, true);
+        layer_set_visible(pausemenu, true);
     } else {
         instance_activate_all();
-        layer_set_visible(layer_name, false);
+        layer_set_visible(pausemenu, false);
     }
 }
 update_pause();

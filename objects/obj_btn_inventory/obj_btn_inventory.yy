@@ -1,11 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"obj_button_inventory",
+  "%Name":"obj_btn_inventory",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":4,"eventType":6,"isDnD":true,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_button_inventory",
+  "name":"obj_btn_inventory",
   "overriddenProperties":[],
   "parent":{
     "name":"Buttons",
