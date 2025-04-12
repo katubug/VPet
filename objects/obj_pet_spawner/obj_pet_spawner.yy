@@ -8,8 +8,8 @@
   "name":"obj_pet_spawner",
   "overriddenProperties":[],
   "parent":{
-    "name":"Room Objects",
-    "path":"folders/Objects/Room Objects.yy",
+    "name":"Game Control",
+    "path":"folders/Objects/Game Control.yy",
   },
   "parentObjectId":null,
   "persistent":false,

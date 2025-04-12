@@ -17,3 +17,4 @@ alarm[2] = game_get_speed(gamespeed_fps) * 60 * 1;
 //Happiness goes up when hunger is full
 alarm[3] = 60*20;
 
+//Alarm 6 is for evolution and is called much farther down

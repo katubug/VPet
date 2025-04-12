@@ -8,19 +8,14 @@ alarm[1] = game_get_speed(gamespeed_fps) * 60 * 20;
 //Clutter determining alarm
 alarm[2] = 60 * 20;
 
+//Alarm 3 is for evolution and will be activated in the does_evolve() function called in Step
+
 //Give player some food to start
 global.pantry.item_add("Lemon", "basic", 99, spr_food_basic, 1);
 
 //Set Up Pause Menu
 paused = false;
 pausemenu = "PauseMenu"
-
-mainUI = "MainUI";
-if (room == rm_death || room = rm_initial){
-    layer_set_visible(mainUI, false);
-} else {
-    layer_set_visible(mainUI, false);
-}
 
 update_pause = function(){
     if (paused){
