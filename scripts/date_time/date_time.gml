@@ -70,8 +70,10 @@ function time_reset()
     global.game.banked_time = 0;
     global.game.last_saved_time = 0;
     var _dataToSave = {
-            game: global.game,
-            pet: global.pet,
+        game: global.game,
+		pet: global.pet,
+		inventory: global.inventory,
+		pantry: global.pantry,
         };
-    save_game(_dataToSave, string("save_data.txt"));
+    json_save_classful("save_data.txt", _dataToSave);
 }

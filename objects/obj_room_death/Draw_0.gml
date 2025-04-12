@@ -1,8 +1,6 @@
-var temp_pet_living = global.game.living;
-
-if(temp_pet_living == 0)
+if(global.game.living == 0)
 {
-	draw_text(x + 0, y + 0, string("Your pet has been claimed by death.") + string("Do you want to try reclaim them?"));
+	draw_text(x + 0, y + 0, string("Your pet has been claimed by death.") + string("Do you want to try to reclaim them?"));
 
 	instance_create_layer(x + 0, y + 40, "Instances", obj_btn_death_yes);
 
@@ -11,5 +9,5 @@ if(temp_pet_living == 0)
 
 else
 {
-	draw_text(x + 0, y + 0, string("How on earth did you get here?") + "");
+	draw_text(x + 0, y + 0, string("How on earth did you get here?"));
 }

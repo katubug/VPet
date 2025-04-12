@@ -37,6 +37,12 @@ if (_game_complete == 1) {
         }
         else if (player_score < computer_score) {
             time_reset();
+            var starter_pet = irandom_range(0, 2);
+            
+                if (starter_pet == 0) global.game.current_pet_type = "chobo";
+                if (starter_pet == 1) global.game.current_pet_type = "pomba";
+                if (starter_pet == 2) global.game.current_pet_type = "dodati";
+            
             room_goto(rm_initial);
         }
     }
