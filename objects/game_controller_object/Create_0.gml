@@ -33,9 +33,9 @@ Menu(
 50,
 50,
 [
-["games", go_to_games],
-["kitchen", go_to_kitchen],
-["garden", go_to_garden],
+[spr_btn_game, go_to_games],
+[spr_btn_kitchen, go_to_kitchen],
+[spr_btn_garden, go_to_garden],
 ],
 "Where to go?"
 );

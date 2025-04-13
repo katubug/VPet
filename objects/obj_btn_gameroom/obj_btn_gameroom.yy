@@ -30,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_button_game",
-    "path":"sprites/spr_button_game/spr_button_game.yy",
+    "name":"spr_btn_game",
+    "path":"sprites/spr_btn_game/spr_btn_game.yy",
   },
   "spriteMaskId":null,
   "visible":true,

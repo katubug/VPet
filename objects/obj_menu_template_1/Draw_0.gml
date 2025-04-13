@@ -12,17 +12,11 @@ for (line = 0; line < (options_count + _desc); line++)
     if (line ==0 && _desc){
         draw_text(x, y, description);
     } else {
-    	//var _str = options[line-_desc][0]
-        var _spr = options[line-_desc][0];
+    	var _str = options[line-_desc][0]
         if (hover == line - _desc){
-            //draw_set_color(c_yellow);
-            //_str = hovermarker+ _str;
-            draw_set_alpha(1);
-            //draw_text(x, y, hovermarker);
-        } else{
-            draw_set_alpha(0.5)
+            draw_set_color(c_yellow);
+            _str = hovermarker+ _str;
         }
-        draw_sprite(_spr, 0, x+ line * width, y);
-        //draw_text(x + line * width, y, _str);
+        draw_text(x, y + line * height_line, _str);
     }
 }
