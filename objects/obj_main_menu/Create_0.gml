@@ -10,6 +10,8 @@ buttons = [
     obj_btn_shop
 ];
 cursor = 0;
+gridX = 0;
+gridY = 0;
 
 button_get = function(){
     return buttons;

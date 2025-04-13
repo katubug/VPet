@@ -29,3 +29,13 @@ update_pause = function(){
 }
 update_pause();
 
+Menu(
+50,
+50,
+[
+["games", go_to_games],
+["kitchen", go_to_kitchen],
+["garden", go_to_garden],
+],
+"Where to go?"
+);
