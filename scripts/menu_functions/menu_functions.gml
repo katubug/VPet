@@ -16,12 +16,14 @@ function text_menu(_x, _y, _options, _description = -1)
         for (var index = 0; index < options_count; index++)
         {
             //for text based
-            width = max(width, string_width(_options[index][0]));
+            //width = max(width, string_width(_options[index][0]));
+            //for icons
+            width = max(width, sprite_get_width(_options[index][0]));
         }
         width += string_width(hovermarker);
         
         
-        option_width = width * (options_count); // this line is explained at like 3:45
+        option_width = 100 * (options_count); // this line is explained at like 3:45
         height = 100;
         
         width_full = option_width + (margin *2);
@@ -41,8 +43,8 @@ function icon_menu(_x, _y, _options, _description = -1)
             
         for (var index = 0; index < options_count; index++)
         {
-            width = sprite_get_width(_options[index].sprite);
-            height = sprite_get_height(_options[index].sprite);
+            width = sprite_get_width(_options[index][0]);
+            height = sprite_get_height(_options[index][0]);
             //x = x + index * width;
         }
         

@@ -29,15 +29,13 @@ update_pause = function(){
 }
 update_pause();
 
-options =
-[
-  new menu_options(spr_btn_game, 0,0,50,20, go_to_games),
-  new menu_options(spr_btn_kitchen, 0,30,50,50, go_to_kitchen),
-]
-
 icon_menu(
 50,
 50,
-options
+[
+[spr_btn_game, go_to_games],
+[spr_btn_kitchen, go_to_kitchen],
+[spr_btn_garden, go_to_garden],
+]
 );
 
