@@ -4,6 +4,11 @@ for (row = 0; row < menu_rows; row++){
         var drawX = cursor + padding;
         var drawY = cursor + padding;
         
-        if (row == gridX && column == gridY) draw_sprite(spr_adult_clup, 0, drawX, drawY);
+        if (row == gridX && column == gridY){
+            draw_sprite(spr_ui_icon1, 0, drawX, drawY);
+            draw_set_alpha(1);
+        } else{
+            draw_set_alpha(0.5)
+    }
     }
 }

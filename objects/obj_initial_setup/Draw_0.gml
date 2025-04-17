@@ -13,4 +13,6 @@ if alarm[0]{
 }
 
 else draw_text(x, y, playername)
+    
+
 

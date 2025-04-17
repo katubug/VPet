@@ -1,39 +1,6 @@
-function text_menu(_x, _y, _options, _description = -1) 
-{
-    with (instance_create_depth(_x, _y, -999, obj_menu_template)){
-        options = _options;
-        description = _description;
-        options_count = array_length(_options);
-        hovermarker = "* ";
-        
-        //Set up size
-        margin = 15;
-        draw_set_font(fnt_Quicksand);
-        
-        width = 10;
-        if (_description != 1) width = max(width, string_width(_description));
-            
-        for (var index = 0; index < options_count; index++)
-        {
-            //for text based
-            //width = max(width, string_width(_options[index][0]));
-            //for icons
-            width = max(width, sprite_get_width(_options[index][0]));
-        }
-        width += string_width(hovermarker);
-        
-        
-        option_width = 100 * (options_count); // this line is explained at like 3:45
-        height = 100;
-        
-        width_full = option_width + (margin *2);
-        height_full = 100 + (margin*2);
-    }
-}
-
 function icon_menu(_x, _y, _options, _description = -1) 
 {
-    with (instance_create_depth(_x, _y, -999, obj_menu_template)){
+    with (instance_create_depth(_x, _y, -998, obj_menu_template)){
         options = _options;
         description = _description;
         options_count = array_length(_options);
@@ -43,15 +10,18 @@ function icon_menu(_x, _y, _options, _description = -1)
             
         for (var index = 0; index < options_count; index++)
         {
-            width = sprite_get_width(_options[index][0]);
-            height = sprite_get_height(_options[index][0]);
-            //x = x + index * width;
+            object = _options[index][0];
+            sprite = object_get_sprite(_options[index][0]);
+            width = sprite_get_width(sprite);
+            height = sprite_get_height(sprite);
+            instance_create_depth(x + index * width, y, -999, object);
+            
         }
         
         option_width = width * (options_count); // this line is explained at like 3:45
         
         width_full = option_width + (margin *2);
-        height_full = 100 + (margin*2);
+        height_full = height + (margin*2);
     }
 }
 
