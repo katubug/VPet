@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"save_player_name",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"save_player_name",
+  "parent":{
+    "name":"KEYBOARD",
+    "path":"folders/Scripts/KEYBOARD.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

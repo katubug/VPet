@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"destroy_keyboard",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"destroy_keyboard",
+  "parent":{
+    "name":"KEYBOARD",
+    "path":"folders/Scripts/KEYBOARD.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
