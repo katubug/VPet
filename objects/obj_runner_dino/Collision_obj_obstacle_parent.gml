@@ -1,5 +1,5 @@
 if (!dino_invincible){
-    vspeed =-9;
+    vspeed =-15;
     hurt = true;
     dino_hp --;
     dino_invincible = true;
