@@ -1,3 +1,35 @@
+function calculate_stats_after_offline(original_hunger, original_health, minutes_offline) {
+    var hunger_decay_interval = 30; // minutes per 1 hunger lost
+    var health_decay_interval = 60; // minutes per 1 health lost after hunger is 0
+
+    // Step 1: Calculate how much hunger would have been lost
+    var hunger_lost = floor(minutes_offline / hunger_decay_interval);
+    var new_hunger = max(original_hunger - hunger_lost, 0);
+
+    // Step 2: If hunger is gone, start calculating health loss
+    var new_health = original_health;
+
+    if (new_hunger == 0) {
+        // Figure out how long the pet has been starving
+        var time_until_starving = original_hunger * hunger_decay_interval;
+        var time_starving = max(minutes_offline - time_until_starving, 0);
+
+        // Step 3: Calculate health lost while starving
+        var health_lost = floor(time_starving / health_decay_interval);
+        new_health = max(original_health - health_lost, 0);
+    }
+    global.game.hunger = new_hunger;
+    global.game.health = new_health;
+    
+    //Happiness calculations
+    if (global.game.clutter_exists == true) {
+        global.game.happiness -= (minutes_offline/40);
+        if (global.game.happiness <=0) global.game.happiness = 0;
+    } else 
+    global.game.happiness -= (minutes_offline/60)
+    if (global.game.happiness <=0) global.game.happiness = 0;
+
+}
 
 function date_time() 
 {
@@ -17,8 +49,11 @@ function date_time()
     //because we are calculating hunger and other need degradation as minutes, we convert the seconds
     //elapsed into minutes by dividing by 60.
     var _minutes_elapsed = time_elapsed/60;
+    
+    calculate_stats_after_offline(global.game.hunger, global.game.health, _minutes_elapsed)
+    
     //decrement hunger for every 30 minutes gone
-    global.game.hunger -= (_minutes_elapsed/30);
+    /*global.game.hunger -= (_minutes_elapsed/30);
     if (global.game.hunger <=0) global.game.hunger = 0;
     //same for happiness, except per hour
     //happiness drains faster if there was clutter when the player logged off.
@@ -28,6 +63,7 @@ function date_time()
     } else 
     global.game.happiness -= (_minutes_elapsed/60)
     if (global.game.happiness <=0) global.game.happiness = 0;
+     * */
     show_debug_message($"total banked time was {global.game.banked_time}.")
     show_debug_message($"time elapsed since logoff was {_minutes_elapsed} minutes aka {time_elapsed} seconds.")
     
