@@ -6,3 +6,7 @@ falling = false;
 ducking = false;
 terminal_velocity = 50;
 game_set_speed (30, gamespeed_fps);
+dino_hp = 3;
+dino_invincible = false;
+gameover = false;
+hurt = false;

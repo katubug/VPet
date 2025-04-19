@@ -1,38 +1,31 @@
+if (hurt == true){
+        sprite_index = spr_dino_hurt;
+    }
+
+if (dino_hp <= 0){
+    gameover = true;
+    grav = 0;
+    image_alpha = 0.5;
+    global.speed_modifier = 0;
+    image_speed = 0;
+    if (!instance_exists(obj_runner_replay)){
+        instance_create_layer(room_width/2, 300, "Instances", obj_runner_replay);
+    }
+}
+
+if (gameover){
+    exit;
+}
+
+if (dino_invincible && !hurt){
+    image_alpha = 0.5;
+} else {
+	image_alpha = 1;
+}
+
 //Detect Key
     var jump_key = input_check_pressed("up") or input_check_pressed("action");
     var duck_key = input_check("down") or input_check("special");
-
-////Ground Check
-//if (duck_key){
-        //ducking = true;
-        //jumping = false;
-        //falling = true;
-    //}
-    //
-    //if (place_meeting(x, y+1, obj_runner_block)){
-        //vertical_speed = 0;
-        //jumping = false;
-        //falling = false;
-        //
-        //if (!duck_key) ducking = false;
-        //}
-    //
-        //if (jump_key && !duck_key){
-            //jumping = true;
-            //vertical_speed = -jump_speed;
-        //} else {
-            //if (ducking){
-                //vertical_speed += grav * 4;
-            //} else {
-                //if (vertical_speed < terminal_velocity){
-                //vertical_speed += grav;
-                //}
-                //
-                //if (sign(vertical_speed) == 1){
-                    //falling = true;
-                //}
-            //}
-        //}
 
 //Ground Check
 if (duck_key)
@@ -95,12 +88,12 @@ if (place_meeting(x, y + vertical_speed, obj_runner_block)){
 
 //Set Sprite
 
-    if (jumping || falling){
+    if (!hurt && (jumping || falling)){
         sprite_index = spr_dino_jump;
     }
     if (ducking) {
         sprite_index = spr_dino_crouch;
     }
-    if (!jumping && !falling && !ducking){
+    if (!jumping && !falling && !ducking && !hurt){
         sprite_index = spr_dino_run;
     }

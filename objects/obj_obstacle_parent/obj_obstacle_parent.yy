@@ -1,9 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"obj_runner_block",
-  "eventList":[],
+  "%Name":"obj_obstacle_parent",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"obj_runner_block",
+  "name":"obj_obstacle_parent",
   "overriddenProperties":[],
   "parent":{
     "name":"Runner_Minigame",
@@ -27,10 +29,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_runner_block",
-    "path":"sprites/spr_runner_block/spr_runner_block.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
-  "visible":false,
+  "visible":true,
 }

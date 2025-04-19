@@ -1,9 +1,12 @@
 {
   "$GMObject":"",
-  "%Name":"obj_runner_block",
-  "eventList":[],
+  "%Name":"obj_runner_replay",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":4,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"obj_runner_block",
+  "name":"obj_runner_replay",
   "overriddenProperties":[],
   "parent":{
     "name":"Runner_Minigame",
@@ -28,9 +31,9 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_runner_block",
-    "path":"sprites/spr_runner_block/spr_runner_block.yy",
+    "name":"spr_runner_replay",
+    "path":"sprites/spr_runner_replay/spr_runner_replay.yy",
   },
   "spriteMaskId":null,
-  "visible":false,
+  "visible":true,
 }
