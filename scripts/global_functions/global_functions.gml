@@ -10,7 +10,7 @@ function go_to_garden()
 
 function go_to_games() 
 {
-    room_goto(rm_game_buttonmash);
+    room_goto(rm_game_runner);
 }
 
 function go_to_inventory()
