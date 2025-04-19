@@ -1,7 +1,7 @@
 {
   "$GMSprite":"",
   "%Name":"spr_runner_block",
-  "bboxMode":0,
+  "bboxMode":1,
   "bbox_bottom":99,
   "bbox_left":0,
   "bbox_right":99,
