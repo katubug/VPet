@@ -4,6 +4,7 @@ if (hurt == true){
 
 if (dino_hp <= 0){
     gameover = true;
+    obj_runner_controller.game_ending = true;
     grav = 0;
     image_alpha = 0.5;
     global.speed_modifier = 0;

@@ -84,7 +84,7 @@ function Inventory() constructor {
 
 
 global.game = {
-	struct_version: 0.3,
+	struct_version: 0.4,
 	ownername: "",
 	living: 1,
 	corns: 100,
@@ -112,7 +112,8 @@ global.game = {
 		seed_planted: "",
 		growth_time: 0,
 		watered: 0,
-	}
+	},
+    high_score_runner: 0,
 };
 
 var _base = 86400; //86400 = 24 hours in seconds 

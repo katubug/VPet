@@ -1,7 +1,8 @@
 //Game Over Behavior
-if (score > runner_high_score){
-     runner_high_score = score;
+game_ending = false;
+if (score > global.game.high_score_runner){
+    global.game.high_score_runner = score;
     new_high_score = true;
 }
-global.game.corns = score/2;
-score = 0;
+global.game.corns += score/2;
+

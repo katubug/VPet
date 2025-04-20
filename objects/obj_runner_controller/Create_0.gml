@@ -1,4 +1,3 @@
-runner_high_score = 0;
 new_high_score = false;
 
 global.speed_modifier = 1;
@@ -8,6 +7,7 @@ button_height = 50;
 jump_button_x = 160;
 button_y = 460
 crouch_button_x = jump_button_x + button_width + 20;
+game_ending = false;
 
 alarm[0] = game_get_speed(gamespeed_fps) * 3;
 alarm[1] = game_get_speed(gamespeed_fps) * 2;
