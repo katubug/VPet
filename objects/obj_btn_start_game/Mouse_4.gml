@@ -1,7 +1,7 @@
 if(room == rm_game_buttonmash){
-time_source_start(obj_room_buttonmash.button_mash_timer);
-obj_room_buttonmash.game_on = true;
-obj_room_buttonmash.outcome = "none";
+time_source_start(obj_buttonmash_controller.button_mash_timer);
+obj_buttonmash_controller.game_on = true;
+obj_buttonmash_controller.outcome = "none";
 }
 
 if (room == rm_rps)

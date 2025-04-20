@@ -14,8 +14,8 @@
   "name":"obj_runner_controller",
   "overriddenProperties":[],
   "parent":{
-    "name":"Runner_Minigame",
-    "path":"folders/Objects/Runner_Minigame.yy",
+    "name":"Minigame_Runner",
+    "path":"folders/Objects/Minigame_Runner.yy",
   },
   "parentObjectId":null,
   "persistent":false,

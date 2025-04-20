@@ -10,8 +10,8 @@
   "name":"obj_btn_start_game",
   "overriddenProperties":[],
   "parent":{
-    "name":"Buttons",
-    "path":"folders/Objects/Buttons.yy",
+    "name":"Minigame_Buttonmash",
+    "path":"folders/Objects/Minigame_Buttonmash.yy",
   },
   "parentObjectId":null,
   "persistent":false,
