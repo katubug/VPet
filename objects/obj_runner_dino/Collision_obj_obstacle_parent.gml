@@ -3,6 +3,6 @@ if (!dino_invincible){
     hurt = true;
     dino_hp --;
     dino_invincible = true;
-    alarm[0] = 1 * room_speed
+    alarm[0] = 1 * game_get_speed(gamespeed_fps)
     alarm[1] = 15;
 }

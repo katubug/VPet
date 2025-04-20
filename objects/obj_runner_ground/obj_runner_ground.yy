@@ -1,12 +1,12 @@
 {
   "$GMObject":"",
-  "%Name":"obj_obstacle_controller",
+  "%Name":"obj_runner_ground",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_obstacle_controller",
+  "name":"obj_runner_ground",
   "overriddenProperties":[],
   "parent":{
     "name":"Runner_Minigame",
@@ -31,9 +31,9 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_obstacle_bat",
-    "path":"sprites/spr_obstacle_bat/spr_obstacle_bat.yy",
+    "name":"spr_runner_grass",
+    "path":"sprites/spr_runner_grass/spr_runner_grass.yy",
   },
   "spriteMaskId":null,
-  "visible":false,
+  "visible":true,
 }

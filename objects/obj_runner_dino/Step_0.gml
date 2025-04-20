@@ -91,7 +91,7 @@ if (place_meeting(x, y + vertical_speed, obj_runner_block)){
     if (!hurt && (jumping || falling)){
         sprite_index = spr_dino_jump;
     }
-    if (ducking) {
+    if (!hurt && ducking) {
         sprite_index = spr_dino_crouch;
     }
     if (!jumping && !falling && !ducking && !hurt){
