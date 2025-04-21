@@ -1,16 +1,9 @@
 if(game_on == 1){
 
-  if (keyboard_check_pressed(ord("R"))) {
-  	player_choice = 0;
-  }
+    if (input_check_pressed("rock")) player_choice = 0;
+    if (input_check_pressed("paper")) player_choice = 1;
+    if (input_check_pressed("scissors")) player_choice = 2;
   
-  if (keyboard_check_pressed(ord("P"))) {
-  	player_choice = 1;
-  }
-  
-  if (keyboard_check_pressed(ord("S"))) {
-  	player_choice = 2;
-  }
   
     if (player_choice !=-1)
     {
@@ -18,14 +11,14 @@ if(game_on == 1){
       
       if (computer_choice == player_choice) {
         game_on = 0;
-        var_result = "Draw";
+        result = "Draw";
       }
       else {
-      var_result = (computer_choice == (player_choice +1) mod 3)?"Lose":"Win"; 
+      result = (computer_choice == (player_choice +1) mod 3)?"Lose":"Win"; 
         game_on = 0;
         round_number++;
-        if (var_result == "Win") player_score++;
-        else if (var_result == "Lose") computer_score++;    
+        if (result == "Win") player_score++;
+        else if (result == "Lose") computer_score++;    
       } 
     }
 }

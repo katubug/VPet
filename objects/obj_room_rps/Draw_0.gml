@@ -1,31 +1,38 @@
+input_virtual_debug_draw();
+draw_set_valign(fa_top);
+draw_set_halign(fa_center);
+
 if (round_number >=1){
+    draw_set_halign(fa_left);
     draw_text(100,50, string("Player Score: ") + string(player_score))
     draw_text(100,70, string("Death Score: ") + string(computer_score))
     draw_text(100,90, string("Round Number: ") + string(round_number))
     }
 
-if(game_on == 1){ 
+if(game_on == 1){
+    draw_set_halign(fa_center);
     draw_text(x+0,y+0, string("Game Begin. Press R for Rock, P for Paper, or S for Scissors."));
 }
 
 if(game_on != 1){
     
     if (_game_complete == 1) {
-        if (player_score > computer_score) draw_text(x+0,y+50, string("You have won your pet back!")+ "");
-        else if (player_score < computer_score) draw_text(x+0,y+50, string("You have unfortunately lost.")+ "");
+        draw_set_halign(fa_center);
+        if (player_score > computer_score) draw_text(x+0,y+50, string("You have won your pet back!"));
+        else if (player_score < computer_score) draw_text(x+0,y+50, string("You have unfortunately lost."));
         
     }
-   if(var_result == "Draw")
+   if(result == "Draw")
    {
    	draw_text(0, 0, string("Draw ") + string("- play another round"));
    }
    
-   if(var_result == "Win")
+   if(result == "Win")
    {
    	draw_text(0, 0, string("Win! ") + string("Your score increased by 1."));
    }
    
-   if(var_result == "Lose")
+   if(result == "Lose")
    {
    	draw_text(0, 0, string("Lose! ") + string("Death's score increased by 1."));
    }

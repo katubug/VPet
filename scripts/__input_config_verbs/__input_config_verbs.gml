@@ -19,6 +19,10 @@ function __input_config_verbs()
             down:  [input_binding_key(vk_down),  input_binding_key("S")],
             left:  [input_binding_key(vk_left),  input_binding_key("A")],
             right: [input_binding_key(vk_right), input_binding_key("D")],
+
+            rock: input_binding_key("R"),
+            paper: input_binding_key("P"),
+            scissors: input_binding_key("S"),
             
             accept:  input_binding_key(vk_enter),
             cancel:  input_binding_key(vk_backspace),

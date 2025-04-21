@@ -2,7 +2,7 @@ if (hurt == true){
         sprite_index = spr_dino_hurt;
     }
 
-if (dino_hp <= 0){
+if (dino_hp <= 0 && !gameover){
     gameover = true;
     obj_runner_controller.game_ending = true;
     grav = 0;

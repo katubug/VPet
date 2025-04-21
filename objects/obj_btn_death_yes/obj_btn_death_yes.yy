@@ -8,8 +8,8 @@
   "name":"obj_btn_death_yes",
   "overriddenProperties":[],
   "parent":{
-    "name":"Buttons",
-    "path":"folders/Objects/Buttons.yy",
+    "name":"Rock Paper Scissors",
+    "path":"folders/Objects/Rock Paper Scissors.yy",
   },
   "parentObjectId":null,
   "persistent":false,

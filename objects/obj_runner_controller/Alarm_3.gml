@@ -5,4 +5,6 @@ if (score > global.game.high_score_runner){
     new_high_score = true;
 }
 global.game.corns += score/2;
+show_debug_message($"corns owned {global.game.corns}");
+input_virtual_destroy_all();
 

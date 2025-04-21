@@ -8,8 +8,8 @@
   "name":"obj_navigation",
   "overriddenProperties":[],
   "parent":{
-    "name":"Game Control",
-    "path":"folders/Objects/Game Control.yy",
+    "name":"Navigation",
+    "path":"folders/Objects/Navigation.yy",
   },
   "parentObjectId":null,
   "persistent":false,

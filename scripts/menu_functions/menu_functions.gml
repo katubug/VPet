@@ -39,8 +39,8 @@ function go_to_garden()
 
 function go_to_games() 
 {
-    room_goto(rm_game_buttonmash);
-    //room_goto(rm_game_runner);
+    //room_goto(rm_game_buttonmash);
+    room_goto(rm_game_runner);
 }
 
 function go_to_inventory()
@@ -51,4 +51,9 @@ function go_to_inventory()
 function go_to_shop()
 {
     room_goto(rm_shop);
+}
+
+function go_to_home()
+{
+    room_goto(rm_main);
 }

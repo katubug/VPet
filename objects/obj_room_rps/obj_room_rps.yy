@@ -10,8 +10,8 @@
   "name":"obj_room_rps",
   "overriddenProperties":[],
   "parent":{
-    "name":"Room Objects",
-    "path":"folders/Objects/Room Objects.yy",
+    "name":"Rock Paper Scissors",
+    "path":"folders/Objects/Rock Paper Scissors.yy",
   },
   "parentObjectId":null,
   "persistent":false,

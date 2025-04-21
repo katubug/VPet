@@ -11,8 +11,8 @@
   "name":"obj_btn_kitchen",
   "overriddenProperties":[],
   "parent":{
-    "name":"Buttons",
-    "path":"folders/Objects/Buttons.yy",
+    "name":"Navigation",
+    "path":"folders/Objects/Navigation.yy",
   },
   "parentObjectId":null,
   "persistent":false,

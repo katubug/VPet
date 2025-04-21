@@ -1,20 +1,20 @@
 {
   "$GMRoom":"v1",
   "%Name":"rm_initial",
-  "creationCodeFile":"",
+  "creationCodeFile":"rooms/rm_initial/RoomCreationCode.gml",
   "inheritCode":false,
   "inheritCreationOrder":false,
   "inheritLayers":false,
   "instanceCreationOrder":[
     {"name":"inst_70CDF0F1","path":"rooms/rm_initial/rm_initial.yy",},
     {"name":"inst_3428B9BE","path":"rooms/rm_initial/rm_initial.yy",},
+    {"name":"inst_2BA1FB33","path":"rooms/rm_initial/rm_initial.yy",},
+    {"name":"inst_63B6B5CB","path":"rooms/rm_initial/rm_initial.yy",},
     {"name":"inst_50EA133D","path":"roomui/RoomUI/RoomUI.yy",},
     {"name":"inst_2D752DBC","path":"roomui/RoomUI/RoomUI.yy",},
     {"name":"inst_45B3FFFC","path":"roomui/RoomUI/RoomUI.yy",},
-    {"name":"inst_2BA1FB33","path":"rooms/rm_initial/rm_initial.yy",},
-    {"name":"inst_63B6B5CB","path":"rooms/rm_initial/rm_initial.yy",},
   ],
-  "isDnd":false,
+  "isDnd":true,
   "layers":[
     {"$GMRInstanceLayer":"","%Name":"Instances","depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v2","%Name":"inst_70CDF0F1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_70CDF0F1","objectId":{"name":"game_controller_object","path":"objects/game_controller_object/game_controller_object.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":0.0,"y":768.0,},
