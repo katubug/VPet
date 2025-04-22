@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sprite_btn_inventory",
-    "path":"sprites/sprite_btn_inventory/sprite_btn_inventory.yy",
+    "name":"spr_btn_inventory",
+    "path":"sprites/spr_btn_inventory/spr_btn_inventory.yy",
   },
   "spriteMaskId":null,
   "visible":true,

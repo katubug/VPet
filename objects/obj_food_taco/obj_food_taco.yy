@@ -2,7 +2,7 @@
   "$GMObject":"",
   "%Name":"obj_food_taco",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":true,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":4,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_food_taco",
@@ -30,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sprite_btn_taco",
-    "path":"sprites/sprite_btn_taco/sprite_btn_taco.yy",
+    "name":"spr_btn_taco",
+    "path":"sprites/spr_btn_taco/spr_btn_taco.yy",
   },
   "spriteMaskId":null,
   "visible":true,

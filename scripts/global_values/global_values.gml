@@ -7,10 +7,9 @@ function Inventory() constructor {
 	_inventory_items = [];
 
 	//A function to set the name of the item type, the quantity, and the sprite of the item.
-	static item_set = function(_name, _slug, _quantity, _sprite, _hunger) {
+	static item_set = function(_name, _quantity, _sprite, _hunger) {
 		array_push(_inventory_items, {
 			name: _name,
-			slug: _slug,
 			quantity: _quantity,
 			sprite: _sprite,
 			hunger: _hunger,
@@ -28,9 +27,21 @@ function Inventory() constructor {
 		//If there are no matches, return -1.
 		return -1;
 	}
+    
+    //Find items in inventory. Accepts the parameter "_name" and iterates over all indexes in the array
+	//"_inventory_items." If the name matches, return the index number of the matching items.
+	static item_amount = function(_name) {
+		for (var item_index = 0; item_index < array_length(_inventory_items); item_index++) {
+			if (_name == _inventory_items[item_index].name) {
+				return _inventory_items[item_index].quantity;
+			}
+		}
+		//If there are no matches, return -1.
+		return -1;
+	}
 
 	//Now, a function to add items to the inventory.
-	static item_add = function(_name, _slug, _quantity, _sprite, _hunger) {
+	static item_add = function(_name, _quantity, _sprite, _hunger) {
 		//first, check if it exists in the inventory by passing the item's _name into the item_find 
 		//function.
 		var index = item_find(_name);
@@ -39,7 +50,7 @@ function Inventory() constructor {
 		if (index >= 0) {
 			_inventory_items[index].quantity += _quantity;
 		} else {
-			item_set(_name, _slug, _quantity, _sprite, _hunger);
+			item_set(_name, _quantity, _sprite, _hunger);
 		}
 	}
 

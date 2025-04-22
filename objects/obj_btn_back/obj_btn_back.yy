@@ -30,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sprite_btn_back",
-    "path":"sprites/sprite_btn_back/sprite_btn_back.yy",
+    "name":"spr_btn_back",
+    "path":"sprites/spr_btn_back/spr_btn_back.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sprite_btn_shop",
-    "path":"sprites/sprite_btn_shop/sprite_btn_shop.yy",
+    "name":"spr_btn_shop",
+    "path":"sprites/spr_btn_shop/spr_btn_shop.yy",
   },
   "spriteMaskId":null,
   "visible":true,

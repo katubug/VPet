@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sprite_btn_taco",
-    "path":"sprites/sprite_btn_taco/sprite_btn_taco.yy",
+    "name":"spr_btn_taco",
+    "path":"sprites/spr_btn_taco/spr_btn_taco.yy",
   },
   "spriteMaskId":null,
   "visible":true,

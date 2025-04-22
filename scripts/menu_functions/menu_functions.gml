@@ -2,7 +2,6 @@ function icon_menu(_x, _y, _options, _description = -1)
 {
     with (instance_create_depth(_x, _y, -998, obj_menu_template)){
         options = _options;
-        description = _description;
         options_count = array_length(_options);
         
         //Set up size
