@@ -1,18 +1,20 @@
 {
   "$GMObject":"",
-  "%Name":"obj_garden_plot",
+  "%Name":"obj_seed_selfesteem",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_garden_plot",
+  "name":"obj_seed_selfesteem",
   "overriddenProperties":[],
   "parent":{
     "name":"Gardening",
     "path":"folders/Objects/Gardening.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_seed_parent",
+    "path":"objects/obj_seed_parent/obj_seed_parent.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -31,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_obj_garden_plot",
-    "path":"sprites/spr_obj_garden_plot/spr_obj_garden_plot.yy",
+    "name":"spr_obj_selfesteem_seed",
+    "path":"sprites/spr_obj_selfesteem_seed/spr_obj_selfesteem_seed.yy",
   },
   "spriteMaskId":null,
   "visible":true,
