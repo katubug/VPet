@@ -27,7 +27,7 @@
   "name":"seq_player_paper",
   "parent":{
     "name":"Rock Paper Scissors",
-    "path":"folders/Sprites/Rock Paper Scissors.yy",
+    "path":"folders/Sequences/Rock Paper Scissors.yy",
   },
   "playback":0,
   "playbackSpeed":60.0,

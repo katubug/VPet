@@ -27,7 +27,7 @@
   "name":"seq_death_rock",
   "parent":{
     "name":"Rock Paper Scissors",
-    "path":"folders/Sprites/Rock Paper Scissors.yy",
+    "path":"folders/Sequences/Rock Paper Scissors.yy",
   },
   "playback":0,
   "playbackSpeed":60.0,
@@ -102,6 +102,6 @@
   ],
   "visibleRange":null,
   "volume":1.0,
-  "xorigin":-674,
-  "yorigin":-377,
+  "xorigin":0,
+  "yorigin":0,
 }

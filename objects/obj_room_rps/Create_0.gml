@@ -3,9 +3,8 @@ computer_choice = -1;
 player_score = 0;
 computer_score = 0;
 round_number = 1;
-game_on = 0;
 result = 0;
-_game_complete = 0;
+game_complete = 0;
 round_end = false;
 round_end2 = false;
 
@@ -56,3 +55,7 @@ destroy_sequences = function(){
             layer_sequence_destroy(death_scissors);
           }
 }
+
+round_check = function(){
+    if (round_number >=3 && player_score != computer_score) game_complete = true;
+    }
