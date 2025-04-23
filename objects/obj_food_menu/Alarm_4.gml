@@ -1,0 +1,1 @@
+obj_pet_parent.image_index = 0;
