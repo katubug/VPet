@@ -23,7 +23,7 @@
   ],
   "name":"spr_adult_balbio",
   "nineSlice":null,
-  "origin":4,
+  "origin":7,
   "parent":{
     "name":"Pet Sprites",
     "path":"folders/Sprites/Pet Sprites.yy",
@@ -63,18 +63,22 @@
     "playbackSpeedType":0,
     "resourceType":"GMSequence",
     "resourceVersion":"2.0",
+    "seqHeight":300.0,
+    "seqWidth":243.0,
     "showBackdrop":true,
     "showBackdropImage":false,
     "timeUnits":1,
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"40b7dae0-2fba-47bf-bff6-b103480bec10","path":"sprites/spr_adult_balbio/spr_adult_balbio.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"69f307ee-c402-4e76-8e77-37bd6b41933f","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"40b7dae0-2fba-47bf-bff6-b103480bec10","path":"sprites/spr_adult_balbio/spr_adult_balbio.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"69f307ee-c402-4e76-8e77-37bd6b41933f","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
     "volume":1.0,
     "xorigin":121,
-    "yorigin":150,
+    "yorigin":300,
   },
   "swatchColours":null,
   "swfPrecision":0.5,

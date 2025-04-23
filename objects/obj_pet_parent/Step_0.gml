@@ -12,3 +12,36 @@ if (global.game.evolution_queued == 0){
         global.game.evolution_queued = 1;
         }
 
+
+if (target_x != 0 && target_y != 0){
+    if (target_x > x) {
+        sprite_index = pet_walking_sprite;
+        image_xscale = -1;
+    }
+    else if (target_x < x) {
+        sprite_index = pet_walking_sprite;
+           
+    }
+} else {
+    if (image_xscale != -1){
+        show_debug_message("beep");
+        sprite_index = pet_idle_sprite;
+    }
+    else if (image_xscale == -1) {
+        show_debug_message("boop");
+        sprite_index = pet_idle_sprite;
+        image_xscale = -1; 
+    }
+}
+
+if (eating){
+    sprite_index = pet_eating_sprite;
+}
+
+if (happy){
+    sprite_index = pet_happy_sprite;
+}
+
+if (sad){
+    sprite_index = pet_sad_sprite;
+}

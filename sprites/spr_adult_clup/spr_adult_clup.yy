@@ -23,7 +23,7 @@
   ],
   "name":"spr_adult_clup",
   "nineSlice":null,
-  "origin":4,
+  "origin":7,
   "parent":{
     "name":"Pet Sprites",
     "path":"folders/Sprites/Pet Sprites.yy",
@@ -78,7 +78,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":162,
-    "yorigin":200,
+    "yorigin":400,
   },
   "swatchColours":null,
   "swfPrecision":0.5,
