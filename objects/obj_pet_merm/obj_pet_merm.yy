@@ -37,8 +37,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_teen_merm",
-    "path":"sprites/spr_teen_merm/spr_teen_merm.yy",
+    "name":"spr_merm_base",
+    "path":"sprites/spr_merm_base/spr_merm_base.yy",
   },
   "spriteMaskId":null,
   "visible":true,

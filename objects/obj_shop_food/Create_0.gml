@@ -1,5 +1,6 @@
 foods = [
     obj_food_basic,
+    obj_food_bibo,
     obj_food_taco
 ]
 

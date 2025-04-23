@@ -37,8 +37,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_teen_vleesh",
-    "path":"sprites/spr_teen_vleesh/spr_teen_vleesh.yy",
+    "name":"spr_vleesh_base",
+    "path":"sprites/spr_vleesh_base/spr_vleesh_base.yy",
   },
   "spriteMaskId":null,
   "visible":true,

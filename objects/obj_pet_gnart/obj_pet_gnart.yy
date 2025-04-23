@@ -37,8 +37,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_child_gnart",
-    "path":"sprites/spr_child_gnart/spr_child_gnart.yy",
+    "name":"spr_gnart_base",
+    "path":"sprites/spr_gnart_base/spr_gnart_base.yy",
   },
   "spriteMaskId":null,
   "visible":true,

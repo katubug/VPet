@@ -37,8 +37,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_adult_teedee",
-    "path":"sprites/spr_adult_teedee/spr_adult_teedee.yy",
+    "name":"spr_teedee_base",
+    "path":"sprites/spr_teedee_base/spr_teedee_base.yy",
   },
   "spriteMaskId":null,
   "visible":true,

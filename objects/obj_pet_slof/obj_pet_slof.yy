@@ -37,8 +37,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_adult_slof",
-    "path":"sprites/spr_adult_slof/spr_adult_slof.yy",
+    "name":"spr_slof_base",
+    "path":"sprites/spr_slof_base/spr_slof_base.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -37,8 +37,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_adult_elboo",
-    "path":"sprites/spr_adult_elboo/spr_adult_elboo.yy",
+    "name":"spr_elboo_base",
+    "path":"sprites/spr_elboo_base/spr_elboo_base.yy",
   },
   "spriteMaskId":null,
   "visible":true,

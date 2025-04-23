@@ -37,8 +37,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_adult_grimble",
-    "path":"sprites/spr_adult_grimble/spr_adult_grimble.yy",
+    "name":"spr_grimble_base",
+    "path":"sprites/spr_grimble_base/spr_grimble_base.yy",
   },
   "spriteMaskId":null,
   "visible":true,

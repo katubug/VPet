@@ -23,7 +23,16 @@ if (mouse_check_button_released(mb_left)) {
 						if (global.game.hunger >= 20) return;
 						//If the pet is hungry...
 						if (global.game.hunger < 20) {
-							//Increase hunger by hunger value
+                            //Set the alarm to stop eating
+                            alarm[0] = game_get_speed(gamespeed_fps) * 2;
+                            //Set the pet to eating
+                            obj_pet_parent.eating = true;
+                            //Create the food
+                            food_to_eat = inventory_item[inventory_index].object;
+                            food_instance = instance_create_layer(room_width/2, 400, "Instances", food_to_eat);
+							//Set the alarm to animate the food
+                            alarm[1] = 10;
+                            //Increase hunger by hunger value
 							//If the food amount would increase hunger past 20, only increase to 20.
 							if (global.game.hunger + inventory_item[inventory_index].hunger >= 20) {
 								global.game.hunger = 20;

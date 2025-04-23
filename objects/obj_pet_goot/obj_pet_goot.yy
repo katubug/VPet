@@ -37,8 +37,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_teen_goot",
-    "path":"sprites/spr_teen_goot/spr_teen_goot.yy",
+    "name":"spr_goot_base",
+    "path":"sprites/spr_goot_base/spr_goot_base.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -37,8 +37,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_child_phil",
-    "path":"sprites/spr_child_phil/spr_child_phil.yy",
+    "name":"spr_phil_base",
+    "path":"sprites/spr_phil_base/spr_phil_base.yy",
   },
   "spriteMaskId":null,
   "visible":true,

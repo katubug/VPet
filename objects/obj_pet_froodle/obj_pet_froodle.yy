@@ -37,8 +37,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_adult_froodle",
-    "path":"sprites/spr_adult_froodle/spr_adult_froodle.yy",
+    "name":"spr_froodle_base",
+    "path":"sprites/spr_froodle_base/spr_froodle_base.yy",
   },
   "spriteMaskId":null,
   "visible":true,

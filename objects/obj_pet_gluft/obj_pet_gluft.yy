@@ -37,8 +37,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_adult_gluft",
-    "path":"sprites/spr_adult_gluft/spr_adult_gluft.yy",
+    "name":"spr_gluft_base",
+    "path":"sprites/spr_gluft_base/spr_gluft_base.yy",
   },
   "spriteMaskId":null,
   "visible":true,

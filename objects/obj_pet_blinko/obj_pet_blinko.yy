@@ -37,8 +37,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_adult_blinko",
-    "path":"sprites/spr_adult_blinko/spr_adult_blinko.yy",
+    "name":"spr_blinko_base",
+    "path":"sprites/spr_blinko_base/spr_blinko_base.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -37,8 +37,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_teen_teru",
-    "path":"sprites/spr_teen_teru/spr_teen_teru.yy",
+    "name":"spr_teru_base",
+    "path":"sprites/spr_teru_base/spr_teru_base.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -37,8 +37,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_adult_nabafee",
-    "path":"sprites/spr_adult_nabafee/spr_adult_nabafee.yy",
+    "name":"spr_nabafee_base",
+    "path":"sprites/spr_nabafee_base/spr_nabafee_base.yy",
   },
   "spriteMaskId":null,
   "visible":true,

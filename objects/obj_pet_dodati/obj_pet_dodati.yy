@@ -37,8 +37,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_baby_dodati",
-    "path":"sprites/spr_baby_dodati/spr_baby_dodati.yy",
+    "name":"spr_dodati_base",
+    "path":"sprites/spr_dodati_base/spr_dodati_base.yy",
   },
   "spriteMaskId":null,
   "visible":true,

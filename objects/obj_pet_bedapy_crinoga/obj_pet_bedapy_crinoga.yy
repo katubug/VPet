@@ -37,8 +37,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_adult_bedapy_crinoga",
-    "path":"sprites/spr_adult_bedapy_crinoga/spr_adult_bedapy_crinoga.yy",
+    "name":"spr_bedapy_crinoga_base",
+    "path":"sprites/spr_bedapy_crinoga_base/spr_bedapy_crinoga_base.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -37,8 +37,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_teen_yorge",
-    "path":"sprites/spr_teen_yorge/spr_teen_yorge.yy",
+    "name":"spr_yorge_base",
+    "path":"sprites/spr_yorge_base/spr_yorge_base.yy",
   },
   "spriteMaskId":null,
   "visible":true,

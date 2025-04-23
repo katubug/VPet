@@ -37,8 +37,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_baby_pomba",
-    "path":"sprites/spr_baby_pomba/spr_baby_pomba.yy",
+    "name":"spr_pomba_base",
+    "path":"sprites/spr_pomba_base/spr_pomba_base.yy",
   },
   "spriteMaskId":null,
   "visible":true,

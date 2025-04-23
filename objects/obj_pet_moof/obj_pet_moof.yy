@@ -37,8 +37,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_teen_moof",
-    "path":"sprites/spr_teen_moof/spr_teen_moof.yy",
+    "name":"spr_moof_base",
+    "path":"sprites/spr_moof_base/spr_moof_base.yy",
   },
   "spriteMaskId":null,
   "visible":true,

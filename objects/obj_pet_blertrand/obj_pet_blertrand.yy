@@ -37,8 +37,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_teen_blertand",
-    "path":"sprites/spr_teen_blertand/spr_teen_blertand.yy",
+    "name":"spr_blertrand_base",
+    "path":"sprites/spr_blertrand_base/spr_blertrand_base.yy",
   },
   "spriteMaskId":null,
   "visible":true,

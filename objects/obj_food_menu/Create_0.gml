@@ -13,3 +13,6 @@ ui_inventory_margin = 16;
 color_border = c_teal;
 color_background = c_dkgray;
 color_inventory_highlight = c_orange;
+
+food_to_eat = "";
+food_instance = "";

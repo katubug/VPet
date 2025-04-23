@@ -37,8 +37,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_adult_teemb",
-    "path":"sprites/spr_adult_teemb/spr_adult_teemb.yy",
+    "name":"spr_teemb_base",
+    "path":"sprites/spr_teemb_base/spr_teemb_base.yy",
   },
   "spriteMaskId":null,
   "visible":true,

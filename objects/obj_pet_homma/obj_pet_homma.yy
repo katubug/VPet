@@ -37,8 +37,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_adult_homma",
-    "path":"sprites/spr_adult_homma/spr_adult_homma.yy",
+    "name":"spr_homma_base",
+    "path":"sprites/spr_homma_base/spr_homma_base.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -37,8 +37,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_child_plang",
-    "path":"sprites/spr_child_plang/spr_child_plang.yy",
+    "name":"spr_plang_base",
+    "path":"sprites/spr_plang_base/spr_plang_base.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -6,6 +6,7 @@ pet_talking = false;
 eating = false;
 sad = false;
 happy = false;
+walking = false;
 //set idle sprite
 idle_sprite = $"spr_{global.game.current_pet_type}_base";
 pet_idle_sprite = asset_get_index(idle_sprite);

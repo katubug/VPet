@@ -37,8 +37,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_adult_balbio",
-    "path":"sprites/spr_adult_balbio/spr_adult_balbio.yy",
+    "name":"spr_balbio_base",
+    "path":"sprites/spr_balbio_base/spr_balbio_base.yy",
   },
   "spriteMaskId":null,
   "visible":true,

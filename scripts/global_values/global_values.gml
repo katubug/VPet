@@ -7,10 +7,11 @@ function Inventory() constructor {
 	_inventory_items = [];
 
 	//A function to set the name of the item type, the quantity, and the sprite of the item.
-	static item_set = function(_name, _quantity, _sprite, _hunger) {
+	static item_set = function(_name, _quantity, _object, _sprite, _hunger) {
 		array_push(_inventory_items, {
 			name: _name,
 			quantity: _quantity,
+            object: _object,
 			sprite: _sprite,
 			hunger: _hunger,
 		});
@@ -41,7 +42,7 @@ function Inventory() constructor {
 	}
 
 	//Now, a function to add items to the inventory.
-	static item_add = function(_name, _quantity, _sprite, _hunger) {
+	static item_add = function(_name, _quantity, _object, _sprite, _hunger) {
 		//first, check if it exists in the inventory by passing the item's _name into the item_find 
 		//function.
 		var index = item_find(_name);
@@ -50,7 +51,7 @@ function Inventory() constructor {
 		if (index >= 0) {
 			_inventory_items[index].quantity += _quantity;
 		} else {
-			item_set(_name, _quantity, _sprite, _hunger);
+			item_set(_name, _quantity, _object, _sprite, _hunger);
 		}
 	}
 

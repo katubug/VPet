@@ -37,8 +37,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_baby_chobo",
-    "path":"sprites/spr_baby_chobo/spr_baby_chobo.yy",
+    "name":"spr_chobo_base",
+    "path":"sprites/spr_chobo_base/spr_chobo_base.yy",
   },
   "spriteMaskId":null,
   "visible":true,

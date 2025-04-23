@@ -37,8 +37,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_adult_clup",
-    "path":"sprites/spr_adult_clup/spr_adult_clup.yy",
+    "name":"spr_clup_base",
+    "path":"sprites/spr_clup_base/spr_clup_base.yy",
   },
   "spriteMaskId":null,
   "visible":true,

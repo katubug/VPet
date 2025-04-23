@@ -37,8 +37,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_adult_tibb",
-    "path":"sprites/spr_adult_tibb/spr_adult_tibb.yy",
+    "name":"spr_tibb_base",
+    "path":"sprites/spr_tibb_base/spr_tibb_base.yy",
   },
   "spriteMaskId":null,
   "visible":true,

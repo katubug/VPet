@@ -11,7 +11,7 @@ alarm[2] = 60 * 20;
 //Alarm 3 is for evolution and will be activated in the does_evolve() function called in Step
 
 //Give player some food to start
-global.pantry.item_add("Lemon", 99, spr_food_basic, 1);
+global.pantry.item_add("Lemon", 99, obj_food_basic, spr_food_basic, 1);
 
 //Set Up Pause Menu
 paused = false;

@@ -1,0 +1,1 @@
+food_to_eat.image_index = 2;
