@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":7,
   "parent":{
-    "name":"Pet Sprites",
-    "path":"folders/Sprites/Pet Sprites.yy",
+    "name":"Homma",
+    "path":"folders/Sprites/Pet Sprites/Homma.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

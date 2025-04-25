@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"seq_bath_Events453",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"seq_bath_Events453",
+  "parent":{
+    "name":"VPet",
+    "path":"VPet.yyp",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

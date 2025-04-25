@@ -3,7 +3,7 @@
 var _hor = clamp(target_x - x, -1, 1);
 var _ver = clamp(target_y - y, -1, 1);
 
-move_and_collide(_hor * move_speed, _ver * move_speed, tilemap);
+if (can_walk) move_and_collide(_hor * move_speed, _ver * move_speed, tilemap);
 
 if (global.game.evolution_queued == 0){
     // do the evolution dance!
@@ -11,6 +11,11 @@ if (global.game.evolution_queued == 0){
         alarm[6] = 10;
         global.game.evolution_queued = 1;
         }
+
+if (room == rm_bathroom && bath_time){
+    bath_time = false;
+    var take_bath = sequencePlay("seq_bath", "Instances", 0, 224);
+}
 
 if (!eating && walking){
      if (point_distance(x, y, target_x, target_y) < 1){

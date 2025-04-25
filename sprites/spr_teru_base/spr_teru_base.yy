@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":7,
   "parent":{
-    "name":"Pet Sprites",
-    "path":"folders/Sprites/Pet Sprites.yy",
+    "name":"Teru",
+    "path":"folders/Sprites/Pet Sprites/Teru.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

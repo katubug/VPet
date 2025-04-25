@@ -56,3 +56,8 @@ function go_to_home()
 {
     room_goto(rm_main);
 }
+
+function go_to_bathroom()
+{
+    room_goto(rm_bathroom);
+}
