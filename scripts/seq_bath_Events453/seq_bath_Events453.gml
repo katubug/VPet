@@ -10,7 +10,7 @@ function seq_bath_happy()
     //get_pet[0].sprite = pet_happy_sprite;
     obj_pet_parent.happy = true;
     
-    global.game.happiness += 5;
+    global.game.happiness = min(global.game.happiness + 5, 20);
 }
 
 

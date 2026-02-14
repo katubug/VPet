@@ -37,7 +37,7 @@ alarm[0] = 60*20;
 alarm[1] = 30;
 
 //character talks
-alarm[2] = game_get_speed(gamespeed_fps) * 60 * 1;
+//alarm[2] = game_get_speed(gamespeed_fps) * 60 * 1;
 
 //Happiness goes up when hunger is full
 alarm[3] = 60*20;

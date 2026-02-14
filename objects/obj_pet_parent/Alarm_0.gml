@@ -12,7 +12,6 @@ else
 
 if(global.game.happiness > 0)
 {
-    
 	global.game.happiness = max(global.game.happiness-1,0);
     show_debug_message($"happiness is now {global.game.happiness}");
 

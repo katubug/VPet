@@ -1,3 +1,4 @@
+//Make the pet talk occasionally.
 show_debug_message("yapping");
 pet_talking = true;
 
