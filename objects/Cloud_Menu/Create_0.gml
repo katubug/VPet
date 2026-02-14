@@ -40,8 +40,7 @@ menu_items = [
         sprite_normal: spr_btn_game,
         sprite_highlight: spr_btn_game,
         callback: function() {
-            show_debug_message("Play menu clicked");
-            // Add your play/games logic here
+            room_goto(rm_bathroom)
         },
         enabled: true,
         tooltip: "Play"
