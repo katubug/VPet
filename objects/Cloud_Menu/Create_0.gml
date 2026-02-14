@@ -43,7 +43,7 @@ menu_items = [
             room_goto(rm_bathroom)
         },
         enabled: true,
-        tooltip: "Play"
+        tooltip: "Games"
     },
     {
         sprite_normal: spr_btn_garden,
