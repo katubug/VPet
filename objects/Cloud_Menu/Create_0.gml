@@ -58,8 +58,7 @@ menu_items = [
         sprite_normal: spr_btn_inventory,
         sprite_highlight: spr_btn_inventory,
         callback: function() {
-            show_debug_message("Stats menu clicked");
-            // Add your stats display logic here
+            room_goto(rm_inventory)
         },
         enabled: true,
         tooltip: "Inventory"
