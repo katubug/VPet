@@ -40,7 +40,7 @@ menu_items = [
         sprite_normal: spr_btn_game,
         sprite_highlight: spr_btn_game,
         callback: function() {
-            room_goto(rm_bathroom)
+            room_goto(rm_stats)
         },
         enabled: true,
         tooltip: "Games"
@@ -67,8 +67,7 @@ menu_items = [
         sprite_normal: spr_btn_shop,
         sprite_highlight: spr_btn_shop,
         callback: function() {
-            show_debug_message("Shop menu clicked");
-            // Add your shop logic here
+            room_goto(rm_shop)
         },
         enabled: true,
         tooltip: "Shop"

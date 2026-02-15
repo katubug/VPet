@@ -18,5 +18,5 @@ if (global.game.last_saved_time != 0){
     show_debug_message($"that means current total time is {global.game.running_time}");
 }
 
-//Then reset the alarm
+// Then reset the alarm
 alarm[0] = 60 * 20;

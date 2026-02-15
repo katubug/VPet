@@ -245,6 +245,7 @@
     {"id":{"name":"obj_seed_parent","path":"objects/obj_seed_parent/obj_seed_parent.yy",},},
     {"id":{"name":"obj_seed_selfesteem","path":"objects/obj_seed_selfesteem/obj_seed_selfesteem.yy",},},
     {"id":{"name":"obj_shop_food","path":"objects/obj_shop_food/obj_shop_food.yy",},},
+    {"id":{"name":"obj_shop_ui","path":"objects/obj_shop_ui/obj_shop_ui.yy",},},
     {"id":{"name":"obj_ui_HUD","path":"objects/obj_ui_HUD/obj_ui_HUD.yy",},},
     {"id":{"name":"Object87","path":"objects/Object87/Object87.yy",},},
     {"id":{"name":"particle_evolution_1","path":"particles/particle_evolution_1/particle_evolution_1.yy",},},

@@ -24,7 +24,6 @@ function pre_save() {
 		game: global.game,
 		pet: global.pet,
 		inventory: global.inventory,
-		pantry: global.pantry,
 	};
 
 	//And then save.
@@ -41,8 +40,6 @@ function pre_load() {
 		//parse that data into our global variables
 		global.inventory = _data.inventory;
 		static_set(global.inventory, static_get(Inventory));
-		global.pantry = _data.pantry;
-		static_set(global.pantry, static_get(Inventory));
 		global.game = _data.game;
 		global.pet = _data.pet;
 

@@ -5,22 +5,10 @@ alarm[0] = 60;
 alarm[1] = game_get_speed(gamespeed_fps) * 60 * 5;
 
 //Clutter determining alarm
-alarm[2] = game_get_speed(gamespeed_fps) * 60 * 5;
+alarm[1] = game_get_speed(gamespeed_fps) * 60 * 5;
 
 //Alarm 3 is for evolution and will be activated in the does_evolve() function called in Step
 
-//Set Up Pause Menu
-paused = false;
-pausemenu = "PauseMenu"
-
-update_pause = function(){
-    if (paused){
-        instance_deactivate_all(true);
-        instance_activate_object(input_controller_object)
-        layer_set_visible(pausemenu, true);
-    } else {
-        instance_activate_all();
-        layer_set_visible(pausemenu, false);
-    }
-}
-update_pause();
+//Give player some food to start (using NEW inventory system)
+inventory_add("apple", 10);
+inventory_add("bread", 5);
