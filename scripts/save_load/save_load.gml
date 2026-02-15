@@ -19,16 +19,20 @@ function pre_save() {
 	//Reset the last-saved current time to right now
 	global.game.last_saved_time = current_time / 1000;
 
-	//Then get ready to save
+	//Then get ready to save (NEW INVENTORY SYSTEM)
 	var _dataToSave = {
 		game: global.game,
 		pet: global.pet,
-		inventory: global.inventory,
+		inventory: global.inventory,  // New inventory system structure
+		inventory_limits: global.inventory_limits,
+		pet_diet_stats: global.pet_diet_stats,
+		discovered_items: ds_map_write(global.discovered_items)  // Save discovered items
 	};
 
 	//And then save.
     if (global.game.ownername != ""){
-	json_save_classful("save_data.txt", _dataToSave);}
+	json_save_classful("save_data.txt", _dataToSave);
+    }
 }
 
 function pre_load() {
@@ -38,10 +42,30 @@ function pre_load() {
 		var _data = json_load_classful("save_data.txt");
 
 		//parse that data into our global variables
-		global.inventory = _data.inventory;
-		static_set(global.inventory, static_get(Inventory));
 		global.game = _data.game;
 		global.pet = _data.pet;
+		
+		// Load new inventory system
+		if (variable_struct_exists(_data, "inventory")) {
+			global.inventory = _data.inventory;
+		}
+		
+		if (variable_struct_exists(_data, "inventory_limits")) {
+			global.inventory_limits = _data.inventory_limits;
+		}
+		
+		if (variable_struct_exists(_data, "pet_diet_stats")) {
+			global.pet_diet_stats = _data.pet_diet_stats;
+		}
+		
+		// Load discovered items
+		if (variable_struct_exists(_data, "discovered_items")) {
+			global.discovered_items = ds_map_create();
+			ds_map_read(global.discovered_items, _data.discovered_items);
+		}
+		
+		// Make sure item database is initialized
+		inventory_init_database();
 
 		//Reset the session time and the last saved time to the current session
 		show_debug_message(

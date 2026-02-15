@@ -63,24 +63,16 @@ if (mouse_check_button_pressed(mb_left)) {
             var item_data = inventory_get_item_data(item.id);
             
             if (item_data != undefined) {
-                // Set as selected
-                selected_slot = hover_slot;
-                
-                // Call callback
-                on_item_click(item.id, item.quantity, hover_slot);
+                // Check if this is a double-click (clicking already selected item)
+                if (hover_slot == selected_slot) {
+                    // Double-click - use the item
+                    on_item_use(item.id);
+                } else {
+                    // First click - just select it
+                    selected_slot = hover_slot;
+                    on_item_click(item.id, item.quantity, hover_slot);
+                }
             }
-        }
-    }
-}
-
-// Handle item usage (double-click or use button)
-if (mouse_check_button_pressed(mb_left)) {
-    if (hover_slot == selected_slot && hover_slot != -1) {
-        var items = inventory_get_all_items(ui_category);
-        
-        if (hover_slot < array_length(items)) {
-            var item = items[hover_slot];
-            on_item_use(item.id);
         }
     }
 }

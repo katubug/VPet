@@ -41,8 +41,6 @@ global.game.evolution_time = {
 	adult: (_base * 3),
 };
 
-global.inventory = new Inventory();
-
 global.pet = {
 	joy: 0,
 	nonsense: 0,
