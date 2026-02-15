@@ -22,9 +22,10 @@ function inventory_init_database() {
         description: "A crisp, juicy red apple. Restores hunger.",
         hunger_restore: 3,
         stats: {
-            sweet: 2,
-            healthy: 1,
-            protein: 0
+            joy: 0,
+            nonsense: -1,  // Decreases nonsense
+            selfesteem: 0,
+            enthusiasm: 2   // Increases enthusiasm
         },
         buy_price: 5,
         sell_price: 2,
@@ -43,9 +44,10 @@ function inventory_init_database() {
         description: "Warm, freshly baked bread.",
         hunger_restore: 5,
         stats: {
-            sweet: 0,
-            healthy: 1,
-            protein: 2
+            joy: 1,
+            nonsense: 0,
+            selfesteem: 1,
+            enthusiasm: 0
         },
         buy_price: 8,
         sell_price: 3,
@@ -64,9 +66,10 @@ function inventory_init_database() {
         description: "A sour lemon. Good for cooking!",
         hunger_restore: 1,
         stats: {
-            sweet: 0,
-            healthy: 3,
-            protein: 0
+            joy: -1,        // Sour = less joy
+            nonsense: 2,    // Silly/zany food
+            selfesteem: 0,
+            enthusiasm: 1
         },
         buy_price: 3,
         sell_price: 1,
@@ -217,9 +220,10 @@ function inventory_init() {
     
     // Track evolution stats from foods eaten
     global.pet_diet_stats = {
-        sweet_total: 0,
-        healthy_total: 0,
-        protein_total: 0
+        joy_total: 0,
+        nonsense_total: 0,
+        selfesteem_total: 0,
+        enthusiasm_total: 0
     };
     
     // Track discovered items (for collection/journal)
@@ -246,6 +250,11 @@ function inventory_init() {
 /// @param {Real} quantity - How many to add
 /// @return {Bool} True if successful, false if failed
 function inventory_add(_item_id, _quantity = 1) {
+    
+    // Auto-initialize if needed (safety check)
+    if (!variable_global_exists("inventory")) {
+        inventory_init();
+    }
     
     // Get item data from database
     var item_data = inventory_get_item_data(_item_id);
@@ -446,6 +455,63 @@ function inventory_clear(_category = "") {
         global.inventory[$ _category] = [];
         show_debug_message("Cleared " + _category + " inventory");
     }
+}
+
+#endregion
+
+#region FEEDING SYSTEM
+
+/// @function inventory_feed_pet(food_id)
+/// @description Feed a food item to the pet, restore hunger, and update stats
+/// @param {String} food_id - The food item's ID
+/// @return {Bool} True if successfully fed, false if failed
+function inventory_feed_pet(_food_id) {
+    
+    var item_data = inventory_get_item_data(_food_id);
+    
+    // Check if it's actually food
+    if (item_data == undefined || item_data.category != "food") {
+        show_debug_message("ERROR: " + _food_id + " is not a food item!");
+        return false;
+    }
+    
+    // Check if pet is already full
+    if (global.game.hunger >= 20) {
+        show_debug_message("Pet is full!");
+        return false;
+    }
+    
+    // Check if player has the food
+    if (!inventory_has(_food_id, 1)) {
+        show_debug_message("Don't have any " + item_data.name + "!");
+        return false;
+    }
+    
+    // Remove the food from inventory
+    inventory_remove(_food_id, 1);
+    
+    // Restore hunger (cap at 20)
+    global.game.hunger = min(global.game.hunger + item_data.hunger_restore, 20);
+    
+    // Update diet stats for evolution
+    global.pet_diet_stats.joy_total += item_data.stats.joy;
+    global.pet_diet_stats.nonsense_total += item_data.stats.nonsense;
+    global.pet_diet_stats.selfesteem_total += item_data.stats.selfesteem;
+    global.pet_diet_stats.enthusiasm_total += item_data.stats.enthusiasm;
+    
+    // Update global.pet stats (the actual stats that affect evolution)
+    global.pet.joy += item_data.stats.joy;
+    global.pet.nonsense += item_data.stats.nonsense;
+    global.pet.selfesteem += item_data.stats.selfesteem;
+    global.pet.enthusiasm += item_data.stats.enthusiasm;
+    
+    show_debug_message("Pet ate " + item_data.name + "!");
+    show_debug_message("Stats changed - Joy: " + string(item_data.stats.joy) + 
+                      ", Nonsense: " + string(item_data.stats.nonsense) +
+                      ", Self-esteem: " + string(item_data.stats.selfesteem) +
+                      ", Enthusiasm: " + string(item_data.stats.enthusiasm));
+    
+    return true;
 }
 
 #endregion

@@ -246,6 +246,7 @@
     {"id":{"name":"obj_seed_selfesteem","path":"objects/obj_seed_selfesteem/obj_seed_selfesteem.yy",},},
     {"id":{"name":"obj_shop_food","path":"objects/obj_shop_food/obj_shop_food.yy",},},
     {"id":{"name":"obj_ui_HUD","path":"objects/obj_ui_HUD/obj_ui_HUD.yy",},},
+    {"id":{"name":"Object87","path":"objects/Object87/Object87.yy",},},
     {"id":{"name":"particle_evolution_1","path":"particles/particle_evolution_1/particle_evolution_1.yy",},},
     {"id":{"name":"particle_evolution","path":"particles/particle_evolution/particle_evolution.yy",},},
     {"id":{"name":"rm_bathroom","path":"rooms/rm_bathroom/rm_bathroom.yy",},},
@@ -260,6 +261,7 @@
     {"id":{"name":"rm_main","path":"rooms/rm_main/rm_main.yy",},},
     {"id":{"name":"rm_rps","path":"rooms/rm_rps/rm_rps.yy",},},
     {"id":{"name":"rm_shop","path":"rooms/rm_shop/rm_shop.yy",},},
+    {"id":{"name":"rm_stats","path":"rooms/rm_stats/rm_stats.yy",},},
     {"id":{"name":"RoomUI","path":"roomui/RoomUI/RoomUI.yy",},},
     {"id":{"name":"__CLASSFUL_JSON_CONFIGS__","path":"scripts/__CLASSFUL_JSON_CONFIGS__/__CLASSFUL_JSON_CONFIGS__.yy",},},
     {"id":{"name":"__input_axis_is_directional","path":"scripts/__input_axis_is_directional/__input_axis_is_directional.yy",},},
@@ -880,6 +882,7 @@
     {"roomId":{"name":"rm_kitchen","path":"rooms/rm_kitchen/rm_kitchen.yy",},},
     {"roomId":{"name":"rm_game_runner","path":"rooms/rm_game_runner/rm_game_runner.yy",},},
     {"roomId":{"name":"rm_bathroom","path":"rooms/rm_bathroom/rm_bathroom.yy",},},
+    {"roomId":{"name":"rm_stats","path":"rooms/rm_stats/rm_stats.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
