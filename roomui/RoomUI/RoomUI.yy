@@ -2,6 +2,7 @@
   "$GMRoomUI":"",
   "%Name":"RoomUI",
   "children":[
+    {"$GMRUILayer":"v1","%Name":"UI","alignItems":2,"children":[],"flexDirection":0,"gridX":32,"gridY":32,"justifyContent":1,"name":"UI","nodeColour":4289524296,"resourceType":"GMRUILayer","resourceVersion":"2.0",},
     {"$GMRUILayer":"v1","%Name":"PauseMenu","alignItems":2,"children":[
         {"$GMRFlexPanel":"","%Name":"Pause_Menu_Panel","alignItems":2,"alignSelf":2,"children":[
             {"$GMRFlexPanel":"","%Name":"Settings","alignItems":2,"children":[
@@ -30,7 +31,7 @@
               ],"flexDirection":0,"height":{"unit":3,"value":48.0,},"justifyContent":1,"name":"SaveQuit","nodeColour":4290267378,"resourceType":"GMRFlexPanel","resourceVersion":"2.0","width":{"unit":3,"value":48.0,},},
             {"$GMRSpriteGraphic":"v1","%Name":"graphic_98CB3AE","animationSpeed":1.0,"colour":4294967295,"flexProperties":{"$InstanceFlexProps":"v1","anchor":0,"resourceType":"InstanceFlexProps","stretchHeight":true,"stretchWidth":true,},"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_98CB3AE","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"spr_ui_box","path":"sprites/spr_ui_box/spr_ui_box.yy",},"x":0.0,"y":0.0,},
           ],"flexDirection":0,"gapColumn":5.0,"gapRow":5.0,"height":{"unit":2,"value":30.0,},"justifyContent":5,"name":"Pause_Menu_Panel","nodeColour":4282970758,"positionLeft":{"unit":2,"value":0.0,},"positionTop":{"unit":2,"value":0.0,},"resourceType":"GMRFlexPanel","resourceVersion":"2.0","width":{"unit":2,"value":50.0,},},
-      ],"flexDirection":0,"gridX":32,"gridY":32,"justifyContent":1,"name":"PauseMenu","nodeColour":4294071624,"resourceType":"GMRUILayer","resourceVersion":"2.0",},
+      ],"flexDirection":0,"gridX":32,"gridY":32,"justifyContent":1,"name":"PauseMenu","nodeColour":4294071624,"resourceType":"GMRUILayer","resourceVersion":"2.0","visible":false,},
   ],
   "locked":false,
   "name":"RoomUI",
@@ -41,5 +42,5 @@
   "resourceType":"GMRoomUI",
   "resourceVersion":"2.0",
   "viewspaceChildren":[],
-  "visible":false,
+  "visible":true,
 }

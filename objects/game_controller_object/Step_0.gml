@@ -1,3 +1,5 @@
+
+
 //Pausing
 if (input_check_released("pause")){
     show_debug_message("pausing");

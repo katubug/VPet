@@ -28,7 +28,8 @@ function pre_save() {
 	};
 
 	//And then save.
-	json_save_classful("save_data.txt", _dataToSave);
+    if (global.game.ownername != ""){
+	json_save_classful("save_data.txt", _dataToSave);}
 }
 
 function pre_load() {

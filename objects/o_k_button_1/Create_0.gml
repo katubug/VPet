@@ -1,3 +1,0 @@
-pressed = false;
-parrent = noone;
-

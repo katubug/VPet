@@ -1,7 +1,7 @@
 /// @description Initialize Icon Menu
 
 // Menu Configuration
-menu_y = 70; // Distance from top of screen
+menu_y = display_get_gui_height() - 70; // Distance from top of screen
 icon_size = 100; // Size of each icon
 icon_spacing = 110; // Spacing between icon centers
 icon_padding = 20; // Left padding for first icon
@@ -19,22 +19,22 @@ last_input_was_keyboard = false; // Track whether last input was keyboard or mou
 // For now using placeholder sprite names
 menu_items = [
     {
-        sprite_normal: spr_btn_home,      // Replace with your sprite
-        sprite_highlight: spr_btn_home, // Replace with your sprite
+        sprite_normal: spr_btn_garden,      // Replace with your sprite
+        sprite_highlight: spr_btn_garden, // Replace with your sprite
         callback: function() {
-            room_goto(rm_main)
+            room_goto(rm_garden)
         },
         enabled: true,
-        tooltip: "Home"
+        tooltip: "Garden"
     },
     {
-        sprite_normal: spr_btn_kitchen,      // Replace with your sprite
-        sprite_highlight: spr_btn_kitchen, // Replace with your sprite
+        sprite_normal: spr_btn_inventory,      // Replace with your sprite
+        sprite_highlight: spr_btn_inventory, // Replace with your sprite
         callback: function() {
-            room_goto(rm_kitchen)
+            room_goto(rm_inventory)
         },
         enabled: true,
-        tooltip: "Kitchen"
+        tooltip: "Inventory"
     },
     {
         sprite_normal: spr_btn_game,
@@ -46,13 +46,13 @@ menu_items = [
         tooltip: "Games"
     },
     {
-        sprite_normal: spr_btn_bathroom,
-        sprite_highlight: spr_btn_bathroom,
+        sprite_normal: spr_btn_garden,
+        sprite_highlight: spr_btn_garden,
         callback: function() {
-            room_goto(rm_bathroom)
+            room_goto(rm_garden)
         },
         enabled: true,
-        tooltip: "Bathroom"
+        tooltip: "Garden"
     },
     {
         sprite_normal: spr_btn_inventory,
