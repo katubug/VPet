@@ -58,8 +58,16 @@ on_item_use = function(_item_id) {
     // Handle different item types
     switch (item_data.category) {
         case "food":
-            // Feed the pet (inventory_feed_pet already shows success message)
-            if (!inventory_feed_pet(_item_id)) {
+            // Feed the pet with animation
+            if (inventory_feed_pet(_item_id)) {
+                // Create feeding animation in kitchen
+                room_goto(rm_kitchen);
+                
+                // Create the food animation object
+                var food_anim = instance_create_layer(0, 0, "Instances", obj_food_animation);
+                food_anim.food_sprite = item_data.sprite;
+                food_anim.return_room = room; // Return to current room (inventory)
+            } else {
                 show_debug_message("Can't use that right now");
             }
             break;

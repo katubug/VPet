@@ -474,16 +474,6 @@ function inventory_feed_pet(_food_id) {
         return false;
     }
     
-    //TODO: here is where to take them to the kitchen to eat
-    room_goto(rm_kitchen);
-    
-    //Set the pet to eating
-    obj_pet_parent.eating = true;
-    //Create the food
-    layer_sprite_create("Instances", room_width/2, 400, _food_id.sprite[0]);
-    //Set the alarm to animate the food
-    obj_food_menu.alarm[1] = 20;
-    
     // Remove the food from inventory
     inventory_remove(_food_id, 1);
     
@@ -507,11 +497,6 @@ function inventory_feed_pet(_food_id) {
                       ", Nonsense: " + string(item_data.stats.nonsense) +
                       ", Self-esteem: " + string(item_data.stats.selfesteem) +
                       ", Enthusiasm: " + string(item_data.stats.enthusiasm));
-    
-    if obj_food_menu.pet_finished_eating = true{
-        layer_sprite_destroy(_food_id.sprite)
-        obj_food_menu.pet_finished_eating = false;
-    }
     
     return true;
 }

@@ -1,15 +1,18 @@
 {
   "$GMObject":"",
-  "%Name":"obj_food_bibo",
+  "%Name":"obj_food_animation",
   "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_food_bibo",
+  "name":"obj_food_animation",
   "overriddenProperties":[],
   "parent":{
-    "name":"Food Types",
-    "path":"folders/Objects/Food Types.yy",
+    "name":"Game Control",
+    "path":"folders/Objects/Game Control.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -29,10 +32,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_food_bibo",
-    "path":"sprites/spr_food_bibo/spr_food_bibo.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }
