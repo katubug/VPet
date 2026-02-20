@@ -58,20 +58,31 @@ on_item_use = function(_item_id) {
     // Handle different item types
     switch (item_data.category) {
         case "food":
-    if (inventory_feed_pet(_item_id)) {
-        // Store sprite info globally (survives room change)
-        global.feeding_sprite = item_data.sprite;
-        global.feeding_return_room = room;
-        
-        // Go to kitchen
-        room_goto(rm_kitchen);
+            show_debug_message(">>> FOOD CASE TRIGGERED <<<");
+            show_debug_message("Item ID: " + _item_id);
+            show_debug_message("Item sprite: " + sprite_get_name(item_data.sprite));
+            
+            // Feed the pet with animation
+            var feed_result = inventory_feed_pet(_item_id);
+            show_debug_message("inventory_feed_pet returned: " + string(feed_result));
+            
+            if (feed_result) {
+                show_debug_message("FEED SUCCESS - Setting up animation");
                 
-                // Create the food animation object
-                var food_anim = instance_create_layer(0, 0, "Instances", obj_food_animation);
-                food_anim.food_sprite = item_data.sprite;
-                food_anim.return_room = room; // Return to current room (inventory)
+                // Store food sprite in global so it survives room change
+                global.feeding_sprite = item_data.sprite;
+                global.feeding_return_room = room;
+                
+                show_debug_message("Set global.feeding_sprite to: " + sprite_get_name(global.feeding_sprite));
+                show_debug_message("Set global.feeding_return_room to: " + room_get_name(global.feeding_return_room));
+                show_debug_message("Changing to rm_kitchen NOW...");
+                
+                // Go to kitchen (obj_food_animation will be created there)
+                room_goto(rm_kitchen);
+                
+                show_debug_message("After room_goto call"); // This might not print
             } else {
-                show_debug_message("Can't use that right now");
+                show_debug_message("FEED FAILED - Can't use that right now");
             }
             break;
             
