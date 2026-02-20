@@ -72,6 +72,10 @@ close_button_size = 30;
 pending_purchase = undefined;
 show_confirmation = false;
 
+// Purchase cooldown to prevent rapid clicking issues
+purchase_cooldown = 0;
+purchase_cooldown_duration = 15; // 15 frames = 0.25 seconds
+
 // Animations
 slot_scale = array_create(grid_columns * grid_rows, 1.0);
 target_scale = array_create(grid_columns * grid_rows, 1.0);

@@ -1,5 +1,10 @@
 /// @description Handle Input and Updates
 
+// Decrease purchase cooldown
+if (purchase_cooldown > 0) {
+    purchase_cooldown--;
+}
+
 // Get mouse position
 var mx = device_mouse_x_to_gui(0);
 var my = device_mouse_y_to_gui(0);
@@ -42,7 +47,7 @@ if (show_close_button && mouse_check_button_pressed(mb_left)) {
 
 // Handle item clicks (purchase)
 var purchased_this_frame = false;
-if (mouse_check_button_pressed(mb_left) && !show_confirmation) {
+if (mouse_check_button_pressed(mb_left) && !show_confirmation && purchase_cooldown == 0) {
     if (hover_slot != -1 && hover_slot < array_length(shop_items)) {
         var shop_item = shop_items[hover_slot];
         var item_data = inventory_get_item_data(shop_item.item_id);
@@ -53,6 +58,7 @@ if (mouse_check_button_pressed(mb_left) && !show_confirmation) {
             // Attempt purchase
             if (purchase_item(shop_item.item_id)) {
                 purchased_this_frame = true;
+                purchase_cooldown = purchase_cooldown_duration; // Start cooldown
             }
         }
     }
@@ -91,9 +97,11 @@ if (selected_slot != -1) {
 }
 
 // Purchase with Enter/Space (only if didn't already purchase from mouse click)
-if (!purchased_this_frame && selected_slot != -1 && (input_check_pressed("accept") || input_check_pressed("action"))) {
+if (!purchased_this_frame && purchase_cooldown == 0 && selected_slot != -1 && (input_check_pressed("accept") || input_check_pressed("action"))) {
     if (selected_slot < array_length(shop_items)) {
         var shop_item = shop_items[selected_slot];
-        purchase_item(shop_item.item_id);
+        if (purchase_item(shop_item.item_id)) {
+            purchase_cooldown = purchase_cooldown_duration; // Start cooldown
+        }
     }
 }
