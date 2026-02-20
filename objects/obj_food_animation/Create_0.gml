@@ -6,6 +6,7 @@
 if (!variable_instance_exists(id, "food_sprite")) {
     food_sprite = spr_food_bibo; // Default fallback
 }
+sprite_index = food_sprite;
 
 // Animation settings
 image_index = 0; // Start at frame 0 (fresh food)
