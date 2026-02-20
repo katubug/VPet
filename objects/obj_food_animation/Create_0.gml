@@ -6,6 +6,8 @@
 if (!variable_instance_exists(id, "food_sprite")) {
     food_sprite = spr_food_bibo; // Default fallback
 }
+
+// Set the sprite for this instance
 sprite_index = food_sprite;
 
 // Animation settings
@@ -17,7 +19,7 @@ x = room_width / 2;
 y = 400;
 
 // Animation timing (in frames, 60fps = 1 second)
-frame_duration = 30; // Each eating frame lasts 45 frames (0.75 seconds)
+frame_duration = 30; // Each eating frame lasts 30 frames (0.5 seconds)
 frame_timer = 0;
 current_frame = 0;
 total_frames = 4; // 4 frames: fresh → partially eaten → mostly eaten → gone
