@@ -58,10 +58,13 @@ on_item_use = function(_item_id) {
     // Handle different item types
     switch (item_data.category) {
         case "food":
-            // Feed the pet with animation
-            if (inventory_feed_pet(_item_id)) {
-                // Create feeding animation in kitchen
-                room_goto(rm_kitchen);
+    if (inventory_feed_pet(_item_id)) {
+        // Store sprite info globally (survives room change)
+        global.feeding_sprite = item_data.sprite;
+        global.feeding_return_room = room;
+        
+        // Go to kitchen
+        room_goto(rm_kitchen);
                 
                 // Create the food animation object
                 var food_anim = instance_create_layer(0, 0, "Instances", obj_food_animation);
