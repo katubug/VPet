@@ -186,17 +186,6 @@ for (var row = 0; row < grid_rows; row++) {
                     draw_rectangle(bar_x, bar_y, bar_x + (bar_width * durability_percent), bar_y + bar_height, false);
                     draw_set_alpha(1);
                 }
-                
-                // Draw freshness indicator for food
-                if (item_data.category == "food" && item.freshness != undefined && item_data.can_spoil) {
-                    if (item.freshness < 50) {
-                        // Warning icon for spoiling food
-                        draw_set_color(item.freshness < 25 ? c_red : c_yellow);
-                        draw_circle(slot_x + scale_offset + 15, slot_y + scale_offset + 15, 8, false);
-                        draw_set_color(c_white);
-                        draw_text(slot_x + scale_offset + 15, slot_y + scale_offset + 15, "!");
-                    }
-                }
             }
         }
     }
@@ -254,11 +243,6 @@ if (show_tooltips && hover_slot != -1 && hover_slot < array_length(items)) {
         if (item_data.category == "food") {
             draw_text(text_x, text_y, "Hunger: +" + string(item_data.hunger_restore));
             text_y += line_height;
-            if (item_data.can_spoil) {
-                var fresh_color = item.freshness > 50 ? c_lime : (item.freshness > 25 ? c_yellow : c_red);
-                draw_set_color(fresh_color);
-                draw_text(text_x, text_y, "Freshness: " + string(round(item.freshness)) + "%");
-            }
         } else if (item_data.category == "toy") {
             draw_text(text_x, text_y, "Happiness: +" + string(item_data.happiness_restore));
             text_y += line_height;

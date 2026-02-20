@@ -4,11 +4,11 @@
 ui_title = "Shop";
 
 // Grid Layout
-grid_columns = 7;
-grid_rows = 3;
-slot_size = 80;
-slot_padding = 10;
-slot_border = 3;
+grid_columns = 5;
+grid_rows = 5;
+slot_size = 100;
+slot_padding = 20;
+slot_border = 0;
 
 // Position
 ui_x = 50;
@@ -63,7 +63,7 @@ shop_items = [
 update_max_scroll();
 
 // Close button
-show_close_button = true;
+show_close_button = false;
 close_button_x = ui_x + ui_width - 40;
 close_button_y = ui_y + 10;
 close_button_size = 30;

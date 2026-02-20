@@ -100,7 +100,6 @@ function time_reset()
         game: global.game,
 		pet: global.pet,
 		inventory: global.inventory,
-		pantry: global.pantry,
         };
     json_save_classful("save_data.txt", _dataToSave);
 }

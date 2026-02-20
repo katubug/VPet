@@ -18,7 +18,7 @@ function inventory_init_database() {
         id: "apple",
         name: "Red Apple",
         category: "food",
-        sprite: spr_food_basic, // Replace with your actual sprite
+        sprite: spr_food_bibo, // Replace with your actual sprite
         description: "A crisp, juicy red apple. Restores hunger.",
         hunger_restore: 3,
         stats: {
@@ -30,10 +30,7 @@ function inventory_init_database() {
         buy_price: 5,
         sell_price: 2,
         rarity: "common",
-        max_stack: 99,
-        can_spoil: true,
-        freshness: 100,
-        decay_rate: 1  // Per day
+        max_stack: 99
     };
     
     global.item_database.bread = {
@@ -52,10 +49,7 @@ function inventory_init_database() {
         buy_price: 8,
         sell_price: 3,
         rarity: "common",
-        max_stack: 99,
-        can_spoil: true,
-        freshness: 100,
-        decay_rate: 2
+        max_stack: 99
     };
     
     global.item_database.lemon = {
@@ -74,10 +68,7 @@ function inventory_init_database() {
         buy_price: 3,
         sell_price: 1,
         rarity: "common",
-        max_stack: 99,
-        can_spoil: true,
-        freshness: 100,
-        decay_rate: 1
+        max_stack: 99
     };
     
     // ========================================
@@ -190,10 +181,7 @@ function inventory_init_database() {
         buy_price: 4,
         sell_price: 1,
         rarity: "common",
-        max_stack: 24,
-        can_spoil: true,
-        freshness: 100,
-        decay_rate: 1
+        max_stack: 24
     };
     
     show_debug_message("Item database initialized with " + string(variable_struct_names_count(global.item_database)) + " items");
@@ -308,7 +296,6 @@ function inventory_add(_item_id, _quantity = 1) {
             quantity: _quantity,
             // Copy any mutable properties (like durability, freshness)
             durability: item_data[$ "current_durability"] ?? -1,
-            freshness: item_data[$ "freshness"] ?? 100
         };
         
         array_push(inventory_array, new_item);
@@ -487,6 +474,16 @@ function inventory_feed_pet(_food_id) {
         return false;
     }
     
+    //TODO: here is where to take them to the kitchen to eat
+    room_goto(rm_kitchen);
+    
+    //Set the pet to eating
+    obj_pet_parent.eating = true;
+    //Create the food
+    layer_sprite_create("Instances", room_width/2, 400, _food_id.sprite[0]);
+    //Set the alarm to animate the food
+    obj_food_menu.alarm[1] = 20;
+    
     // Remove the food from inventory
     inventory_remove(_food_id, 1);
     
@@ -510,6 +507,11 @@ function inventory_feed_pet(_food_id) {
                       ", Nonsense: " + string(item_data.stats.nonsense) +
                       ", Self-esteem: " + string(item_data.stats.selfesteem) +
                       ", Enthusiasm: " + string(item_data.stats.enthusiasm));
+    
+    if obj_food_menu.pet_finished_eating = true{
+        layer_sprite_destroy(_food_id.sprite)
+        obj_food_menu.pet_finished_eating = false;
+    }
     
     return true;
 }

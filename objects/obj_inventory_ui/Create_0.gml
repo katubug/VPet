@@ -50,12 +50,63 @@ on_item_click = function(_item_id, _quantity, _slot_index) {
 };
 
 on_item_use = function(_item_id) {
-    // Override this function to handle using items
-    show_debug_message("Used: " + _item_id);
+    // Default behavior: handle items based on their category
+    var item_data = inventory_get_item_data(_item_id);
+    
+    if (item_data == undefined) return;
+    
+    // Handle different item types
+    switch (item_data.category) {
+        case "food":
+            // Feed the pet (inventory_feed_pet already shows success message)
+            if (!inventory_feed_pet(_item_id)) {
+                show_debug_message("Can't use that right now");
+            }
+            break;
+            
+        case "toy":
+            // Play with toy
+            var items = inventory_get_all_items("toy");
+            var toy_instance = undefined;
+            
+            for (var i = 0; i < array_length(items); i++) {
+                if (items[i].id == _item_id) {
+                    toy_instance = items[i];
+                    break;
+                }
+            }
+            
+            if (toy_instance != undefined && toy_instance.durability > 0) {
+                // Restore happiness
+                global.game.happiness = min(global.game.happiness + item_data.happiness_restore, 20);
+                
+                // Decrease durability
+                toy_instance.durability--;
+                
+                show_debug_message("Played with " + item_data.name + "! (Durability: " + string(toy_instance.durability) + ")");
+                
+                // Remove if broken
+                if (toy_instance.durability <= 0) {
+                    inventory_remove(_item_id, 1);
+                    show_debug_message(item_data.name + " broke!");
+                }
+            }
+            break;
+            
+        case "seed":
+            // Can't use seeds directly - need to plant them
+            show_debug_message("Go to the garden to plant " + item_data.name);
+            break;
+            
+        case "ingredient":
+            // Can't use ingredients directly - need to cook with them
+            show_debug_message("Go to the kitchen to cook with " + item_data.name);
+            break;
+    }
 };
 
 // Close button
-show_close_button = true;
+show_close_button = false;
 close_button_x = ui_x + ui_width - 40;
 close_button_y = ui_y + 10;
 close_button_size = 30;

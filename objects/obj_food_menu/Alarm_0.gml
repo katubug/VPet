@@ -1,2 +1,3 @@
 obj_pet_parent.eating = false;
-instance_destroy(food_instance);
+var pet_finished_eating = true;
+room_goto(rm_inventory);

@@ -41,6 +41,7 @@ if (show_close_button && mouse_check_button_pressed(mb_left)) {
 }
 
 // Handle item clicks (purchase)
+var purchased_this_frame = false;
 if (mouse_check_button_pressed(mb_left) && !show_confirmation) {
     if (hover_slot != -1 && hover_slot < array_length(shop_items)) {
         var shop_item = shop_items[hover_slot];
@@ -50,7 +51,9 @@ if (mouse_check_button_pressed(mb_left) && !show_confirmation) {
             selected_slot = hover_slot;
             
             // Attempt purchase
-            purchase_item(shop_item.item_id);
+            if (purchase_item(shop_item.item_id)) {
+                purchased_this_frame = true;
+            }
         }
     }
 }
@@ -87,8 +90,8 @@ if (selected_slot != -1) {
     }
 }
 
-// Purchase with Enter/Space
-if (selected_slot != -1 && (input_check_pressed("accept") || input_check_pressed("action"))) {
+// Purchase with Enter/Space (only if didn't already purchase from mouse click)
+if (!purchased_this_frame && selected_slot != -1 && (input_check_pressed("accept") || input_check_pressed("action"))) {
     if (selected_slot < array_length(shop_items)) {
         var shop_item = shop_items[selected_slot];
         purchase_item(shop_item.item_id);
