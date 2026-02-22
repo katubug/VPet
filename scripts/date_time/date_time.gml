@@ -96,6 +96,7 @@ function time_reset()
     global.game.running_time = 0;
     global.game.banked_time = 0;
     global.game.last_saved_time = 0;
+    global.pet.evolution_phase = "baby";
     var _dataToSave = {
         game: global.game,
 		pet: global.pet,

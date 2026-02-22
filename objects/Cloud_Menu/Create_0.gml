@@ -40,7 +40,7 @@ menu_items = [
         sprite_normal: spr_btn_game,
         sprite_highlight: spr_btn_game,
         callback: function() {
-            room_goto(rm_stats)
+            room_goto(rm_games)
         },
         enabled: true,
         tooltip: "Games"

@@ -267,39 +267,56 @@ function inventory_add(_item_id, _quantity = 1) {
     
     // Check if item already exists in inventory
     var item_found = false;
+    var first_stack_index = -1;
+    
     for (var i = 0; i < array_length(inventory_array); i++) {
         if (inventory_array[i].id == _item_id) {
+            // Remember the first stack we found
+            if (first_stack_index == -1) {
+                first_stack_index = i;
+            }
+            
             // Item exists - check if we can stack it
             var max_stack = item_data.max_stack;
-            var new_quantity = inventory_array[i].quantity + _quantity;
+            var current_quantity = inventory_array[i].quantity;
+            var space_available = max_stack - current_quantity;
             
-            if (new_quantity <= max_stack) {
-                // Can stack completely
-                inventory_array[i].quantity = new_quantity;
+            if (space_available > 0) {
+                // Can add at least some to this stack
+                var amount_to_add = min(_quantity, space_available);
+                inventory_array[i].quantity += amount_to_add;
+                _quantity -= amount_to_add;
                 item_found = true;
-                show_debug_message("Added " + string(_quantity) + "x " + item_data.name + " (now have " + string(new_quantity) + ")");
-                break;
-            } else {
-                // Stack is full, add remaining to new slot
-                var overflow = new_quantity - max_stack;
-                inventory_array[i].quantity = max_stack;
-                _quantity = overflow;
-                // Continue loop to add overflow to new slot
+                
+                show_debug_message("Added " + string(amount_to_add) + "x " + item_data.name + " (now have " + string(inventory_array[i].quantity) + ")");
+                
+                // If we've added everything, we're done
+                if (_quantity == 0) {
+                    break;
+                }
             }
         }
     }
     
-    // If item wasn't found or had overflow, create new entry
-    if (!item_found || _quantity > 0) {
-        var new_item = {
-            id: _item_id,
-            quantity: _quantity,
-            // Copy any mutable properties (like durability, freshness)
-            durability: item_data[$ "current_durability"] ?? -1,
-        };
+    // If we still have items left to add, create new stack(s)
+    if (_quantity > 0) {
+        var max_stack = item_data.max_stack;
         
-        array_push(inventory_array, new_item);
-        show_debug_message("Added " + string(_quantity) + "x " + item_data.name + " (new stack)");
+        while (_quantity > 0) {
+            var stack_quantity = min(_quantity, max_stack);
+            
+            var new_item = {
+                id: _item_id,
+                quantity: stack_quantity,
+                // Copy any mutable properties (like durability)
+                durability: item_data[$ "current_durability"] ?? -1,
+            };
+            
+            array_push(inventory_array, new_item);
+            show_debug_message("Added " + string(stack_quantity) + "x " + item_data.name + " (new stack)");
+            
+            _quantity -= stack_quantity;
+        }
     }
     
     return true;
@@ -465,6 +482,11 @@ function inventory_feed_pet(_food_id) {
     // Check if pet is already full
     if (global.game.hunger >= 20) {
         show_debug_message("Pet is full!");
+        
+        // Show popup message
+        var popup = instance_create_depth(0, 0, -9999, obj_popup_message);
+        popup.message = "Pet is full!";
+
         return false;
     }
     

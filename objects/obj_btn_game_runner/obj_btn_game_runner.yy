@@ -1,12 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"obj_btn_taco",
+  "%Name":"obj_btn_game_runner",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":7,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":4,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_btn_taco",
+  "name":"obj_btn_game_runner",
   "overriddenProperties":[],
   "parent":{
     "name":"Buttons",
@@ -31,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_btn_taco",
-    "path":"sprites/spr_btn_taco/spr_btn_taco.yy",
+    "name":"spr_btn_game_runner",
+    "path":"sprites/spr_btn_game_runner/spr_btn_game_runner.yy",
   },
   "spriteMaskId":null,
   "visible":true,

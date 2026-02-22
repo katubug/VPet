@@ -1,7 +1,7 @@
 /// @description Initialize Icon Menu
 
 // Menu Configuration
-menu_y = display_get_gui_height() - 70; // Distance from top of screen
+menu_y = display_get_gui_height() - 120; // Distance from top of screen
 icon_size = 100; // Size of each icon
 icon_spacing = 110; // Spacing between icon centers
 icon_padding = 20; // Left padding for first icon
