@@ -1,11 +1,5 @@
 if(global.game.living == 0)
 {
-	//draw_text(x + 0, y + 0, string("Your pet has been claimed by death.") + string("Do you want to try to reclaim them?"));
-
-	//instance_create_layer(x + 0, y + 40, "Instances", obj_btn_death_yes);
-
-	//instance_create_layer(x + 60, y + 40, "Instances", obj_btn_death_no);
-    
     var _dlg = instance_create_layer(0, 0, "UI", obj_dialog_modal);
     _dlg.message    = "Your pet has been claimed by death. Do you want to try to revive them?";
     _dlg.on_confirm = function() {
@@ -22,6 +16,7 @@ if(global.game.living == 0)
                 if (starter_pet == 0) global.game.current_pet_type = "chobo";
                 if (starter_pet == 1) global.game.current_pet_type = "pomba";
                 if (starter_pet == 2) global.game.current_pet_type = "dodati";
+                    
         global.game.evolution_phase = "baby";
 
         room_goto(rm_initial);

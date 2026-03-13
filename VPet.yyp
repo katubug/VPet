@@ -168,8 +168,6 @@
     {"id":{"name":"obj_btn_back","path":"objects/obj_btn_back/obj_btn_back.yy",},},
     {"id":{"name":"obj_btn_bathroom","path":"objects/obj_btn_bathroom/obj_btn_bathroom.yy",},},
     {"id":{"name":"obj_btn_begin","path":"objects/obj_btn_begin/obj_btn_begin.yy",},},
-    {"id":{"name":"obj_btn_death_no","path":"objects/obj_btn_death_no/obj_btn_death_no.yy",},},
-    {"id":{"name":"obj_btn_death_yes","path":"objects/obj_btn_death_yes/obj_btn_death_yes.yy",},},
     {"id":{"name":"obj_btn_die","path":"objects/obj_btn_die/obj_btn_die.yy",},},
     {"id":{"name":"obj_btn_game_buttonmash","path":"objects/obj_btn_game_buttonmash/obj_btn_game_buttonmash.yy",},},
     {"id":{"name":"obj_btn_game_runner","path":"objects/obj_btn_game_runner/obj_btn_game_runner.yy",},},
