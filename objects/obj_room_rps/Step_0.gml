@@ -37,9 +37,13 @@ if (game_complete == 1) {
     destroy_sequences();
     input_virtual_destroy_all();
         if (player_score > computer_score) {
-            global.game.limbo = 0;
-            global.game.living = 1;
-            instance_create_layer(room_width/2-100, 400, "Instances", obj_btn_back);
+            var _dlg = instance_create_layer(0, 0, "UI", obj_dialog_modal);   
+            _dlg.message    = "You have won your pet back!";                                                                                              _dlg.message = "What do you want to do?";
+              array_push(_dlg.buttons, { label: "YAY",   callback: function() {
+                global.game.living = 1;
+                global.game.limbo = 0;
+                room_goto(rm_main)
+                 } });
             
         }
         else if (player_score < computer_score) {
@@ -55,7 +59,12 @@ if (game_complete == 1) {
                 if (starter_pet == 1) global.game.current_pet_type = "pomba";
                 if (starter_pet == 2) global.game.current_pet_type = "dodati";
                     
-            instance_create_layer(room_width/2-100, 400, "Instances", obj_btn_back);
+             var _dlg = instance_create_layer(0, 0, "UI", obj_dialog_modal);  
+            _dlg.message    = "I'm sorry, you lost and your pet has gone to heaven.";                                                                                               _dlg.message = "What do you want to do?";
+              array_push(_dlg.buttons, { label: "Awwww",   callback: function() { 
+                    room_goto(rm_initial);
+                } });  
+            
         }
     }
 

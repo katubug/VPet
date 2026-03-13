@@ -1,12 +1,13 @@
 if(global.game.living == 0)
 {
+    
     var _dlg = instance_create_layer(0, 0, "UI", obj_dialog_modal);
-    _dlg.message    = "Your pet has been claimed by death. Do you want to try to revive them?";
-    _dlg.on_confirm = function() {
-        global.game.limbo = 1;
+     _dlg.message    = "Your pet has been claimed by death. Do you want to try to revive them?";
+    array_push(_dlg.buttons, { label: "omg yes",     callback: function() {
+    global.game.limbo = 1;
         room_goto(rm_rps)
-        };
-    _dlg.on_cancel  = function() { 
+        } });
+    array_push(_dlg.buttons, { label: "nah im good", callback: function() {
         global.game.living = 1;
         global.game.limbo = 0;
         time_reset();
@@ -20,7 +21,7 @@ if(global.game.living == 0)
         global.game.evolution_phase = "baby";
 
         room_goto(rm_initial);
-    };
+         } });
 }
 
 else
