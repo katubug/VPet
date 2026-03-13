@@ -4,6 +4,7 @@ global.game = {
 	struct_version: 0.4,
 	ownername: "",
 	living: 1,
+    limbo:0,
 	corns: 100,
 	hunger: 20,
 	health: 20,
@@ -47,6 +48,11 @@ global.pet = {
 	selfesteem: 0,
 	enthusiasm: 0,
 };
+
+// Flag used by obj_dialog_modal to block input on the rest of the game.
+// Any object whose input should freeze during a dialog should guard its
+// input code with: if (!global.dialog_open) { ... }
+global.dialog_open = false;
 
 starter_pet = irandom_range(0, 2);
 if (global.game.current_pet_type == "") {

@@ -37,13 +37,17 @@ if (game_complete == 1) {
     destroy_sequences();
     input_virtual_destroy_all();
         if (player_score > computer_score) {
+            global.game.limbo = 0;
             global.game.living = 1;
             instance_create_layer(room_width/2-100, 400, "Instances", obj_btn_back);
             
         }
         else if (player_score < computer_score) {
+            global.game.living = 1;
+            global.game.limbo = 0;
             time_reset();
             reset_needs();
+            global.game.evolution_phase = "baby";
             
             var starter_pet = irandom_range(0, 2);
             
