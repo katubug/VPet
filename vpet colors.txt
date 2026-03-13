@@ -1,0 +1,26 @@
+after tweaking:
+
+background blue: #cff5ff
+darker blue: #4cbedb
+font text blue: #004d7a
+pink: #ff85a3
+yellow: #FCFDAF
+
+===
+
+blue: #ABEEFF
+dark blue: 70E2FF
+contrast blue: 00627A
+yellow: #FCFDAF
+Pink: FFD2FC
+white
+
+
+pink alts:
+thistle: #D7B9D5
+petal rouge: #FF7B9C
+cotton candy: #FF9FB2
+celadon green: B5EBAD
+
+===
+
