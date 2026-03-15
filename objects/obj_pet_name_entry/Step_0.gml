@@ -81,6 +81,11 @@ function submit_pet_name() {
     // Strip leading/trailing whitespace before saving
     global.game.petname = string_trim(pet_name);
 
+    // Fallback in case something weird strips the name to empty after trimming
+    if (string_length(global.game.petname) == 0) {
+        global.game.petname = "Goober";
+    }
+
     show_debug_message($"Pet named: {global.game.petname} ({global.game.gender})");
 
     // Hide mobile keyboard if it's still showing

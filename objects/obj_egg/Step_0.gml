@@ -21,22 +21,27 @@ if (!is_rocking && crack_phase == 0) {
     rock_cooldown--;
 
     if (rock_cooldown <= 0) {
-        // Switch to the 4-frame rock animation
-        sprite_index = spr_egg_rock;
-        image_index  = 0;    // Always start from the beginning
-        image_speed  = 1;    // Play at the sprite's defined FPS (2fps in IDE)
-        is_rocking   = true;
+        is_rocking = true;
+        rock_t     = 0; // Reset the rotation timer so the swing always starts from neutral
     }
 }
 
 
-// ── ROCK ANIMATION END DETECTION ─────────────────────────────────────────────
+// ── CODE-BASED ROCK ANIMATION ─────────────────────────────────────────────────
+// Drives a full left-right swing using image_angle — no sprite swap needed
 if (is_rocking) {
-    if (floor(image_index) >= image_number - 1) {
-        // Rock complete — return to static idle
-        sprite_index = spr_egg_base;
-        image_speed  = 0;
-        is_rocking   = false;
+    // Advance the rotation timer each frame
+    // Adjust 3 to change rock speed: higher = faster swing (3 ≈ 2 seconds for a full rock)
+    rock_t += 3;
+
+    // Sine wave maps 0°–360° onto a smooth left-right tilt
+    // Adjust 15 to change how far the egg tilts (in degrees)
+    image_angle = dsin(rock_t) * 15;
+
+    // One full sine cycle (360°) = one complete back-and-forth rock
+    if (rock_t >= 360) {
+        image_angle = 0;     // Snap back to perfectly upright
+        is_rocking  = false;
 
         // Randomise the next rock delay (3–5 seconds)
         rock_cooldown = irandom_range(
@@ -60,7 +65,8 @@ if (crack_phase < 3) {
         image_speed  = 0;
         is_rocking   = false; // Abort any in-progress rock
 
-        // Reset scale cleanly so the crack sprite doesn't inherit a mid-stretch pose
+        // Reset rotation and scale so crack sprites display cleanly
+        image_angle  = 0;
         image_xscale = 1;
         image_yscale = 1;
     }
@@ -76,6 +82,19 @@ if (crack_phase < 3) {
     if (hatch_timer <= 0 && crack_phase == 2) {
         crack_phase = 3;
     }
+}
+
+
+// ── HATCHING WIGGLE ───────────────────────────────────────────────────────────
+// Rapid sine-wave jitter applied while cracks are showing
+// Adjust the speed (12) and amplitudes to taste
+if (crack_phase == 1) {
+    wiggle_t    += 12; // Degrees per frame — higher = faster shake
+    image_angle  = dsin(wiggle_t) * 6; // ±6 degree tilt for first crack
+}
+if (crack_phase == 2) {
+    wiggle_t    += 12;
+    image_angle  = dsin(wiggle_t) * 12; // ±12 degrees — more frantic as hatch nears
 }
 
 

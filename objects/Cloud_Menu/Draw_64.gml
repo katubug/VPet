@@ -1,7 +1,7 @@
 /// @description Draw Icon Menu (Top and Bottom Rows)
 
-// During the egg phase the player is locked to the main room — hide the menu entirely
-if (global.game.evolution_phase == "egg") exit;
+// Hide the menu during the egg phase and while the pet name prompt is open
+if (global.game.evolution_phase == "egg" || instance_exists(obj_pet_name_entry)) exit;
 
 // Helper: draws a single row of menu items
 // row_items  - the array of item structs to draw

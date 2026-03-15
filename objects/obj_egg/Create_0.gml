@@ -14,6 +14,9 @@ rock_cooldown = irandom_range(3 * game_get_speed(gamespeed_fps), 5 * game_get_sp
 // Whether the rock animation is currently playing
 is_rocking = false;
 
+// Rotation timer that drives the code-based rock (counts up in degrees while rocking)
+rock_t = 0;
+
 // Crack state: 0 = normal egg, 1 = first crack, 2 = second crack, 3 = hatching
 crack_phase = 0;
 
@@ -23,3 +26,6 @@ bounce_t = 0;
 
 // Post-hatch countdown before the name prompt appears (set during hatch sequence)
 post_hatch_timer = 0;
+
+// Rotation timer for the hatching wiggle — separate from rock_t so it runs independently
+wiggle_t = 0;

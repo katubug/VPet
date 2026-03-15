@@ -1,7 +1,7 @@
 /// @description Handle Input and State
 
-// During the egg phase the player is locked to the main room — skip all input
-if (global.game.evolution_phase == "egg") exit;
+// Lock navigation during the egg phase and while the pet name prompt is open
+if (global.game.evolution_phase == "egg" || instance_exists(obj_pet_name_entry)) exit;
 
 // -- Cooldown Tick --
 if (input_cooldown > 0) {
