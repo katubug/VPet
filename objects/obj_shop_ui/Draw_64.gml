@@ -177,8 +177,8 @@ for (var row = 0; row < grid_rows; row++) {
     }
 }
 
-// Draw tooltip for hovered item
-if (hover_slot != -1 && hover_slot < array_length(shop_items)) {
+// Draw tooltip for hovered item — suppressed while the purchase popup is open
+if (!global.dialog_open && hover_slot != -1 && hover_slot < array_length(shop_items)) {
     var shop_item = shop_items[hover_slot];
     var item_data = inventory_get_item_data(shop_item.item_id);
     
@@ -241,7 +241,7 @@ draw_set_halign(fa_center);
 draw_set_valign(fa_bottom);
 draw_set_color(c_ltgray);
 draw_set_alpha(0.7);
-draw_text(ui_x + ui_width / 2, ui_y + ui_height - 10, "Click to purchase");
+draw_text(ui_x + ui_width / 2, ui_y + ui_height - 10, "Tap an item to purchase");
 draw_set_alpha(1);
 
 // Reset draw settings

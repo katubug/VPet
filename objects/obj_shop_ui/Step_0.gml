@@ -45,63 +45,77 @@ if (show_close_button && mouse_check_button_pressed(mb_left)) {
     }
 }
 
-// Handle item clicks (purchase)
-var purchased_this_frame = false;
-if (mouse_check_button_pressed(mb_left) && !show_confirmation && purchase_cooldown == 0) {
+// Handle item clicks — open the purchase popup instead of buying immediately.
+// The popup handles quantity selection and calls purchase_item() on confirm.
+// Skip all interaction while a dialog/popup is open.
+if (mouse_check_button_pressed(mb_left) && !global.dialog_open && purchase_cooldown == 0) {
     if (hover_slot != -1 && hover_slot < array_length(shop_items)) {
         var shop_item = shop_items[hover_slot];
         var item_data = inventory_get_item_data(shop_item.item_id);
-        
-        if (item_data != undefined) {
+
+        // Only open popup for valid, in-stock items the player can afford
+        if (item_data != undefined && shop_item.stock != 0) {
             selected_slot = hover_slot;
-            
-            // Attempt purchase
-            if (purchase_item(shop_item.item_id)) {
-                purchased_this_frame = true;
-                purchase_cooldown = purchase_cooldown_duration; // Start cooldown
+
+            // Spawn the purchase popup and hand it the item context.
+            // Using instance_create_depth so it works regardless of layer name.
+            var _popup = instance_create_depth(0, 0, -9998, obj_shop_purchase_popup);
+            _popup.item_id   = shop_item.item_id; // which item is being purchased
+            _popup.shop_item = shop_item;          // stock struct (for max-qty calc)
+
+            purchase_cooldown = purchase_cooldown_duration; // brief cooldown to prevent double-opens
+        }
+    }
+}
+
+// Keyboard controls — blocked while a popup is open
+if (!global.dialog_open) {
+
+    // ESC / cancel verb closes the shop
+    if (input_check_pressed("cancel") || keyboard_check_pressed(vk_escape)) {
+        instance_destroy();
+    }
+
+    // Arrow key navigation through the grid
+    if (selected_slot != -1) {
+        var move_x = input_check_pressed("right") - input_check_pressed("left");
+        var move_y = input_check_pressed("down")  - input_check_pressed("up");
+
+        if (move_x != 0 || move_y != 0) {
+            var current_col = selected_slot mod grid_columns;
+            var current_row = floor(selected_slot / grid_columns);
+
+            current_col = clamp(current_col + move_x, 0, grid_columns - 1);
+            current_row = clamp(current_row + move_y, 0, 999);
+
+            selected_slot = (current_row * grid_columns) + current_col;
+
+            // Auto-scroll to keep the selected slot visible
+            if (current_row < scroll_offset) {
+                scroll_offset = current_row;
             }
+            if (current_row >= scroll_offset + grid_rows) {
+                scroll_offset = current_row - grid_rows + 1;
+            }
+
+            // Clamp to the number of items actually in the shop
+            selected_slot = min(selected_slot, array_length(shop_items) - 1);
         }
     }
-}
 
-// Keyboard controls
-if (input_check_pressed("cancel") || keyboard_check_pressed(vk_escape)) {
-    instance_destroy();
-}
+    // Accept / action verb on the selected grid slot opens the purchase popup
+    if (purchase_cooldown == 0 && selected_slot != -1
+        && (input_check_pressed("accept") || input_check_pressed("action"))) {
+        if (selected_slot < array_length(shop_items)) {
+            var shop_item = shop_items[selected_slot];
+            var item_data = inventory_get_item_data(shop_item.item_id);
 
-// Arrow key navigation
-if (selected_slot != -1) {
-    var move_x = input_check_pressed("right") - input_check_pressed("left");
-    var move_y = input_check_pressed("down") - input_check_pressed("up");
-    
-    if (move_x != 0 || move_y != 0) {
-        var current_col = selected_slot mod grid_columns;
-        var current_row = floor(selected_slot / grid_columns);
-        
-        current_col = clamp(current_col + move_x, 0, grid_columns - 1);
-        current_row = clamp(current_row + move_y, 0, 999);
-        
-        selected_slot = (current_row * grid_columns) + current_col;
-        
-        // Auto-scroll
-        if (current_row < scroll_offset) {
-            scroll_offset = current_row;
-        }
-        if (current_row >= scroll_offset + grid_rows) {
-            scroll_offset = current_row - grid_rows + 1;
-        }
-        
-        // Clamp to item count
-        selected_slot = min(selected_slot, array_length(shop_items) - 1);
-    }
-}
-
-// Purchase with Enter/Space (only if didn't already purchase from mouse click)
-if (!purchased_this_frame && purchase_cooldown == 0 && selected_slot != -1 && (input_check_pressed("accept") || input_check_pressed("action"))) {
-    if (selected_slot < array_length(shop_items)) {
-        var shop_item = shop_items[selected_slot];
-        if (purchase_item(shop_item.item_id)) {
-            purchase_cooldown = purchase_cooldown_duration; // Start cooldown
+            if (item_data != undefined && shop_item.stock != 0) {
+                var _popup = instance_create_depth(0, 0, -9998, obj_shop_purchase_popup);
+                _popup.item_id   = shop_item.item_id;
+                _popup.shop_item = shop_item;
+                purchase_cooldown = purchase_cooldown_duration;
+            }
         }
     }
 }
