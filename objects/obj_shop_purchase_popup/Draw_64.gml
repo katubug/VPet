@@ -76,9 +76,9 @@ if (item_data != undefined && sprite_exists(item_data.sprite)) {
 // line_h: vertical gap between lines at 2× scale (~22 font px × 2 = 44 screen px local).
 // info_w: available column width in local px; halved when passed to draw_text_ext_transformed
 //         because the font measures in unscaled px but renders at 2×.
-var txt_scale = 2;    // render text at this multiple of the base font size
+var txt_scale = 1.5;  // render text at this multiple of the base font size (1.5 ≈ 75% of 2×)
 var info_x    = 350;  // local X of the text column (pad=30 + sprite=300 + gap=20)
-var line_h    = 44;   // local-px line spacing at 2× text scale
+var line_h    = 33;   // local-px line spacing at 1.5× text scale (22 * 1.5 = 33)
 var info_w    = popup_w - pad - info_x; // available column width in local px (= 320)
 
 draw_set_font(fnt_Quicksand);
