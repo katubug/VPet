@@ -1,5 +1,6 @@
 var _stage = garden_get_stage(plot_index);
 
+
 // --- Layer 1: Plot soil sprite ---
 // Switches to the watered sprite for exactly 1 hour after watering (while boost is active)
 // asset_get_index returns -1 if the sprite hasn't been created in the IDE yet — skip drawing safely
@@ -26,16 +27,25 @@ var _hover_spr = asset_get_index("spr_garden_plot_hover");
 if (_hover && _hover_spr >= 0) draw_sprite(_hover_spr, 0, x, y);
 
 // --- Layer 4: Growth progress bar below the plot ---
-// Adjust the y offsets (+34 to +39) and width (76px) to match your sprite size
+// _bar_pad adds inset margin on each side — increase to move bar away from plot edges
+// Total bar width = (38 - _bar_pad) * 2; adjust y offsets to reposition vertically
+var _bar_pad = 10; // 10px inset from each edge of the 76px plot width
+var _bar_x1  = x - 38 + _bar_pad; // left edge of the bar
+var _bar_x2  = x + 38 - _bar_pad; // right edge of the bar
+var _bar_w   = _bar_x2 - _bar_x1; // usable fill width in pixels
+
 if (_stage >= 1) {
     var _grow_time = inventory_get_item_data(global.game.garden_plots[plot_index].seed_type).grow_time;
     var _pct = garden_get_effective_growth(plot_index) / _grow_time;
 
     draw_set_color(c_dkgray);
-    draw_rectangle(x - 38, y + 34, x + 38, y + 39, false);
+    draw_rectangle(_bar_x1, y + 34, _bar_x2, y + 39, false);
 
     draw_set_color(c_lime);
-    draw_rectangle(x - 38, y + 34, x - 38 + (76 * _pct), y + 39, false);
+    draw_rectangle(_bar_x1, y + 34, _bar_x1 + (_bar_w * _pct), y + 39, false);
 
     draw_set_color(c_white); // reset color so nothing else inherits it
+
+    // Temporary debug: shows % over each plot bar
+    draw_text(x - 20, y + 42, string_format(_pct * 100, 3, 1) + "%");
 }

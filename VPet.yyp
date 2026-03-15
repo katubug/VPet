@@ -857,6 +857,7 @@
     {"id":{"name":"spr_teemb_base","path":"sprites/spr_teemb_base/spr_teemb_base.yy",},},
     {"id":{"name":"spr_teru_base","path":"sprites/spr_teru_base/spr_teru_base.yy",},},
     {"id":{"name":"spr_tibb_base","path":"sprites/spr_tibb_base/spr_tibb_base.yy",},},
+    {"id":{"name":"spr_tiled_background","path":"sprites/spr_tiled_background/spr_tiled_background.yy",},},
     {"id":{"name":"spr_ui_back","path":"sprites/spr_ui_back/spr_ui_back.yy",},},
     {"id":{"name":"spr_ui_button","path":"sprites/spr_ui_button/spr_ui_button.yy",},},
     {"id":{"name":"spr_ui_check","path":"sprites/spr_ui_check/spr_ui_check.yy",},},
