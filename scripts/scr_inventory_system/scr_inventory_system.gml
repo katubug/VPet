@@ -71,6 +71,35 @@ function inventory_init_database() {
         max_stack: 99
     };
     
+    // Garden-grown fruits (harvested from plots, not purchasable)
+    global.item_database.tomato = {
+        id: "tomato",
+        name: "Tomato",
+        category: "food",
+        sprite: spr_food_basic,
+        description: "A juicy homegrown tomato.",
+        hunger_restore: 4,
+        stats: { joy: 1, nonsense: 0, selfesteem: 1, enthusiasm: 0 },
+        buy_price: 0,
+        sell_price: 3,
+        rarity: "common",
+        max_stack: 99
+    };
+
+    global.item_database.carrot = {
+        id: "carrot",
+        name: "Carrot",
+        category: "food",
+        sprite: spr_food_basic,
+        description: "Crunchy and garden-fresh.",
+        hunger_restore: 3,
+        stats: { joy: 0, nonsense: 0, selfesteem: 2, enthusiasm: 1 },
+        buy_price: 0,
+        sell_price: 2,
+        rarity: "common",
+        max_stack: 99
+    };
+
     // ========================================
     // TOY ITEMS
     // ========================================
@@ -117,24 +146,31 @@ function inventory_init_database() {
         category: "seed",
         sprite: spr_food_basic, // Replace with your seed sprite
         description: "Plant this to grow fresh tomatoes.",
-        grow_time: 120, // Seconds to grow
+        grow_time: 28800, // 8 hours (480 minutes) to grow
         harvest_item: "tomato", // What it produces
         harvest_amount: 3, // How many you get
+        // Per-stage plant sprites (sprout is shared — see spr_garden_sprout)
+        // asset_get_index returns -1 safely if the sprite hasn't been created in the IDE yet
+        sprite_immature: asset_get_index("spr_garden_tomato_immature"),
+        sprite_mature:   asset_get_index("spr_garden_tomato_mature"),
         buy_price: 10,
         sell_price: 4,
         rarity: "common",
         max_stack: 99
     };
-    
+
     global.item_database.carrot_seed = {
         id: "carrot_seed",
         name: "Carrot Seed",
         category: "seed",
         sprite: spr_food_basic, // Replace with your seed sprite
         description: "Plant this to grow crunchy carrots.",
-        grow_time: 90,
+        grow_time: 28800, // 8 hours to match tomato
         harvest_item: "carrot",
         harvest_amount: 4,
+        // Per-stage plant sprites (sprout is shared — see spr_garden_sprout)
+        sprite_immature: asset_get_index("spr_garden_carrot_immature"),
+        sprite_mature:   asset_get_index("spr_garden_carrot_mature"),
         buy_price: 8,
         sell_price: 3,
         rarity: "common",

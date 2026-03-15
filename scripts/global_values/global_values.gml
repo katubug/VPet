@@ -22,21 +22,30 @@ global.game = {
 	running_time: 0,
 	banked_time: 0,
 	last_saved_time: 0,
-	evolution_phase: "baby",
+	evolution_phase: "egg", // Start as an egg before the baby stage
+	petname: "",           // Name given to the pet after hatching
+	gender: "",            // "boy" or "girl", set randomly at hatch
 	current_pet_type: "",
 	evolution_queued: 1,
 	previous_pet_type: "",
-	garden: {
-		seed_planted: "",
-		growth_time: 0,
-		watered: 0,
-	},
+	garden_plots: [], // 9-element array, populated below after struct init
     high_score_runner: 0,
 };
+
+// Initialize 9 garden plots (3x3 grid) — index 0 to 8
+for (var _gi = 0; _gi < 9; _gi++) {
+    array_push(global.game.garden_plots, {
+        seed_type:     "none", // "none" or item id e.g. "tomato_seed"
+        plant_time:    -1,     // epoch seconds when planted (-1 = empty)
+        water_time:    -1,     // epoch seconds of last watering (-1 = never)
+        bonus_seconds: 0,      // accumulated bonus seconds from expired watering windows
+    });
+}
 
 var _base = 86400; //86400 = 24 hours in seconds 
 global.game.evolution_time = {
 	base: _base,
+	egg: 45,           // Egg lasts 45 seconds — edit this to change egg duration
 	child: (_base / 2),
 	teen: (_base * 2),
 	adult: (_base * 3),
@@ -48,6 +57,10 @@ global.pet = {
 	selfesteem: 0,
 	enthusiasm: 0,
 };
+
+// Watering mode toggle — set true when the player activates the watering can in the garden
+// Plots check this to decide whether a click should water or harvest
+global.garden_watering_mode = false;
 
 // Flag used by obj_dialog_modal to block input on the rest of the game.
 // Any object whose input should freeze during a dialog should guard its

@@ -64,6 +64,25 @@ function pre_load() {
 			ds_map_read(global.discovered_items, _data.discovered_items);
 		}
 		
+		// Migrate old saves that predate petname/gender fields
+		if (!variable_struct_exists(global.game, "petname")) {
+			global.game.petname = "";
+		}
+		if (!variable_struct_exists(global.game, "gender")) {
+			global.game.gender = "";
+		}
+
+		// Migrate old saves that used a garden struct instead of garden_plots array
+		if (!variable_struct_exists(global.game, "garden_plots")) {
+			global.game.garden_plots = [];
+			for (var _gi = 0; _gi < 9; _gi++) {
+				array_push(global.game.garden_plots, {
+					seed_type: "none", plant_time: -1,
+					water_time: -1, bonus_seconds: 0,
+				});
+			}
+		}
+
 		// Make sure item database is initialized
 		inventory_init_database();
 

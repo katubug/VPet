@@ -1,3 +1,5 @@
-plot_seed_type = "none";
-plot_x = obj_garden_plot.x;
-plot_y = obj_garden_plot.y;
+// plot_index is set by obj_garden_spawner immediately after creation — do not change this default here
+plot_index = 0;
+
+// Used for hover highlight in Draw event
+_hover = false;

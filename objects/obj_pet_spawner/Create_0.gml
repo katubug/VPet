@@ -1,4 +1,7 @@
-if (global.game.evolution_queued == 0) {
+if (global.game.evolution_phase == "egg") {
+	// Game just started — spawn the egg instead of a pet
+	instance_create_layer(x, y, "Instances", obj_egg);
+} else if (global.game.evolution_queued == 0) {
 	var pet_name = $"obj_pet_{global.game.previous_pet_type}";
 	show_debug_message(pet_name);
 	pet_object_index = asset_get_index(pet_name);

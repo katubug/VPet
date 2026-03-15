@@ -25,15 +25,10 @@ function evolution_control(_phase)
 {
     global.game.previous_pet_type = global.game.current_pet_type;
     show_debug_message($"the evolution script is executing the {_phase} phase");
-    var _pool = []; //declare empty array
-    //populate array with items from the global.pet struct.
-    //the "with" functions as a "diy closure" so that the local variables are accessible. 
-    //I don't fully understand this but here's the link: https://yal.cc/gamemaker-diy-closures/
-    with ({_pool}) struct_foreach(global.pet, function(_stat) {
-        array_push(_pool, _stat);
-    });
-    
-    //then this sorts the array by the value of each stat
+    // hardcode just the 4 stat names so we don't accidentally pull in non-numeric fields
+    var _pool = ["nonsense", "selfesteem", "joy", "enthusiasm"];
+
+    // sort the stat names by their numeric values, highest first
     array_sort(_pool, function(_a, _b) {
         return sign(global.pet[$ _b] - global.pet[$ _a]);
     });
