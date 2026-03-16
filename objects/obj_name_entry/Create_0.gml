@@ -33,9 +33,13 @@ border_width = 4;
 text_color = c_white;
 prompt_text = "Enter your name:";
 instruction_text = "(Press Enter when done)";
-if (os_type == os_android || os_type == os_ios) {
-    instruction_text = "(Tap Done when finished)";
-}
+
+// Done button (mobile only) -- sits below the input box
+done_btn_width = 200; // Width of the Done button
+done_btn_height = 70; // Height of the Done button
+done_btn_color = c_green; // Button background colour
+done_btn_label = "Done"; // Label shown on the button
+// done_btn_x/y are calculated in Draw each frame alongside box_x/box_y
 
 // Start mobile keyboard if on mobile device
 if (os_type == os_android || os_type == os_ios) {
