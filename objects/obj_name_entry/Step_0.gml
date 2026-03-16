@@ -67,7 +67,8 @@ else {
     }
     
     // Check if virtual keyboard was hidden (user pressed Done)
-    if (keyboard_showing && keyboard_virtual_status() == kbv_type_none) {
+    // keyboard_virtual_status() returns -1 when hidden -- kbv_type_none is not a valid constant on Android
+    if (keyboard_showing && keyboard_virtual_status() == -1) {
         if (string_length(string_trim(player_name)) > 0) {
             submit_name();
         }

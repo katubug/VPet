@@ -1,5 +1,14 @@
 /// @description Initialize Name Entry System
 
+// Initialize variables first so Step doesn't crash if we destroy early
+// (GameMaker runs one Step event even after instance_destroy in Create)
+keyboard_showing = false; // Tracks whether the virtual keyboard is open
+submitted = false; // Prevents double-submission of the name
+player_name = ""; // The name the player is typing
+cursor_timer = 0; // Counts frames for cursor blink timing
+cursor_visible = true; // Whether the cursor is currently shown
+cursor_blink_speed = 30; // Frames between blinks -- increase to blink slower
+
 // Check if save file exists
 if (file_exists("save_data.txt")) {
     // Save file exists, skip name entry
@@ -8,11 +17,7 @@ if (file_exists("save_data.txt")) {
 }
 
 // Input state
-player_name = "";
-max_name_length = 20;
-cursor_visible = true;
-cursor_timer = 0;
-cursor_blink_speed = 30; // Frames between blinks
+max_name_length = 20; // Max characters allowed in the name
 
 // UI Settings
 box_width = 600;
@@ -32,14 +37,10 @@ if (os_type == os_android || os_type == os_ios) {
     instruction_text = "(Tap Done when finished)";
 }
 
-// Mobile keyboard state
-keyboard_showing = false;
-
 // Start mobile keyboard if on mobile device
 if (os_type == os_android || os_type == os_ios) {
     keyboard_virtual_show(kbv_type_default, kbv_returnkey_done, kbv_autocapitalize_words, false);
-    keyboard_showing = true;
+    keyboard_showing = true; // Mark keyboard as open so Step can manage it
 }
 
-// Flag to prevent accidental double-submission
-submitted = false;
+// submitted and keyboard_showing initialized above the file_exists check
