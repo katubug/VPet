@@ -1,5 +1,13 @@
 /// @description Draw Pet Name & Gender Entry Screen
 
+// ── LAYOUT RECALCULATION ──────────────────────────────────────────────────────
+// Recalculate positions each frame — display_get_gui_width/height is unreliable in Create on Android
+box_x      = (display_get_gui_width()  / 2) - (box_width  / 2);
+box_y      = (display_get_gui_height() / 2) - (box_height / 2);
+done_btn_x = (display_get_gui_width()  / 2) - (done_btn_width  / 2); // Centers the Done button horizontally
+done_btn_y = box_y + box_height + 20; // Places the Done button 20px below the card
+
+
 // ── DARK OVERLAY ─────────────────────────────────────────────────────────────
 // Semi-transparent black wash over the whole screen so the card pops
 draw_set_alpha(0.75);
@@ -81,17 +89,26 @@ draw_set_color(c_white);
 draw_text(_cx, _field_y, _display);
 
 
-// ── INSTRUCTION TEXT ─────────────────────────────────────────────────────────
-var _instr_y = box_y + box_height - 36;
-draw_set_alpha(0.6);
-var _instr = (os_type == os_android || os_type == os_ios)
-           ? "(Tap Done when finished)"
-           : "(Press Enter when done)";
-draw_text(_cx, _instr_y, _instr);
-
-// Character counter — bottom-right of card
-draw_set_halign(fa_right);
-draw_text(box_x + box_width - 16, _instr_y, $"{string_length(pet_name)}/{max_name_length}");
+// ── INSTRUCTION / DONE BUTTON ────────────────────────────────────────────────
+if (os_type == os_android || os_type == os_ios) {
+    // Draw a green Done button below the card — tapping it submits the name
+    draw_set_alpha(1);
+    draw_set_color(done_btn_color);
+    draw_rectangle(done_btn_x, done_btn_y, done_btn_x + done_btn_width, done_btn_y + done_btn_height, false);
+    draw_set_color(c_white);
+    draw_set_halign(fa_center);
+    draw_set_valign(fa_middle);
+    draw_text(done_btn_x + (done_btn_width / 2), done_btn_y + (done_btn_height / 2), done_btn_label);
+} else {
+    // Desktop: show instruction text and character counter at the bottom of the card
+    var _instr_y = box_y + box_height - 36;
+    draw_set_alpha(0.6);
+    draw_set_halign(fa_center);
+    draw_text(_cx, _instr_y, "(Press Enter when done)");
+    // Character counter — bottom-right of card
+    draw_set_halign(fa_right);
+    draw_text(box_x + box_width - 16, _instr_y, $"{string_length(pet_name)}/{max_name_length}");
+}
 
 
 // ── RESET DRAW STATE ─────────────────────────────────────────────────────────

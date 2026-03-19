@@ -10,8 +10,8 @@
   "name":"obj_pet_name_entry",
   "overriddenProperties":[],
   "parent":{
-    "name":"Game Control",
-    "path":"folders/Objects/Game Control.yy",
+    "name":"Name Entry",
+    "path":"folders/Objects/Name Entry.yy",
   },
   "parentObjectId":null,
   "persistent":false,

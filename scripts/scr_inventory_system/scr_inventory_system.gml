@@ -76,7 +76,7 @@ function inventory_init_database() {
         id: "tomato",
         name: "Tomato",
         category: "food",
-        sprite: spr_food_basic,
+        sprite: spr_food_tomato,
         description: "A juicy homegrown tomato.",
         hunger_restore: 4,
         stats: { joy: 1, nonsense: 0, selfesteem: 1, enthusiasm: 0 },

@@ -49,8 +49,9 @@ if (os_type != os_android && os_type != os_ios) {
 
 // ── MOBILE / TOUCH INPUT ─────────────────────────────────────────────────────
 else {
-
-    if (keyboard_virtual_status() == kbv_type_default) {
+    // Always read from keyboard_string — keyboard_virtual_status() is unreliable on Android
+    // (returns -1 briefly after show, and kbv_type_none is not a valid constant on Android)
+    {
         var _raw = keyboard_string;
         var _filtered = "";
         for (var i = 1; i <= string_length(_raw); i++) {
@@ -59,16 +60,27 @@ else {
                 _filtered += _ch;
             }
         }
-        pet_name        = string_copy(_filtered, 1, max_name_length);
-        keyboard_string = pet_name;
+        pet_name = string_copy(_filtered, 1, max_name_length);
+        // Only write back if changed — writing every frame causes [VK] SetInputString spam
+        if (_raw != pet_name) {
+            keyboard_string = pet_name;
+        }
     }
 
-    // Detect when the user presses Done on the virtual keyboard
-    if (keyboard_showing && keyboard_virtual_status() == kbv_type_none) {
-        if (string_length(string_trim(pet_name)) > 0) {
-            submit_pet_name();
+    if (mouse_check_button_pressed(mb_left)) {
+        var _mx = device_mouse_x_to_gui(0); // GUI-space tap X
+        var _my = device_mouse_y_to_gui(0); // GUI-space tap Y
+        // Tap Done button → submit if name is non-empty
+        if (point_in_rectangle(_mx, _my, done_btn_x, done_btn_y, done_btn_x + done_btn_width, done_btn_y + done_btn_height)) {
+            if (string_length(string_trim(pet_name)) > 0) {
+                keyboard_virtual_hide();
+                submit_pet_name();
+            }
+        // Tap inside the input field → reopen keyboard
+        } else if (point_in_rectangle(_mx, _my, box_x + 40, box_y + 346, box_x + box_width - 40, box_y + 394)) {
+            keyboard_virtual_show(kbv_type_default, kbv_returnkey_done, kbv_autocapitalize_words, false);
+            keyboard_showing = true;
         }
-        keyboard_showing = false;
     }
 }
 

@@ -33,8 +33,11 @@ submitted       = false;
 // Adjust box_width/box_height to resize the whole panel
 box_width  = 580;
 box_height = 480;
-box_x = (display_get_gui_width()  / 2) - (box_width  / 2); // 70
-box_y = (display_get_gui_height() / 2) - (box_height / 2); // 400
+// box_x/box_y are recalculated in Draw each frame — display_get_gui_width/height unreliable in Create on Android
+done_btn_width  = 200; // Width of the Done button on mobile — adjust freely
+done_btn_height = 70;  // Height of the Done button on mobile — adjust freely
+done_btn_color  = c_green; // Background color of the Done button
+done_btn_label  = "Done";  // Text shown on the Done button
 
 
 // ── MOBILE KEYBOARD ──────────────────────────────────────────────────────────
