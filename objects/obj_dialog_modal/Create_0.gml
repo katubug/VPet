@@ -5,7 +5,7 @@
 // ─────────────────────────────────────────────────────────────────────────────
 // Call this from anywhere (a button click, a Step event, etc.):
 //
-//   var _dlg = instance_create_layer(0, 0, "UI", obj_dialog_modal);
+//   var _dlg = instance_create_layer(0, 0, "Instances", obj_dialog_modal);
 //   _dlg.message = "Are you sure you want to do this?";
 //
 //   // Add as many buttons as you need with array_push:
@@ -118,9 +118,9 @@ global.dialog_open = true;
 
 
 // ── DEPTH ────────────────────────────────────────────────────────────────────
-// Lower depth = drawn on top. -9999 should beat everything else.
-// Lower this further if something still appears above the dialog.
-depth = -9999;
+// Depth can't be set on UI layer instances (runtime restriction as of 2024.x).
+// UI layers always render on top of world layers, so this isn't needed.
+// If draw order within the UI layer matters, use layer_force_draw_depth() instead.
 
 
 // ── LOCAL HELPER FUNCTIONS ───────────────────────────────────────────────────

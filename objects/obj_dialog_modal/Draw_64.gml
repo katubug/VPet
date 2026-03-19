@@ -17,11 +17,11 @@ draw_rectangle(0, 0, gui_w, gui_h, false);
 
 
 // ── PANEL ─────────────────────────────────────────────────────────────────────
-// draw_sprite_stretched respects the nine-slice config on spr_ui_box —
+// draw_sprite_stretched respects the nine-slice config on spr_ui_back —
 // corners stay crisp, middle stretches. c_white = no color tint.
 draw_set_alpha(1);
 draw_set_color(c_white);
-draw_sprite_stretched(spr_ui_box, 0,
+draw_sprite_stretched(spr_ui_back, 0,
     cx - panel_draw_w / 2,
     cy - panel_draw_h / 2,
     panel_draw_w,

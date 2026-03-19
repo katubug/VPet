@@ -5,6 +5,13 @@
 var _btn_count = array_length(buttons);
 if (_btn_count == 0) exit;
 
+// Recalculate center every Step — the canvas may have been resized after Create ran
+// (especially on Android where the surface resizes shortly after game start).
+gui_w = display_get_gui_width();
+gui_h = display_get_gui_height();
+cx    = gui_w / 2;
+cy    = gui_h / 2;
+
 
 // ── MEASURE TEXT ─────────────────────────────────────────────────────────────
 // Set the font before measuring so string_width/height are accurate.

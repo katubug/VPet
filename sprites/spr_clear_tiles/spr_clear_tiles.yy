@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_clear_tiles",
   "bboxMode":0,
   "bbox_bottom":0,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"0a0a8a6e-c5c3-450e-a9fd-8fbad541e4b8","name":"0a0a8a6e-c5c3-450e-a9fd-8fbad541e4b8","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"0a0a8a6e-c5c3-450e-a9fd-8fbad541e4b8","name":"0a0a8a6e-c5c3-450e-a9fd-8fbad541e4b8","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
