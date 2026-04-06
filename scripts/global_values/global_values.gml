@@ -30,6 +30,10 @@ global.game = {
 	previous_pet_type: "",
 	garden_plots: [], // 9-element array, populated below after struct init
     high_score_runner: 0,
+    high_score_buttonmash: 0, // High score for the button mash minigame
+    generation: 1,            // Which generation this pet is — always 1 for now, expand later
+    pet_age_days: 0,          // Age of the pet in days — calculated/set elsewhere, placeholder for now
+    thirst: 10,               // Thirst stat (0–20) — system not implemented yet, starts at mid-value
 };
 
 // Initialize 9 garden plots (3x3 grid) — index 0 to 8

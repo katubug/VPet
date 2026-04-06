@@ -83,6 +83,23 @@ function pre_load() {
 			}
 		}
 
+		// Migrate old saves missing high_score_buttonmash
+		if (!variable_struct_exists(global.game, "high_score_buttonmash")) {
+			global.game.high_score_buttonmash = 0;
+		}
+		// Migrate old saves missing generation
+		if (!variable_struct_exists(global.game, "generation")) {
+			global.game.generation = 1;
+		}
+		// Migrate old saves missing pet_age_days
+		if (!variable_struct_exists(global.game, "pet_age_days")) {
+			global.game.pet_age_days = 0;
+		}
+		// Migrate old saves missing thirst
+		if (!variable_struct_exists(global.game, "thirst")) {
+			global.game.thirst = 10;
+		}
+
 		// Make sure item database is initialized
 		inventory_init_database();
 

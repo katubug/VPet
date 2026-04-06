@@ -8,3 +8,5 @@ alarm[1] = game_get_speed(gamespeed_fps) * 60 * 5;
 alarm[1] = game_get_speed(gamespeed_fps) * 60 * 5;
 
 //Alarm 3 is for evolution and will be activated in the does_evolve() function called in Step
+
+scribble_font_set_default("fnt_Kubasta");
