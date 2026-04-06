@@ -141,7 +141,9 @@
     {"$GMFolder":"","%Name":"Tile Sets","folderPath":"folders/Tile Sets.yy","name":"Tile Sets","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Timelines","folderPath":"folders/Timelines.yy","name":"Timelines","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
-  "ForcedPrefabProjectReferences":[],
+  "ForcedPrefabProjectReferences":[
+    {"link":"io.gamemaker.sdfshaders-1.0.0","name":"io.gamemaker.sdfshaders-1.0.0","path":"io.gamemaker.sdfshaders-1.0.0.yyp",},
+  ],
   "IncludedFiles":[
     {"$GMIncludedFile":"","%Name":"controllerblacklist.csv","CopyToMask":-1,"filePath":"datafiles","name":"controllerblacklist.csv","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"controllertypes.csv","CopyToMask":-1,"filePath":"datafiles","name":"controllertypes.csv","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
@@ -152,13 +154,15 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.14.3.217",
+    "IDEVersion":"2024.14.4.221",
   },
   "name":"VPet",
   "resources":[
+    {"id":{"name":"fnt_Kubasta_lrg","path":"fonts/fnt_Kubasta_lrg/fnt_Kubasta_lrg.yy",},},
+    {"id":{"name":"fnt_Kubasta","path":"fonts/fnt_Kubasta/fnt_Kubasta.yy",},},
     {"id":{"name":"fnt_Quicksand_lrg","path":"fonts/fnt_Quicksand_lrg/fnt_Quicksand_lrg.yy",},},
     {"id":{"name":"fnt_Quicksand","path":"fonts/fnt_Quicksand/fnt_Quicksand.yy",},},
-    {"id":{"name":"font0","path":"fonts/font0/font0.yy",},},
+    {"id":{"name":"Font6","path":"fonts/Font6/Font6.yy",},},
     {"id":{"name":"scribble_fallback_font","path":"fonts/scribble_fallback_font/scribble_fallback_font.yy",},},
     {"id":{"name":"Cloud_Menu_Debug","path":"objects/Cloud_Menu_Debug/Cloud_Menu_Debug.yy",},},
     {"id":{"name":"Cloud_Menu","path":"objects/Cloud_Menu/Cloud_Menu.yy",},},
@@ -244,7 +248,7 @@
     {"id":{"name":"obj_seed_parent","path":"objects/obj_seed_parent/obj_seed_parent.yy",},},
     {"id":{"name":"obj_shop_purchase_popup","path":"objects/obj_shop_purchase_popup/obj_shop_purchase_popup.yy",},},
     {"id":{"name":"obj_shop_ui","path":"objects/obj_shop_ui/obj_shop_ui.yy",},},
-    {"id":{"name":"obj_ui_HUD","path":"objects/obj_ui_HUD/obj_ui_HUD.yy",},},
+    {"id":{"name":"obj_stats_screen","path":"objects/obj_stats_screen/obj_stats_screen.yy",},},
     {"id":{"name":"particle_evolution_1","path":"particles/particle_evolution_1/particle_evolution_1.yy",},},
     {"id":{"name":"particle_evolution","path":"particles/particle_evolution/particle_evolution.yy",},},
     {"id":{"name":"rm_bathroom","path":"rooms/rm_bathroom/rm_bathroom.yy",},},
@@ -917,5 +921,6 @@
   "templateType":"game",
   "TextureGroups":[
     {"$GMTextureGroup":"","%Name":"Default","autocrop":true,"border":2,"compressFormat":"bz2","customOptions":"","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"name":"Default","resourceType":"GMTextureGroup","resourceVersion":"2.0","targets":-1,},
+    {"$GMTextureGroup":"","%Name":"fonts","autocrop":true,"border":2,"compressFormat":"bz2","customOptions":"","directory":"","groupParent":null,"isScaled":false,"loadType":"default","mipsToGenerate":0,"name":"fonts","resourceType":"GMTextureGroup","resourceVersion":"2.0","targets":-1,},
   ],
 }

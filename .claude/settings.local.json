@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(command -v jq)"
+      "Bash(command -v jq)",
+      "Bash(xargs grep:*)",
+      "Bash(grep -r \"view_wport\\\\|gui_width\\\\|gui_height\\\\|display_get_gui_size\" --include=*.gml .)"
     ]
   }
 }

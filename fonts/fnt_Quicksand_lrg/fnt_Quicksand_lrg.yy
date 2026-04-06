@@ -135,8 +135,8 @@
   "size":30.0,
   "styleName":"Light",
   "textureGroupId":{
-    "name":"Default",
-    "path":"texturegroups/Default",
+    "name":"fonts",
+    "path":"texturegroups/fonts",
   },
   "TTFName":"",
   "usesSDF":false,
