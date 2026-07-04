@@ -86,7 +86,7 @@ if (_highest == "selfesteem"){
        if (_second_highest == "enthusiasm" && _lowest =="nonsense") {
            pet_evolution = "tibb";
            global.game.evolution_phase = "adult";
-           global.game.current_pet_type = "grimble";
+           global.game.current_pet_type = "tibb";
         event_perform(ev_alarm, 3);
        }
     }
