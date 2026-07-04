@@ -106,4 +106,12 @@ function submit_pet_name() {
     }
 
     instance_destroy(self); // Done — remove the prompt
+
+    // Save to disk so petname and evolution_phase="baby" survive a close/crash
+    // before the next normal save (time_reset had written "egg" to disk earlier).
+    pre_save();
+
+    // Reload rm_main so obj_pet_spawner creates the pet correctly (phase is now
+    // "baby") and Cloud_Menu loads without any egg/naming guards active.
+    room_goto(rm_main);
 }

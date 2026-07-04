@@ -20,7 +20,7 @@ for (var _s = 0; _s < array_length(known_seeds); _s++) {
 
     // Quantity label in the bottom-left of the slot using Scribble
     // The "x" prefix makes it read like "x3" — adjust the offset if needed
-    draw_text_scribble(_sx + 4, _sy + slot_w - 16, "x" + string(_qty));
+    draw_text(_sx + 4, _sy + slot_w - 16, "x" + string(_qty));
 }
 
 // DEBUG: insta-grow button — remove this block when done testing
@@ -32,7 +32,7 @@ draw_rectangle(debug_grow_btn_x, debug_grow_btn_y,
     debug_grow_btn_x + debug_grow_btn_size, debug_grow_btn_y + debug_grow_btn_size, true);
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
-draw_text_scribble(
+draw_text(
     debug_grow_btn_x + debug_grow_btn_size / 2,
     debug_grow_btn_y + debug_grow_btn_size / 2,
     "GROW");
@@ -61,7 +61,7 @@ if (_water_spr >= 0) {
     // Label so the player knows what it is before the sprite exists
     draw_set_halign(fa_center);
     draw_set_valign(fa_middle);
-    draw_text_scribble(
+    draw_text(
         watering_btn_x + watering_btn_size / 2,
         watering_btn_y + watering_btn_size / 2,
         "Water");

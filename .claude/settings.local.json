@@ -3,7 +3,8 @@
     "allow": [
       "Bash(command -v jq)",
       "Bash(xargs grep:*)",
-      "Bash(grep -r \"view_wport\\\\|gui_width\\\\|gui_height\\\\|display_get_gui_size\" --include=*.gml .)"
+      "Bash(grep -r \"view_wport\\\\|gui_width\\\\|gui_height\\\\|display_get_gui_size\" --include=*.gml .)",
+      "Bash(find /c/Users/Katu/GameMakerProjects/VPet/scripts -type f -name *save* -o -name *load* -o -name *name* -o -name *evolution*)"
     ]
   }
 }

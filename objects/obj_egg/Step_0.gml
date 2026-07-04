@@ -113,6 +113,10 @@ if (crack_phase == 3) {
     // Advance the game past the egg phase so everything else (Cloud_Menu etc.) works
     global.game.evolution_phase = "baby";
 
+    // Persist the phase and gender to disk immediately — time_reset() had saved "egg",
+    // so if the game closes before naming, the next load would incorrectly show an egg.
+    pre_save();
+
     // Spawn whichever starter pet was randomly chosen at game init
     var _pet_name  = $"obj_pet_{global.game.current_pet_type}";
     var _pet_index = asset_get_index(_pet_name);
