@@ -1,4 +1,5 @@
 new_high_score = false;
+runner_score = 0;
 
 global.speed_modifier = 1;
 

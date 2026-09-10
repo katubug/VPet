@@ -28,13 +28,12 @@ if (!is_rocking && crack_phase == 0) {
 
 
 // ── CODE-BASED ROCK ANIMATION ─────────────────────────────────────────────────
-// Drives a full left-right swing using image_angle — no sprite swap needed
+// Drives a full left-right swing using image_angle
 if (is_rocking) {
     // Advance the rotation timer each frame
     // Adjust 3 to change rock speed: higher = faster swing (3 ≈ 2 seconds for a full rock)
     rock_t += 3;
 
-    // Sine wave maps 0°–360° onto a smooth left-right tilt
     // Adjust 15 to change how far the egg tilts (in degrees)
     image_angle = dsin(rock_t) * 15;
 
@@ -101,20 +100,17 @@ if (crack_phase == 2) {
 // ── HATCH SEQUENCE (fires once when crack_phase reaches 3) ───────────────────
 if (crack_phase == 3) {
 
-    // Randomly assign the pet's gender — stored in the save file
-    // Change the values in choose() if you want different gender options
+    // Randomly assign the pet's gender
     global.game.gender = choose("boy", "girl");
 
     // Fire the burst particle effect at the egg's position
-    // Uses the same particle system as regular evolution (particle_evolution_1)
     var _partsys = part_system_create(particle_evolution_1);
     part_system_position(_partsys, x, y);
 
     // Advance the game past the egg phase so everything else (Cloud_Menu etc.) works
     global.game.evolution_phase = "baby";
 
-    // Persist the phase and gender to disk immediately — time_reset() had saved "egg",
-    // so if the game closes before naming, the next load would incorrectly show an egg.
+    // Persist the phase and gender to disk immediately
     pre_save();
 
     // Spawn whichever starter pet was randomly chosen at game init
@@ -122,11 +118,10 @@ if (crack_phase == 3) {
     var _pet_index = asset_get_index(_pet_name);
     instance_create_layer(x, y, "Instances", _pet_index);
 
-    // Hide the egg shell — it stays alive as a 2-second timer before the name prompt
+    // Hide the egg shell - it stays alive as a 2-second timer before the name prompt
     visible = false;
 
     // 2-second delay before showing the name prompt (2 * fps)
-    // Adjust the multiplier to change how long after hatching the prompt appears
     post_hatch_timer = 2 * game_get_speed(gamespeed_fps);
 
     // Move to the post-hatch waiting phase

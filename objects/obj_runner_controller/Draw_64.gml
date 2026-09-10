@@ -6,7 +6,7 @@ draw_sprite(spr_crouch_button, 0, crouch_button_x, button_y)
 
 
 var str_gameover = string("Game Over");
-var str_score = string($"Your final score was {score}, you earned {round(score/2)} Corns!");
+var str_score = string($"Your final score was {runner_score}, you earned {round(runner_score/2)} Corns!");
 
 if (obj_runner_dino.gameover){  
     draw_set_valign(fa_top);
