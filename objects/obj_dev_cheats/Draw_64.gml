@@ -53,6 +53,112 @@ _draw_field("Pet:", species_options[species_selected],
 	panel_x + 15, dd_field_x, row2_y, dd_field_w, dd_field_h,
 	dropdown_open == 1);
 
+// -- Helper: draw a ‹ value › row (label + left arrow + value + right arrow) --
+var _draw_arrow_row = function(_label, _value, _y) {
+	// Label on the left
+	draw_set(c_white, 1);
+	text_align(fa_left, fa_middle);
+	draw_text(label_x, _y, _label);
+
+	// Left arrow button
+	draw_set(make_color_rgb(60, 60, 80), 1);                         // dark background
+	draw_rectangle(arrow_left_x, _y - arrow_h / 2, arrow_left_x + arrow_w, _y + arrow_h / 2, false);
+	draw_set(c_yellow, 1);
+	text_align(fa_center, fa_middle);
+	draw_text(arrow_left_x + arrow_w / 2, _y, "<");                 // arrow glyph
+
+	// Value display between arrows
+	draw_set(c_white, 1);
+	text_align(fa_center, fa_middle);
+	draw_text(value_center_x, _y, string(_value));
+
+	// Right arrow button
+	draw_set(make_color_rgb(60, 60, 80), 1);                         // dark background
+	draw_rectangle(arrow_right_x, _y - arrow_h / 2, arrow_right_x + arrow_w, _y + arrow_h / 2, false);
+	draw_set(c_yellow, 1);
+	text_align(fa_center, fa_middle);
+	draw_text(arrow_right_x + arrow_w / 2, _y, ">");                // arrow glyph
+};
+
+// -- Helper: draw a read-only stat row (label: value + last source) --
+var _draw_stat_row = function(_label, _value, _stat_name, _y) {
+	draw_set(c_white, 1);
+	text_align(fa_left, fa_middle);
+	var _last = stat_history_get_last(_stat_name);                   // get last history entry or "none"
+	var _source_text = "";
+	if (is_struct(_last)) {
+		_source_text = $" (last: {_last.source} +{_last.amount})";   // show what changed the stat last
+	}
+	draw_text(label_x, _y, $"{_label}: {_value}{_source_text}");
+};
+
+// -- Helper: draw a clickable name field --
+var _draw_name_field = function(_label, _value, _y) {
+	// Label on the left
+	draw_set(c_white, 1);
+	text_align(fa_left, fa_middle);
+	draw_text(label_x, _y, _label);
+
+	// Clickable field background
+	draw_set(make_color_rgb(50, 50, 60), 1);
+	draw_rectangle(dd_field_x, _y - dd_field_h / 2, dd_field_x + dd_field_w, _y + dd_field_h / 2, false);
+	draw_set(c_ltgray, 1);
+	draw_rectangle(dd_field_x, _y - dd_field_h / 2, dd_field_x + dd_field_w, _y + dd_field_h / 2, true);
+
+	// Name text (or placeholder if empty)
+	draw_set(c_white, 1);
+	text_align(fa_left, fa_middle);
+	var _display = (_value == "") ? "(click to set)" : _value;       // show placeholder when empty
+	draw_text(dd_field_x + 10, _y, _display);
+};
+
+// -- Helper: draw a horizontal separator line --
+var _draw_separator = function(_y) {
+	draw_set(c_gray, 0.5);
+	draw_line(panel_x + 10, _y, panel_x + panel_w - 10, _y);       // thin gray line across the panel
+};
+
+// -- Helper: draw an action button --
+var _draw_button = function(_text, _y, _color) {
+	draw_set(_color, 1);
+	draw_rectangle(btn_x, _y, btn_x + btn_w, _y + btn_h, false);   // filled background
+	draw_set(c_white, 1);
+	draw_rectangle(btn_x, _y, btn_x + btn_w, _y + btn_h, true);    // border
+	text_align(fa_center, fa_middle);
+	draw_text(btn_x + btn_w / 2, _y + btn_h / 2, _text);           // centered label
+};
+
+// -- Need stats (hunger, happiness, health) --
+_draw_arrow_row("Hunger:", global.game.hunger, hunger_row_y);
+_draw_arrow_row("Happiness:", global.game.happiness, happiness_row_y);
+_draw_arrow_row("Health:", global.game.health, health_row_y);
+
+// -- Separator --
+_draw_separator(separator1_y);
+
+// -- Personality stats (read-only with last source) --
+_draw_stat_row("Joy", global.pet.joy, "joy", joy_row_y);
+_draw_stat_row("Nonsense", global.pet.nonsense, "nonsense", nonsense_row_y);
+_draw_stat_row("Self-Esteem", global.pet.selfesteem, "selfesteem", selfesteem_row_y);
+_draw_stat_row("Enthusiasm", global.pet.enthusiasm, "enthusiasm", enthusiasm_row_y);
+
+// -- Separator --
+_draw_separator(separator2_y);
+
+// -- Corns --
+_draw_arrow_row("Corns:", global.game.corns, corns_row_y);
+
+// -- Name fields --
+_draw_name_field("Player:", global.game.ownername, ownername_row_y);
+_draw_name_field("Pet:", global.game.petname, petname_row_y);
+
+// -- Separator --
+_draw_separator(separator3_y);
+
+// -- Action buttons --
+_draw_button("QUEUE EVOLUTION", evolve_btn_y, make_color_rgb(40, 80, 40));  // dark green
+_draw_button("KILL PET", kill_btn_y, make_color_rgb(140, 30, 30));          // dark red
+
 // -- Draw the open dropdown list (if any) --
 if (dropdown_open != -1) {
 	var _options = (dropdown_open == 0) ? phase_options : species_options;

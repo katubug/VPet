@@ -608,6 +608,7 @@
     {"id":{"name":"scr_garden_system","path":"scripts/scr_garden_system/scr_garden_system.yy",},},
     {"id":{"name":"scr_inventory_system","path":"scripts/scr_inventory_system/scr_inventory_system.yy",},},
     {"id":{"name":"scr_pet_dialogue","path":"scripts/scr_pet_dialogue/scr_pet_dialogue.yy",},},
+    {"id":{"name":"scr_stat_history","path":"scripts/scr_stat_history/scr_stat_history.yy",},},
     {"id":{"name":"scr_typewriter","path":"scripts/scr_typewriter/scr_typewriter.yy",},},
     {"id":{"name":"seq_bath_Events453","path":"scripts/seq_bath_Events453/seq_bath_Events453.yy",},},
     {"id":{"name":"sequence_calling","path":"scripts/sequence_calling/sequence_calling.yy",},},

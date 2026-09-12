@@ -62,6 +62,9 @@ global.pet = {
 	enthusiasm: 0,
 };
 
+// Initialize stat history tracking (session-only, not saved to disk)
+stat_history_init();
+
 // Watering mode toggle — set true when the player activates the watering can in the garden
 // Plots check this to decide whether a click should water or harvest
 global.garden_watering_mode = false;
