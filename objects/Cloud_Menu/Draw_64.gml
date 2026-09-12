@@ -1,7 +1,7 @@
 /// @description Draw Icon Menu (Top and Bottom Rows)
 
 // Hide the menu during the egg phase and while the pet name prompt is open
-if (global.game.evolution_phase == "egg" || instance_exists(obj_pet_name_entry)) exit;
+if (global.game.evolution_phase == "egg" || instance_exists(obj_pet_name_entry) || global.talk_active) exit;
 
 // Helper: draws a single row of menu items
 // row_items  - the array of item structs to draw
@@ -39,8 +39,12 @@ var _draw_row = function(row_items, row_y, sel_index, hov_index, is_active_row) 
             use_alpha = menu_alpha_hover;
         }
 
-        // Draw the icon sprite centered at (icon_x, icon_y)
-        draw_sprite_ext(use_sprite, 0, icon_x, icon_y, 1, 1, 0, c_white, use_alpha);
+        // Scale the sprite so it displays at icon_size (96px) regardless of native resolution
+        var _xscale = icon_size / sprite_get_width(use_sprite);  // Horizontal scale factor
+        var _yscale = icon_size / sprite_get_height(use_sprite); // Vertical scale factor
+
+        // Draw the icon sprite centered at (icon_x, icon_y) at the target size
+        draw_sprite_ext(use_sprite, 0, icon_x, icon_y, _xscale, _yscale, 0, c_white, use_alpha);
 
         // Keyboard selection ring: yellow circle outline around the active icon
         if (is_keyboard_selected) {

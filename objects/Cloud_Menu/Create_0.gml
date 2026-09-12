@@ -1,11 +1,9 @@
-/// @description Initialize Icon Menu
-
 // -- Positioning --
-menu_y_top    = 70;                             // Y position of the top row icons
-menu_y_bottom = display_get_gui_height() - 120; // Y position of the bottom row icons
+menu_y_top    = 50;                             // Y position of the top row icons
+menu_y_bottom = display_get_gui_height() - 150; // Y position of the bottom row icons
 
 // -- Icon Sizing --
-icon_size    = 100; // Pixel size of each icon (width and height)
+icon_size    = 96; // Pixel size of each icon (width and height)
 icon_spacing = 110; // Distance between icon centers (icon_size + 10px gap)
 
 // -- Alpha Values --
@@ -28,8 +26,6 @@ input_cooldown    = 0;  // Frames remaining before another input registers
 cooldown_duration = 10; // How many frames the cooldown lasts
 
 // -- Top Row: Navigation --
-// 5 items: Home, Stats, Inventory, Kitchen, Bathroom
-// Add more items here by appending to this array
 top_items = [
     {
         sprite_normal:    spr_btn_home,      // Normal icon sprite
@@ -41,8 +37,8 @@ top_items = [
         tooltip: "Home"
     },
     {
-        sprite_normal:    spr_btn_inventory, // Using inventory sprite as placeholder for Stats
-        sprite_highlight: spr_btn_inventory,
+        sprite_normal:    spr_btn_stats, 
+        sprite_highlight: spr_btn_stats,
         callback: function() {
             room_goto(rm_stats); // Navigate to the stats room
         },
@@ -75,12 +71,19 @@ top_items = [
         },
         enabled: true,
         tooltip: "Bathroom"
+    },
+    {
+        sprite_normal:    spr_btn_talk,
+        sprite_highlight: spr_btn_talk,
+        callback: function() {
+            with (obj_pet_parent) { start_talk(); } // trigger the talk sequence on the pet
+        },
+        enabled: true,
+        tooltip: "Talk to Pet"
     }
 ];
 
 // -- Bottom Row: Activities --
-// 5 items: Games, Shop, Garden, Explore (placeholder), Placeholder
-// Replace placeholder sprites and callbacks when real content is ready
 bottom_items = [
     {
         sprite_normal:    spr_btn_game,
@@ -110,10 +113,9 @@ bottom_items = [
         tooltip: "Garden"
     },
     {
-        sprite_normal:    spr_btn_game,      // TODO: replace with spr_btn_explore when created
-        sprite_highlight: spr_btn_game,
+        sprite_normal:    spr_btn_explore,      // TODO: replace with spr_btn_explore when created
+        sprite_highlight: spr_btn_explore,
         callback: function() {
-            show_debug_message("Explore: not yet implemented"); // Placeholder — wire up when Explore room exists
         },
         enabled: true,
         tooltip: "Explore"
