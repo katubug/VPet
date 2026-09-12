@@ -549,6 +549,12 @@ function inventory_feed_pet(_food_id) {
     global.pet.nonsense += item_data.stats.nonsense;
     global.pet.selfesteem += item_data.stats.selfesteem;
     global.pet.enthusiasm += item_data.stats.enthusiasm;
+
+    // Log stat changes to history (skip zero-amount changes to keep the log clean)
+    if (item_data.stats.joy != 0) stat_history_log("joy", item_data.name, item_data.stats.joy);
+    if (item_data.stats.nonsense != 0) stat_history_log("nonsense", item_data.name, item_data.stats.nonsense);
+    if (item_data.stats.selfesteem != 0) stat_history_log("selfesteem", item_data.name, item_data.stats.selfesteem);
+    if (item_data.stats.enthusiasm != 0) stat_history_log("enthusiasm", item_data.name, item_data.stats.enthusiasm);
     
     show_debug_message("Pet ate " + item_data.name + "!");
     show_debug_message("Stats changed - Joy: " + string(item_data.stats.joy) + 

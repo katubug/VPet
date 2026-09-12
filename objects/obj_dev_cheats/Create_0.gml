@@ -39,7 +39,7 @@ max_visible = 25;      // max items visible at once (fits comfortably on a 1280-
 
 // -- Layout constants (GUI coordinates) --
 panel_w = 420;                                          // panel width
-panel_h = 160;                                          // panel height (collapsed, no dropdown open)
+panel_h = 700;                                          // panel height (tall enough for all controls)
 panel_x = display_get_gui_width() - panel_w - 20;      // anchored to the right side with a margin
 panel_y = 120;                                          // below the top menu row
 dd_field_w = 240;                                       // width of each dropdown field
@@ -48,6 +48,43 @@ dd_item_h = 32;                                         // height of each item i
 dd_field_x = panel_x + panel_w - dd_field_w - 15;      // right-aligned inside the panel
 row1_y = panel_y + 55;                                  // Y of the Age dropdown field
 row2_y = row1_y + 50;                                   // Y of the Species dropdown field
+
+// -- New controls layout (below the dropdowns) --
+row_spacing = 36;                                       // vertical gap between each control row
+needs_start_y = row2_y + 60;                            // first need stat row starts here
+// Row Y positions — each row is row_spacing apart
+hunger_row_y = needs_start_y;                           // hunger ‹ value ›
+happiness_row_y = hunger_row_y + row_spacing;           // happiness ‹ value ›
+health_row_y = happiness_row_y + row_spacing;           // health ‹ value ›
+separator1_y = health_row_y + row_spacing;              // visual divider
+joy_row_y = separator1_y + 14;                          // joy (read-only + last source)
+nonsense_row_y = joy_row_y + row_spacing;               // nonsense (read-only + last source)
+selfesteem_row_y = nonsense_row_y + row_spacing;        // self-esteem (read-only + last source)
+enthusiasm_row_y = selfesteem_row_y + row_spacing;      // enthusiasm (read-only + last source)
+separator2_y = enthusiasm_row_y + row_spacing;          // visual divider
+corns_row_y = separator2_y + 14;                        // corns ‹ value ›
+ownername_row_y = corns_row_y + row_spacing;            // player name [click to edit]
+petname_row_y = ownername_row_y + row_spacing;          // pet name [click to edit]
+separator3_y = petname_row_y + row_spacing;             // visual divider
+evolve_btn_y = separator3_y + 14;                       // queue evolution button
+kill_btn_y = evolve_btn_y + row_spacing + 4;            // kill pet button
+
+// Arrow button dimensions for ‹ value › controls
+arrow_w = 28;                                           // width of each < > arrow button
+arrow_h = 28;                                           // height of each < > arrow button
+value_field_w = 60;                                     // width of the value display between arrows
+label_x = panel_x + 15;                                 // left edge of labels
+value_center_x = dd_field_x + dd_field_w / 2;           // center of the value area (aligned with dropdowns)
+arrow_left_x = value_center_x - value_field_w / 2 - arrow_w; // left arrow x
+arrow_right_x = value_center_x + value_field_w / 2;    // right arrow x
+
+// Button dimensions for action buttons
+btn_w = 200;                                            // width of action buttons
+btn_h = 32;                                             // height of action buttons
+btn_x = panel_x + panel_w / 2 - btn_w / 2;             // centered horizontally in the panel
+
+// Async dialog tracking for name editing
+async_target = "";                                      // "ownername" or "petname" — which field is being edited
 
 /// @function apply_phase()
 /// @description Sets the evolution phase without touching the pet species
@@ -83,4 +120,31 @@ apply_species = function() {
 	}
 
 	pre_save(); // persist the change to disk
+};
+
+/// @function adjust_need(_field, _delta)
+/// @description Changes a need stat (hunger/happiness/health) by _delta, clamped to 0–20, and saves
+adjust_need = function(_field, _delta) {
+	global.game[$ _field] = clamp(global.game[$ _field] + _delta, 0, 20); // adjust within 0–20 range
+	pre_save(); // persist the change to disk
+};
+
+/// @function adjust_corns(_delta)
+/// @description Changes corn total by _delta (min 0, no upper cap), and saves
+adjust_corns = function(_delta) {
+	global.game.corns = max(global.game.corns + _delta, 0); // never go below 0
+	pre_save(); // persist the change to disk
+};
+
+/// @function queue_evolution()
+/// @description Queues an evolution to trigger when the player returns to the main room
+queue_evolution = function() {
+	global.game.evolution_queued = 0; // obj_pet_parent Step checks for 0 and triggers Alarm_6
+	pre_save(); // persist the change to disk
+};
+
+/// @function kill_pet()
+/// @description Sets health to 0 — game_controller_object Step handles the death flow from there
+kill_pet = function() {
+	global.game.health = 0; // game_controller detects health <= 0, sets living = false, goes to rm_death
 };

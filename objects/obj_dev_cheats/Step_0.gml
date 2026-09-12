@@ -67,3 +67,63 @@ if (point_in_rectangle(_mx, _my, dd_field_x, row2_y, dd_field_x + dd_field_w, ro
 	dropdown_scroll = 0;
 	exit;
 }
+
+// -- Need stat arrow buttons (hunger, happiness, health) --
+// Each has a left arrow (decrease by 1) and right arrow (increase by 1)
+var _need_rows = [
+	{ field: "hunger",    y: hunger_row_y },
+	{ field: "happiness", y: happiness_row_y },
+	{ field: "health",    y: health_row_y },
+];
+for (var _i = 0; _i < array_length(_need_rows); _i++) {
+	var _row = _need_rows[_i];
+	var _ry = _row.y;                                              // center Y of this row
+	// Left arrow — decrease by 1
+	if (point_in_rectangle(_mx, _my, arrow_left_x, _ry - arrow_h / 2, arrow_left_x + arrow_w, _ry + arrow_h / 2)) {
+		adjust_need(_row.field, -1);
+		exit;
+	}
+	// Right arrow — increase by 1
+	if (point_in_rectangle(_mx, _my, arrow_right_x, _ry - arrow_h / 2, arrow_right_x + arrow_w, _ry + arrow_h / 2)) {
+		adjust_need(_row.field, 1);
+		exit;
+	}
+}
+
+// -- Corns arrow buttons (±10 per click) --
+// Left arrow — decrease by 10
+if (point_in_rectangle(_mx, _my, arrow_left_x, corns_row_y - arrow_h / 2, arrow_left_x + arrow_w, corns_row_y + arrow_h / 2)) {
+	adjust_corns(-10);
+	exit;
+}
+// Right arrow — increase by 10
+if (point_in_rectangle(_mx, _my, arrow_right_x, corns_row_y - arrow_h / 2, arrow_right_x + arrow_w, corns_row_y + arrow_h / 2)) {
+	adjust_corns(10);
+	exit;
+}
+
+// -- Name fields (click to edit via async dialog) --
+// Player name — clickable text area
+if (point_in_rectangle(_mx, _my, dd_field_x, ownername_row_y - dd_field_h / 2, dd_field_x + dd_field_w, ownername_row_y + dd_field_h / 2)) {
+	async_target = "ownername";                                    // remember which name field we're editing
+	get_string_async("Enter player name:", global.game.ownername); // opens OS text input dialog
+	exit;
+}
+// Pet name — clickable text area
+if (point_in_rectangle(_mx, _my, dd_field_x, petname_row_y - dd_field_h / 2, dd_field_x + dd_field_w, petname_row_y + dd_field_h / 2)) {
+	async_target = "petname";                                      // remember which name field we're editing
+	get_string_async("Enter pet name:", global.game.petname);      // opens OS text input dialog
+	exit;
+}
+
+// -- Queue Evolution button --
+if (point_in_rectangle(_mx, _my, btn_x, evolve_btn_y, btn_x + btn_w, evolve_btn_y + btn_h)) {
+	queue_evolution();
+	exit;
+}
+
+// -- Kill Pet button --
+if (point_in_rectangle(_mx, _my, btn_x, kill_btn_y, btn_x + btn_w, kill_btn_y + btn_h)) {
+	kill_pet();
+	exit;
+}
