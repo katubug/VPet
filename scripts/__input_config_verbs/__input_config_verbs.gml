@@ -28,6 +28,7 @@ function __input_config_verbs()
             cancel:  input_binding_key(vk_backspace),
             action:  [input_binding_key(vk_space), input_binding_mouse_button(mb_left)],
             special: input_binding_key(vk_shift),
+            control: [input_binding_key(vk_control), input_binding_key("Control")],
             
             pause: input_binding_key(vk_escape),
         },

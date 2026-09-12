@@ -71,6 +71,10 @@ global.garden_watering_mode = false;
 // input code with: if (!global.dialog_open) { ... }
 global.dialog_open = false;
 
+// Flag used by the talk screen to hide menus and block input during pet dialogue.
+// Objects that should freeze during talk should guard with: if (!global.talk_active) { ... }
+global.talk_active = false;
+
 starter_pet = irandom_range(0, 2);
 if (global.game.current_pet_type == "") {
 	if (starter_pet == 0) global.game.current_pet_type = "chobo";

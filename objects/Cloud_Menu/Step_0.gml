@@ -1,7 +1,7 @@
 /// @description Handle Input and State
 
 // Lock navigation during the egg phase and while the pet name prompt is open
-if (global.game.evolution_phase == "egg" || instance_exists(obj_pet_name_entry)) exit;
+if (global.game.evolution_phase == "egg" || instance_exists(obj_pet_name_entry) || global.talk_active) exit;
 
 // -- Cooldown Tick --
 if (input_cooldown > 0) {

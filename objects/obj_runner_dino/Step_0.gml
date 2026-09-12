@@ -1,5 +1,5 @@
 if (hurt == true){
-        sprite_index = spr_dino_hurt;
+        sprite_index = spr_dino_hurt; // hurt sound now plays in collision event (once per hit)
     }
 
 if (dino_hp <= 0 && !gameover){
@@ -50,6 +50,7 @@ if (duck_key)
 		if (jump_key && !duck_key){
 				jumping = true;
 				vertical_speed = -jump_speed;
+				audio_play_sound(snd_jump, 1, false); // play jump sound once when jump starts
 		}
 	}
 	else
