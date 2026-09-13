@@ -12,14 +12,14 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"f22a07a6-2509-430d-b166-094786fc0984","name":"f22a07a6-2509-430d-b166-094786fc0984","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"1ad3945b-b2c8-4ede-b570-f837848c4bc2","name":"1ad3945b-b2c8-4ede-b570-f837848c4bc2","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":1200,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"c34b3c24-2317-4786-a50c-db3a67757d48","blendMode":0,"displayName":"default","isLocked":false,"name":"c34b3c24-2317-4786-a50c-db3a67757d48","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"f3f49910-fb9f-4444-87b4-52d77fd09ecd","blendMode":0,"displayName":"default","isLocked":false,"name":"f3f49910-fb9f-4444-87b4-52d77fd09ecd","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"background_rm_bathroom",
   "nineSlice":null,
@@ -70,7 +70,9 @@
     "timeUnits":1,
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"f22a07a6-2509-430d-b166-094786fc0984","path":"sprites/background_rm_bathroom/background_rm_bathroom.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"47a561d5-4a1c-4814-a055-3fe55c945c57","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"1ad3945b-b2c8-4ede-b570-f837848c4bc2","path":"sprites/background_rm_bathroom/background_rm_bathroom.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"d8006f2a-bfd7-4c32-948f-c0f29b1f2661","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
