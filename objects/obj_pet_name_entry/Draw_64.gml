@@ -5,7 +5,7 @@
 box_x      = (display_get_gui_width()  / 2) - (box_width  / 2);
 box_y      = (display_get_gui_height() / 2) - (box_height / 2);
 done_btn_x = (display_get_gui_width()  / 2) - (done_btn_width  / 2); // Centers the Done button horizontally
-done_btn_y = box_y + box_height + 20; // Places the Done button 20px below the card
+done_btn_y = box_y + box_height + 5; // Places the Done button 5px below the card (20 ÷ 4)
 
 
 // ── DARK OVERLAY ─────────────────────────────────────────────────────────────
@@ -22,9 +22,9 @@ draw_set_color(make_color_rgb(40, 40, 55)); // Dark blue-grey card
 draw_rectangle(box_x, box_y, box_x + box_width, box_y + box_height, false);
 draw_set_alpha(1);
 
-// Card border — white outline, 3px thick
+// Card border — white outline, 1px thick (3 ÷ 4 ≈ 1)
 draw_set_color(c_white);
-for (var _i = 0; _i < 3; _i++) {
+for (var _i = 0; _i < 1; _i++) {
     draw_rectangle(box_x + _i, box_y + _i, box_x + box_width - _i, box_y + box_height - _i, true);
 }
 
@@ -32,11 +32,11 @@ for (var _i = 0; _i < 3; _i++) {
 // ── PET SPRITE ───────────────────────────────────────────────────────────────
 // Draw the baby pet's idle sprite, centered near the top of the card
 // pet_spr has bottom-center origin, so the draw point is the bottom of the sprite
-// Scale 0.4 = 192x192 display size (sprite is 480x480 native)
-// Adjust the scale value to resize — adjust _sprite_y to reposition vertically
-var _sprite_scale = 0.4;
+// Scale 0.1 keeps the same visual ratio at 180×320 (0.4 ÷ 4)
+// NOTE: bump this to ~0.4 once sprites are reimported at native resolution
+var _sprite_scale = 0.1;
 var _sprite_x     = box_x + (box_width / 2);        // Horizontally centered on card
-var _sprite_y     = box_y + 220;                     // Bottom of the sprite lands here
+var _sprite_y     = box_y + 55;                      // Bottom of the sprite lands here (220 ÷ 4)
 
 if (sprite_exists(pet_spr)) {
     draw_sprite_ext(pet_spr, 0, _sprite_x, _sprite_y, _sprite_scale, _sprite_scale, 0, c_white, 1);
@@ -46,14 +46,14 @@ if (sprite_exists(pet_spr)) {
 // ── TEXT SETUP ───────────────────────────────────────────────────────────────
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
-draw_set_font(fnt_Quicksand);
+draw_set_font(fnt_Kubasta);
 var _cx = box_x + (box_width / 2); // Horizontal center of the card
 
 
 // ── PET TYPE & GENDER LINE ────────────────────────────────────────────────────
 // Shows e.g. "Dodati  •  Boy"
 // Adjust _info_y to move this line up or down within the card
-var _info_y = box_y + 260;
+var _info_y = box_y + 65;  // 260 ÷ 4 = 65
 draw_set_color(make_color_rgb(180, 220, 255)); // Soft blue — stands out from white name text
 draw_text(_cx, _info_y, $"{pet_type_display}  •  {gender_display}");
 
@@ -61,24 +61,24 @@ draw_text(_cx, _info_y, $"{pet_type_display}  •  {gender_display}");
 // ── PROMPT TEXT ───────────────────────────────────────────────────────────────
 // "Name your pet!" label above the input field
 // Adjust _prompt_y to reposition
-var _prompt_y = box_y + 310;
+var _prompt_y = box_y + 77;  // 310 ÷ 4 ≈ 77
 draw_set_color(c_white);
 draw_text(_cx, _prompt_y, "Name your pet!");
 
 
 // ── NAME INPUT FIELD ──────────────────────────────────────────────────────────
 // The text being typed, with a blinking cursor
-var _field_y    = box_y + 370;
-var _field_w    = box_width - 80;
-var _field_x    = box_x + 40;
+var _field_y    = box_y + 92;       // 370 ÷ 4 ≈ 92
+var _field_w    = box_width - 20;   // 80 ÷ 4 = 20
+var _field_x    = box_x + 10;       // 40 ÷ 4 = 10
 
 // Input field background box
 draw_set_alpha(0.5);
 draw_set_color(c_black);
-draw_rectangle(_field_x, _field_y - 24, _field_x + _field_w, _field_y + 24, false);
+draw_rectangle(_field_x, _field_y - 6, _field_x + _field_w, _field_y + 6, false); // 24 ÷ 4 = 6
 draw_set_alpha(1);
 draw_set_color(c_white);
-draw_rectangle(_field_x, _field_y - 24, _field_x + _field_w, _field_y + 24, true);
+draw_rectangle(_field_x, _field_y - 6, _field_x + _field_w, _field_y + 6, true);
 
 // Name text + blinking cursor
 var _display = pet_name;
@@ -101,13 +101,13 @@ if (os_type == os_android || os_type == os_ios) {
     draw_text(done_btn_x + (done_btn_width / 2), done_btn_y + (done_btn_height / 2), done_btn_label);
 } else {
     // Desktop: show instruction text and character counter at the bottom of the card
-    var _instr_y = box_y + box_height - 36;
+    var _instr_y = box_y + box_height - 9; // 36 ÷ 4 = 9
     draw_set_alpha(0.6);
     draw_set_halign(fa_center);
     draw_text(_cx, _instr_y, "(Press Enter when done)");
     // Character counter — bottom-right of card
     draw_set_halign(fa_right);
-    draw_text(box_x + box_width - 16, _instr_y, $"{string_length(pet_name)}/{max_name_length}");
+    draw_text(box_x + box_width - 4, _instr_y, $"{string_length(pet_name)}/{max_name_length}"); // 16 ÷ 4 = 4
 }
 
 

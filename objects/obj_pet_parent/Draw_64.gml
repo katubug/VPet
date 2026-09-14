@@ -12,7 +12,7 @@ draw_set(c_white, 1);
 draw_rectangle(0, 0, _gui_w, _bar_h, false);
 
 // -- Dialogue text (typewriter effect, centered in the bar) --
-draw_set_font(fnt_Kubasta_heading);         // larger font for readability
+draw_set_font(fnt_Kubasta_lrg);         // larger font for readability
 draw_set(c_black, 1);
 text_align(fa_center, fa_middle);
 
@@ -21,7 +21,7 @@ var _visible_text = typewriter_get_text(talk_typewriter);
 
 // Draw the text centered horizontally and vertically within the bar
 // Use generous margins so long lines wrap nicely inside the bar
-draw_text_ext(_gui_w / 2, _bar_h / 2, _visible_text, -1, _gui_w - 80);
+draw_text_ext(_gui_w / 2, _bar_h / 2, _visible_text, -1, _gui_w - 20);
 
 // -- Reset draw state so other objects aren't affected --
 draw_reset();

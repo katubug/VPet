@@ -1,12 +1,12 @@
 /// @description Draw popup message
 
 // Measure text size
-draw_set_font(fnt_Quicksand);
+draw_set_font(fnt_Kubasta);
 var text_width = string_width(message);
 var text_height = string_height(message);
 
 // Box padding
-var padding = 20;
+var padding = 5; // 20 ÷ 4 = 5
 var box_width = text_width + (padding * 2);
 var box_height = text_height + (padding * 2);
 

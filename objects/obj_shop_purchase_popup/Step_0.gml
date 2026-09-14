@@ -36,45 +36,44 @@ if (state == "closing") {
 // To screen: screen_x = cx + (local_x - popup_w/2)
 //            screen_y = cy + (local_y - popup_h/2)
 //
-// popup_w=700 (center=350), popup_h=540 (center=270)
+// popup_w=175 (center=87.5), popup_h=135 (center=67.5)
 // Adjust the local offsets here to reposition individual elements.
 
-var px = cx - popup_w * 0.5; // panel left edge in screen space (cx - 350)
-var py = cy - popup_h * 0.5; // panel top  edge in screen space (cy - 270)
+var px = cx - popup_w * 0.5; // panel left edge in screen space
+var py = cy - popup_h * 0.5; // panel top  edge in screen space
 
 // ── QUANTITY ROW ──────────────────────────────────────────────────────────────
 // Sits above the action row.  Bottom-up calculation:
-//   act_y2 = popup_h - pad       = 540-30 = 510
-//   act_y1 = act_y2  - abtn_h   = 510-50 = 460
-//   qty_y2 = act_y1  - pad      = 460-20 = 440  (20px breathing room)
-//   qty_y1 = qty_y2  - sbtn_h   = 440-60 = 380
-var qty_y1 = py + 380; // top    of quantity row
-var qty_y2 = py + 440; // bottom of quantity row
+//   act_y2 = popup_h - pad       = 135-8 = 127
+//   act_y1 = act_y2  - abtn_h   = 127-12 = 115
+//   qty_y2 = act_y1  - pad/2     = 115-5  = 110
+//   qty_y1 = qty_y2  - sbtn_h   = 110-15 = 95
+var qty_y1 = py + 95;  // top    of quantity row (380 ÷ 4)
+var qty_y2 = py + 110; // bottom of quantity row (440 ÷ 4)
 
-// The five elements are centered horizontally in popup_w=700 (center=350).
+// The five elements are centered horizontally in popup_w=175 (center=87.5).
 // Total row width = sbtn_w*4 + sbtn_gap*3 + qty_display_w
-//                = 60*4 + 12*3 + 80 = 240+36+80 = 356... wait
-// Actually: 60+12+60+12+80+12+60+12+60 = 368
-// Starts at center - 368/2 = 350 - 184 = 166
-var qx = px + 166; // left edge of the first qty button in screen space
+//                = 15*4 + 3*3 + 20 = 60+9+20 = 89 (was 368 ÷ 4 ≈ 92)
+// Starts at center - 89/2 = 87.5 - 44.5 ≈ 43
+var qx = px + 43; // left edge of the first qty button in screen space
 
-rect_m10  = { x1: qx,       y1: qty_y1, x2: qx + 60,  y2: qty_y2 }; // [-10] local 166–226
-rect_m1   = { x1: qx + 72,  y1: qty_y1, x2: qx + 132, y2: qty_y2 }; // [-1]  local 238–298 (60+12=72)
-rect_disp = { x1: qx + 144, y1: qty_y1, x2: qx + 224, y2: qty_y2 }; // disp  local 310–390 (132+12=144, +80)
-rect_p1   = { x1: qx + 236, y1: qty_y1, x2: qx + 296, y2: qty_y2 }; // [+1]  local 402–462 (224+12=236)
-rect_p10  = { x1: qx + 308, y1: qty_y1, x2: qx + 368, y2: qty_y2 }; // [+10] local 474–534 (296+12=308)
+rect_m10  = { x1: qx,       y1: qty_y1, x2: qx + 15,  y2: qty_y2 }; // [-10]
+rect_m1   = { x1: qx + 18,  y1: qty_y1, x2: qx + 33,  y2: qty_y2 }; // [-1]  (15+3=18)
+rect_disp = { x1: qx + 36,  y1: qty_y1, x2: qx + 56,  y2: qty_y2 }; // disp  (33+3=36, +20)
+rect_p1   = { x1: qx + 59,  y1: qty_y1, x2: qx + 74,  y2: qty_y2 }; // [+1]  (56+3=59)
+rect_p10  = { x1: qx + 77,  y1: qty_y1, x2: qx + 92,  y2: qty_y2 }; // [+10] (74+3=77)
 
 
 // ── ACTION ROW ────────────────────────────────────────────────────────────────
 // Cancel and Confirm sit at the very bottom of the panel.
-//   act_y1 = popup_h - pad - abtn_h = 540-30-50 = 460  (local)
-//   act_y2 = popup_h - pad          = 540-30     = 510  (local)
-var ay1 = py + 460; // top    of action buttons
-var ay2 = py + 510; // bottom of action buttons
+//   act_y1 = popup_h - pad - abtn_h = 135-8-12 = 115  (local)
+//   act_y2 = popup_h - pad          = 135-8     = 127  (local)
+var ay1 = py + 115; // top    of action buttons (460 ÷ 4)
+var ay2 = py + 127; // bottom of action buttons (510 ÷ 4 ≈ 127)
 
-// Centered: total = abtn_w*2 + abtn_gap = 150+16+150 = 316, starts at 350-158 = 192
-rect_can = { x1: px + 192, y1: ay1, x2: px + 342, y2: ay2 }; // Cancel  (192 to 342)
-rect_con = { x1: px + 358, y1: ay1, x2: px + 508, y2: ay2 }; // Confirm (358 to 508)
+// Centered: total = abtn_w*2 + abtn_gap = 37+4+37 = 78, starts at 87.5-39 ≈ 48
+rect_can = { x1: px + 48, y1: ay1, x2: px + 85,  y2: ay2 }; // Cancel  (48 to 85)
+rect_con = { x1: px + 89, y1: ay1, x2: px + 126, y2: ay2 }; // Confirm (89 to 126)
 
 
 // ── MOUSE INPUT ───────────────────────────────────────────────────────────────

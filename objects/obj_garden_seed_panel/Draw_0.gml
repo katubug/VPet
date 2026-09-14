@@ -20,7 +20,7 @@ for (var _s = 0; _s < array_length(known_seeds); _s++) {
 
     // Quantity label in the bottom-left of the slot using Scribble
     // The "x" prefix makes it read like "x3" — adjust the offset if needed
-    draw_text(_sx + 4, _sy + slot_w - 16, "x" + string(_qty));
+    draw_text(_sx + 1, _sy + slot_w - 4, "x" + string(_qty)); // 4→1, 16→4
 }
 
 // DEBUG: insta-grow button — remove this block when done testing

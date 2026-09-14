@@ -5,7 +5,7 @@
 box_x = (display_get_gui_width() / 2) - (box_width / 2);
 box_y = (display_get_gui_height() / 2) - (box_height / 2);
 done_btn_x = (display_get_gui_width() / 2) - (done_btn_width / 2); // Centered below the input box
-done_btn_y = box_y + box_height + 20; // 20px gap below the box
+done_btn_y = box_y + box_height + 5; // 5px gap below the box (20 ÷ 4)
 
 // Draw semi-transparent background overlay
 draw_set_alpha(0.7);
@@ -29,10 +29,10 @@ for (var i = 0; i < border_width; i++) {
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 draw_set_color(text_color);
-draw_set_font(fnt_Quicksand);
+draw_set_font(fnt_Kubasta);
 
 // Draw prompt text
-var prompt_y = box_y + 50;
+var prompt_y = box_y + 12; // 50 ÷ 4 ≈ 12
 draw_text(box_x + box_width/2, prompt_y, prompt_text);
 
 // Draw the input field
@@ -49,7 +49,7 @@ draw_text(box_x + box_width/2, name_y, display_name);
 
 // Draw instruction text (hidden on mobile since there's a Done button instead)
 if (os_type != os_android && os_type != os_ios) {
-    var instruction_y = box_y + box_height - 40;
+    var instruction_y = box_y + box_height - 10; // 40 ÷ 4 = 10
     draw_set_alpha(0.7);
     draw_text(box_x + box_width/2, instruction_y, instruction_text);
     draw_set_alpha(1);
@@ -72,7 +72,7 @@ if (os_type == os_android || os_type == os_ios) {
 var char_count_text = $"{string_length(player_name)}/{max_name_length}";
 draw_set_halign(fa_right);
 draw_set_alpha(0.5);
-draw_text(box_x + box_width - 20, box_y + box_height - 20, char_count_text);
+draw_text(box_x + box_width - 5, box_y + box_height - 5, char_count_text); // 20 ÷ 4 = 5
 draw_set_alpha(1);
 
 // Reset draw settings

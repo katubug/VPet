@@ -29,11 +29,8 @@ pet_sad_sprite = asset_get_index(sad_sprite);
 happy_sprite = $"spr_{global.game.current_pet_type}_happy";
 pet_happy_sprite = asset_get_index(happy_sprite);
 
-//if the pet's sprites are 112px, scale them up to 4x so they match larger sprites
+// All sprites are now at native pixel-art resolution — no runtime scaling needed
 pet_scale = 1;
-if (pet_idle_sprite != -1 && sprite_get_width(pet_idle_sprite) == 112){
-    pet_scale = 4;
-}
 image_xscale = pet_scale;
 image_yscale = pet_scale;
 
@@ -76,7 +73,7 @@ talk_squash_t = 0;            // timer driving the squash-and-stretch oscillatio
 talk_facing = 1;              // 1 = facing left (default), -1 = facing right (flipped)
 
 /// @function start_talk()
-/// @description Begins the talk sequence — called from Cloud_Menu's Talk button callback
+/// @description Begins the talk sequence - called from Cloud_Menu's Talk button callback
 start_talk = function() {
 	if (talk_active) return;                    // don't start if already talking
 
@@ -96,7 +93,7 @@ start_talk = function() {
 
 	// Set the walk-in destination: horizontally centered, near the bottom of the room
 	talk_target_x = room_width / 2;
-	talk_target_y = room_height - 200;          // 200px from the bottom edge (tweak if sprite origin needs it)
+	talk_target_y = room_height - 50;           // 50px from the bottom edge (tweak if sprite origin needs it)
 
 	// Compute the zoom scale from the base pet_scale and the multiplier
 	talk_zoom_scale = pet_scale * talk_zoom_multiplier;

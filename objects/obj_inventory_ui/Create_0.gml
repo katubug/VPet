@@ -7,15 +7,15 @@ ui_title = "Food Inventory";
 // Grid Layout
 grid_columns = 7;
 grid_rows = 4;
-slot_size = 80; // Size of each inventory slot
-slot_padding = 10; // Space between slots
-slot_border = 3;
+slot_size = 20;    // Size of each inventory slot (80 ÷ 4)
+slot_padding = 2;  // Space between slots (10 ÷ 4 ≈ 2)
+slot_border = 1;   // Border thickness (3 ÷ 4, min 1)
 
 // Position
-ui_x = 50;
-ui_y = 150;
+ui_x = 12;  // 50 ÷ 4 ≈ 12
+ui_y = 37;  // 150 ÷ 4 ≈ 37
 ui_width = (grid_columns * (slot_size + slot_padding)) + slot_padding;
-ui_height = (grid_rows * (slot_size + slot_padding)) + slot_padding + 100; // +100 for title/info
+ui_height = (grid_rows * (slot_size + slot_padding)) + slot_padding + 25; // +25 for title/info (100 ÷ 4)
 
 // Colors
 color_background = c_dkgray;
@@ -129,9 +129,9 @@ on_item_use = function(_item_id) {
 
 // Close button
 show_close_button = false;
-close_button_x = ui_x + ui_width - 40;
-close_button_y = ui_y + 10;
-close_button_size = 30;
+close_button_x = ui_x + ui_width - 10; // 40 ÷ 4 = 10
+close_button_y = ui_y + 2;             // 10 ÷ 4 ≈ 2
+close_button_size = 8;                  // 30 ÷ 4 ≈ 8
 
 // Tab system for switching categories
 show_tabs = true;
@@ -142,8 +142,8 @@ tabs = [
     { name: "Seeds", category: "seed" },
     { name: "Ingredients", category: "ingredient" }
 ];
-tab_width = 120;
-tab_height = 40;
+tab_width = 30;  // 120 ÷ 4 = 30
+tab_height = 10;  // 40 ÷ 4 = 10
 
 // Filter/Sort options
 sort_mode = "none"; // "none", "name", "quantity", "rarity"
@@ -179,7 +179,7 @@ function update_max_scroll() {
 function get_slot_at_position(_mx, _my) {
     // Check if mouse is in grid area
     var grid_start_x = ui_x + slot_padding;
-    var grid_start_y = ui_y + 80 + slot_padding; // +80 for title area
+    var grid_start_y = ui_y + 20 + slot_padding; // +20 for title area (80 ÷ 4)
     
     for (var row = 0; row < grid_rows; row++) {
         for (var col = 0; col < grid_columns; col++) {

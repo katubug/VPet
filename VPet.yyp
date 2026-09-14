@@ -141,12 +141,8 @@
   },
   "name":"VPet",
   "resources":[
-    {"id":{"name":"fnt_Kubasta_heading","path":"fonts/fnt_Kubasta_heading/fnt_Kubasta_heading.yy",},},
     {"id":{"name":"fnt_Kubasta_lrg","path":"fonts/fnt_Kubasta_lrg/fnt_Kubasta_lrg.yy",},},
     {"id":{"name":"fnt_Kubasta","path":"fonts/fnt_Kubasta/fnt_Kubasta.yy",},},
-    {"id":{"name":"fnt_Quicksand_lrg","path":"fonts/fnt_Quicksand_lrg/fnt_Quicksand_lrg.yy",},},
-    {"id":{"name":"fnt_Quicksand","path":"fonts/fnt_Quicksand/fnt_Quicksand.yy",},},
-    {"id":{"name":"Font6","path":"fonts/Font6/Font6.yy",},},
     {"id":{"name":"button_parent","path":"objects/button_parent/button_parent.yy",},},
     {"id":{"name":"button_tap_parent","path":"objects/button_tap_parent/button_tap_parent.yy",},},
     {"id":{"name":"Cloud_Menu_Debug","path":"objects/Cloud_Menu_Debug/Cloud_Menu_Debug.yy",},},

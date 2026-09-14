@@ -1,7 +1,7 @@
-speed = -20 * global.speed_modifier;
+speed = -5 * global.speed_modifier; // 20 ÷ 4 = 5 — ground scroll speed
 
 if (!obj_runner_dino.gameover){
-    if (x < -50){
+    if (x < -12){ // 50 ÷ 4 ≈ 12 — wrap threshold
         randomize();
         var number = irandom(10);
         
