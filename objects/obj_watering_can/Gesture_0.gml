@@ -1,0 +1,1 @@
+global.garden_watering_mode = !global.garden_watering_mode;

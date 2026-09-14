@@ -2,7 +2,7 @@
 dragged = 0;
 
 // Find the specific plot instance at the drop position (not a global reference)
-var _target = instance_position(x, y, obj_garden_plot);
+var _target = instance_position(x, y, obj_garden_plot_parent);
 if (_target != noone) {
     // Read this plot's data from the array using its own index
     var _plot = global.game.garden_plots[_target.plot_index];

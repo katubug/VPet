@@ -1,9 +1,9 @@
 // Position of the panel — adjust to fit your room layout
-panel_x  = 60;
-panel_y  = 820;
+panel_x  = 32;
+panel_y  = 229;
 
 // Width of each seed slot in pixels (also used as height — square slots)
-slot_w   = 80;
+slot_w   = 20;
 
 // Gap between slots in pixels
 slot_gap = 10;
