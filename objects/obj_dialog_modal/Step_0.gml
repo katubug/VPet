@@ -15,7 +15,7 @@ cy    = gui_h / 2;
 
 // ── MEASURE TEXT ─────────────────────────────────────────────────────────────
 // Set the font before measuring so string_width/height are accurate.
-draw_set_font(fnt_Quicksand);
+draw_set_font(fnt_Kubasta);
 var _text_w = string_width(message);
 var _text_h = string_height(message);
 

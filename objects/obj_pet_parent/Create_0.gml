@@ -73,7 +73,7 @@ talk_squash_t = 0;            // timer driving the squash-and-stretch oscillatio
 talk_facing = 1;              // 1 = facing left (default), -1 = facing right (flipped)
 
 /// @function start_talk()
-/// @description Begins the talk sequence — called from Cloud_Menu's Talk button callback
+/// @description Begins the talk sequence - called from Cloud_Menu's Talk button callback
 start_talk = function() {
 	if (talk_active) return;                    // don't start if already talking
 

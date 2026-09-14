@@ -35,7 +35,7 @@ draw_sprite_stretched(spr_ui_back, 0,
 if (scale > 0.6) {
     var _text_alpha = (scale - 0.6) / 0.4;
 
-    draw_set_font(fnt_Quicksand);
+    draw_set_font(fnt_Kubasta);
     draw_set_alpha(_text_alpha);
     draw_set_halign(fa_center);
     draw_set_valign(fa_middle);
@@ -70,7 +70,7 @@ for (var i = 0; i < _btn_count; i++) {
 if (scale > 0.6) {
     var _label_alpha = (scale - 0.6) / 0.4;
 
-    draw_set_font(fnt_Quicksand);
+    draw_set_font(fnt_Kubasta);
     draw_set_halign(fa_center);
     draw_set_valign(fa_middle);
     draw_set_alpha(_label_alpha);

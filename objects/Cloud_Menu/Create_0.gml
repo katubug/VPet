@@ -1,10 +1,12 @@
 // -- Positioning --
-menu_y_top    = 12;                             // Y position of the top row icons (50 ÷ 4)
-menu_y_bottom = display_get_gui_height() - 37;  // Y position of the bottom row icons (150 ÷ 4 ≈ 37)
+// Top row: 8px from the top of the screen
+menu_y_top    = 20;
+// Bottom row: 8px below the content area's lower bound
+menu_y_bottom = global.display_area_bottom + 20;
 
 // -- Icon Sizing --
-icon_size    = 24; // Pixel size of each icon (96 ÷ 4 = 24)
-icon_spacing = 27; // Distance between icon centers (110 ÷ 4 ≈ 27)
+icon_size    = 32; // Pixel size of each icon (96 ÷ 4 = 24)
+icon_spacing = 42; // Distance between icon centers (110 ÷ 4 ≈ 27)
 
 // -- Alpha Values --
 menu_alpha_selected   = 1.0; // Full opacity when an icon is selected/hovered

@@ -78,7 +78,7 @@ var info_x    = 88;   // local X of the text column (350 ÷ 4 ≈ 88)
 var line_h    = 8;    // local-px line spacing (33 ÷ 4 ≈ 8)
 var info_w    = popup_w - pad - info_x; // available column width in local px
 
-draw_set_font(fnt_Quicksand);
+draw_set_font(fnt_Kubasta);
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);
 

@@ -63,10 +63,10 @@ function draw_button(_x, _y, _w, _h, _label, _color, _hover = false) {
 	}
 
 	// ── LABEL TEXT ───────────────────────────────────────────────────────────
-	// Centered in the button using fnt_Quicksand (the project's standard UI font).
+	// Centered in the button using fnt_Kubasta (the project's standard UI font).
 	// Change the font here if a specific button style needs a different face.
 	draw_set(c_white, 1);
-	draw_set_font(fnt_Quicksand);
+	draw_set_font(fnt_Kubasta);
 	text_align(fa_center, fa_middle);
 	draw_text(
 		_x + _w / 2,              // horizontal center of the button

@@ -21,7 +21,7 @@ for (var i = 0; i < slot_border; i++) {
 // Draw title
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);
-draw_set_font(fnt_Quicksand);
+draw_set_font(fnt_Kubasta);
 draw_set_color(color_text);
 draw_text(ui_x + 5, ui_y + 2, ui_title); // 20→5, 10→2
 
