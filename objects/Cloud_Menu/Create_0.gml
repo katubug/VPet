@@ -1,10 +1,10 @@
 // -- Positioning --
-menu_y_top    = 50;                             // Y position of the top row icons
-menu_y_bottom = display_get_gui_height() - 150; // Y position of the bottom row icons
+menu_y_top    = 12;                             // Y position of the top row icons (50 ÷ 4)
+menu_y_bottom = display_get_gui_height() - 37;  // Y position of the bottom row icons (150 ÷ 4 ≈ 37)
 
 // -- Icon Sizing --
-icon_size    = 96; // Pixel size of each icon (width and height)
-icon_spacing = 110; // Distance between icon centers (icon_size + 10px gap)
+icon_size    = 24; // Pixel size of each icon (96 ÷ 4 = 24)
+icon_spacing = 27; // Distance between icon centers (110 ÷ 4 ≈ 27)
 
 // -- Alpha Values --
 menu_alpha_selected   = 1.0; // Full opacity when an icon is selected/hovered
@@ -139,4 +139,4 @@ menu_count_bottom = array_length(bottom_items); // Number of items in the bottom
 // Both rows use the same start X since they have the same item count.
 // Adjust this formula if row counts differ in future.
 var total_menu_width = (menu_count_top - 1) * icon_spacing + icon_size; // Total pixel span of icons
-menu_start_x = (display_get_gui_width() / 2) - (total_menu_width / 2 - 50); // Left edge of first icon
+menu_start_x = (display_get_gui_width() / 2) - (total_menu_width / 2 - 12); // Left edge of first icon (50 ÷ 4 ≈ 12)

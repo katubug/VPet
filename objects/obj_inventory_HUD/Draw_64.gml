@@ -49,8 +49,8 @@ text_align(fa_left, fa_top);
 //text shadow
 draw_set(c_black, 0.5);
 draw_text(
-    ui_padding_x + (ui_border_size * 3) + 4,
-    ui_padding_y + (ui_border_size * 4) + 4,
+    ui_padding_x + (ui_border_size * 3) + 1, // 4 ÷ 4 = 1
+    ui_padding_y + (ui_border_size * 4) + 1, // 4 ÷ 4 = 1
 "About"
 );
 
@@ -65,8 +65,8 @@ draw_text(
 //text shadow
 draw_set(c_black, 0.5);
 draw_text(
-    ui_padding_x + ui_border_size + ui_panel_left + ui_inventory_margin + 4,
-    ui_padding_y + (ui_border_size * 4) + 4,
+    ui_padding_x + ui_border_size + ui_panel_left + ui_inventory_margin + 1, // 4 ÷ 4 = 1
+    ui_padding_y + (ui_border_size * 4) + 1, // 4 ÷ 4 = 1
 "Inventory"
 );
 
@@ -91,8 +91,8 @@ for (var row = 0; row < inventory_rows; row++){
                 draw_sprite_ext(
                 spr_inventory_box,
                 0,
-                pos_x + 4,
-                pos_y + 4,
+                pos_x + 1, // 4 ÷ 4 = 1
+                pos_y + 1, // 4 ÷ 4 = 1
                 1, 1, 0, c_black, 0.4
                 );
         
@@ -130,7 +130,7 @@ for (var row = 0; row < inventory_rows; row++){
                 draw_circle(
                 pos_x + ui_inventory_box,
                 pos_y + ui_inventory_box,
-                14,
+                4, // 14 ÷ 4 ≈ 4 (quantity circle radius)
                 false);
             
         //quantity text

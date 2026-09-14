@@ -74,19 +74,19 @@ if (game_complete == 1) {
 if (round_end == true && player_choice != -1){
         if (player_choice == 0) {
             round_end = false;
-            player_rock = layer_sequence_create("Instances", room_width/2, 200, seq_player_rock);
+            player_rock = layer_sequence_create("Instances", room_width/2, 50, seq_player_rock);
             player_choice = -1;
             // Don't check round yet - wait for animation
         }
         if (player_choice == 1){
             round_end = false;
-            player_paper = layer_sequence_create("Instances", room_width/2, 200, seq_player_paper);
+            player_paper = layer_sequence_create("Instances", room_width/2, 50, seq_player_paper);
             player_choice = -1;
             // Don't check round yet - wait for animation
         }
         if (player_choice == 2){
             round_end = false;
-            player_scissors = layer_sequence_create("Instances", room_width/2, 200, seq_player_scissors);
+            player_scissors = layer_sequence_create("Instances", room_width/2, 50, seq_player_scissors);
             player_choice = -1;
             // Don't check round yet - wait for animation
         }       
@@ -96,21 +96,21 @@ if (round_end == true && player_choice != -1){
         
         if (computer_choice == 0) {
             round_end2 = false;
-            death_rock = layer_sequence_create("Instances", room_width/2, 200, seq_death_rock);
+            death_rock = layer_sequence_create("Instances", room_width/2, 50, seq_death_rock);
             
             // Check if game should end AFTER starting animation
             alarm[0] = 60; // Wait 1 second for animation, then check
         }
         if (computer_choice == 1){
             round_end2 = false;
-            death_paper = layer_sequence_create("Instances", room_width/2, 200, seq_death_paper);
+            death_paper = layer_sequence_create("Instances", room_width/2, 50, seq_death_paper);
             
             // Check if game should end AFTER starting animation
             alarm[0] = 60; // Wait 1 second for animation, then check
         }
         if (computer_choice == 2){
             round_end2 = false;
-            death_scissors = layer_sequence_create("Instances", room_width/2, 200, seq_death_scissors);
+            death_scissors = layer_sequence_create("Instances", room_width/2, 50, seq_death_scissors);
             
             // Check if game should end AFTER starting animation
             alarm[0] = 60; // Wait 1 second for animation, then check

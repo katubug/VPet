@@ -6,7 +6,7 @@ draw_set_font(fnt_Kubasta);
 var _mx      = margin;                      // Left x edge for all labels
 var _vx      = _mx + label_col_width;       // X where values and bars begin
 var _gui_w   = display_get_gui_width();     // Full canvas width — used for centering and line ends
-var _cy      = margin + 120;                // Cursor y — incremented as rows are drawn; +120 pushes content down from top
+var _cy      = margin + 30;                 // Cursor y — incremented as rows are drawn; +30 pushes content down from top (120 ÷ 4)
 
 // =========================================================
 //  READ DATA

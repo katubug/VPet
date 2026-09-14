@@ -1,8 +1,8 @@
 // Spawns all 9 garden plot instances in a 3x3 grid
 // Adjust start_x/start_y to move the whole garden, spacing to change plot distance
-var _start_x = 250;
-var _start_y  = 460;
-var _spacing  = 100;
+var _start_x = 62;  // 250 ÷ 4 ≈ 62
+var _start_y  = 115; // 460 ÷ 4 = 115
+var _spacing  = 25;  // 100 ÷ 4 = 25
 var _cols     = 3;
 var _rows     = 3;
 

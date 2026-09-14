@@ -20,14 +20,14 @@ if (file_exists("save_data.txt")) {
 max_name_length = 20; // Max characters allowed in the name
 
 // UI Settings
-box_width = 600;
-box_height = 200;
+box_width = 150;   // 600 ÷ 4
+box_height = 50;   // 200 ÷ 4
 box_x = (display_get_gui_width() / 2) - (box_width / 2);
 box_y = (display_get_gui_height() / 2) - (box_height / 2);
 box_color = c_dkgray;
 box_alpha = 0.9;
 border_color = c_white;
-border_width = 4;
+border_width = 1;  // 4 ÷ 4 = 1
 
 // Text settings
 text_color = c_white;
@@ -35,8 +35,8 @@ prompt_text = "Enter your name:";
 instruction_text = "(Press Enter when done)";
 
 // Done button (mobile only) -- sits below the input box
-done_btn_width = 200; // Width of the Done button
-done_btn_height = 70; // Height of the Done button
+done_btn_width = 50;  // Width of the Done button (200 ÷ 4)
+done_btn_height = 18; // Height of the Done button (70 ÷ 4 ≈ 18)
 done_btn_color = c_green; // Button background colour
 done_btn_label = "Done"; // Label shown on the button
 // done_btn_x/y are calculated in Draw each frame alongside box_x/box_y

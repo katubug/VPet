@@ -1,5 +1,5 @@
 if (!dino_invincible){
-    vspeed =-15;
+    vspeed = -4; // bounce back on hit (15 ÷ 4 ≈ 4)
     hurt = true;
     audio_play_sound(snd_ouch, 1, false); // play hurt sound once per hit
     dino_hp --;

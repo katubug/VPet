@@ -21,7 +21,7 @@ var _visible_text = typewriter_get_text(talk_typewriter);
 
 // Draw the text centered horizontally and vertically within the bar
 // Use generous margins so long lines wrap nicely inside the bar
-draw_text_ext(_gui_w / 2, _bar_h / 2, _visible_text, -1, _gui_w - 80);
+draw_text_ext(_gui_w / 2, _bar_h / 2, _visible_text, -1, _gui_w - 20);
 
 // -- Reset draw state so other objects aren't affected --
 draw_reset();

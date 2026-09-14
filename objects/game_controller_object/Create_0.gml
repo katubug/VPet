@@ -6,6 +6,19 @@ if (instance_number(game_controller_object) > 1) {
     exit;
 }
 
+// -- Resolution setup --
+// Set the GUI layer to match native pixel-art resolution (180×320)
+display_set_gui_size(180, 320);
+// Force nearest-neighbor filtering so pixels stay crisp when upscaled
+gpu_set_texfilter(false);
+// On desktop, open the window at 4× native (720×1280) so it's not tiny
+if (os_type == os_windows || os_type == os_macosx || os_type == os_linux) {
+    var _dw = display_get_width();  // monitor width in pixels
+    var _dh = display_get_height(); // monitor height in pixels
+    window_set_size(720, 1280);     // 4× the 180×320 base resolution
+    window_set_position((_dw - 720) / 2, (_dh - 1280) / 2); // center on screen
+}
+
 //Update running time alarm
 alarm[0] = 60;
 

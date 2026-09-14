@@ -8,12 +8,12 @@ game_complete = 0;
 round_end = false;
 round_end2 = false;
 
-button_width = 100;
-button_height = 50;
-button_y = 460
-rock_button_x = 50;
-paper_button_x = rock_button_x + button_width + 20;
-scissors_button_x = paper_button_x + button_width + 20;
+button_width = 25;    // 100 ÷ 4 — virtual button width
+button_height = 12;   // 50 ÷ 4 — virtual button height
+button_y = 115;       // 460 ÷ 4 — button Y position
+rock_button_x = 12;   // 50 ÷ 4 — rock button X
+paper_button_x = rock_button_x + button_width + 5;    // 5px gap between buttons
+scissors_button_x = paper_button_x + button_width + 5; // 5px gap between buttons
 
 player_rock = undefined;
 player_scissors = undefined;

@@ -2,7 +2,7 @@
 
 // Draw in GUI coordinates (always on top)
 var gui_x = display_get_gui_width() / 2;
-var gui_y = 700;
+var gui_y = 175; // 700 ÷ 4 = 175
 
 // Explicitly draw the sprite
 draw_sprite(sprite_index, image_index, gui_x, gui_y);
@@ -17,7 +17,7 @@ draw_sprite(sprite_index, image_index, gui_x, gui_y);
 // Optional: Additional debug with F1
 if (keyboard_check(vk_f1)) {
     draw_set_color(c_lime);
-    draw_text(10, 10, "Frame: " + string(current_frame) + "/" + string(total_frames));
-    draw_text(10, 30, "Timer: " + string(frame_timer) + "/" + string(frame_duration));
-    draw_text(10, 50, "Sprite: " + sprite_get_name(sprite_index));
+    draw_text(2, 2, "Frame: " + string(current_frame) + "/" + string(total_frames));
+    draw_text(2, 8, "Timer: " + string(frame_timer) + "/" + string(frame_duration));
+    draw_text(2, 14, "Sprite: " + sprite_get_name(sprite_index));
 }

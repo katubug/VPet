@@ -12,7 +12,7 @@ if (talk_active) {
 
 			// Add a wobble on top of the smooth lerp to look like a bouncy walk
 			talk_wobble_t += 0.18;                          // gentle wobble speed
-			x = _base_x + sin(talk_wobble_t * 6) * 3;  // ±3px horizontal sway
+			x = _base_x + sin(talk_wobble_t * 6) * 1;  // ±1px horizontal sway
 			image_angle = sin(talk_wobble_t * 6) * 4;   // ±4 degree tilt
 
 			// Lerp the scale from normal to the zoomed-in size
@@ -119,7 +119,7 @@ if (global.game.evolution_queued == 0){
 //If player goes to the bathroom, pet takes a bath
 if (room == rm_bathroom && bath_time){
     bath_time = false;
-    var take_bath = sequencePlay("seq_bath", "Instances", 0, 224);
+    var take_bath = sequencePlay("seq_bath", "Instances", 0, 56);
 }
 
 //Unsure what this does - stops the pet from walking if it gets to its destination?

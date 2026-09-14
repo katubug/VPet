@@ -11,7 +11,7 @@ draw_rectangle(panel_x, panel_y, panel_x + panel_w, panel_y + panel_h, true);
 // -- Title --
 text_align(fa_center, fa_middle);
 draw_set(c_yellow, 1);
-draw_text(panel_x + panel_w / 2, panel_y + 22, "DEV CHEATS");
+draw_text(panel_x + panel_w / 2, panel_y + 6, "DEV CHEATS"); // 22 ÷ 4 ≈ 6
 
 // -- Helper: draw a dropdown field (the closed box showing the current value) --
 var _draw_field = function(_label, _value, _label_x, _field_x, _y, _w, _h, _is_open) {
@@ -35,22 +35,22 @@ var _draw_field = function(_label, _value, _label_x, _field_x, _y, _w, _h, _is_o
 	// Current value text
 	draw_set(c_white, 1);
 	text_align(fa_left, fa_middle);
-	draw_text(_field_x + 10, _y + _h / 2, _value);
+	draw_text(_field_x + 2, _y + _h / 2, _value); // 10→2
 
 	// Down arrow indicator on the right side
 	text_align(fa_right, fa_middle);
 	draw_set(c_yellow, 1);
-	draw_text(_field_x + _w - 8, _y + _h / 2, "v");
+	draw_text(_field_x + _w - 2, _y + _h / 2, "v"); // 8→2
 };
 
 // -- Age dropdown field --
 _draw_field("Age:", phase_options[phase_selected],
-	panel_x + 15, dd_field_x, row1_y, dd_field_w, dd_field_h,
+	panel_x + 4, dd_field_x, row1_y, dd_field_w, dd_field_h,
 	dropdown_open == 0);
 
 // -- Species dropdown field --
 _draw_field("Pet:", species_options[species_selected],
-	panel_x + 15, dd_field_x, row2_y, dd_field_w, dd_field_h,
+	panel_x + 4, dd_field_x, row2_y, dd_field_w, dd_field_h,
 	dropdown_open == 1);
 
 // -- Helper: draw a ‹ value › row (label + left arrow + value + right arrow) --
@@ -109,13 +109,13 @@ var _draw_name_field = function(_label, _value, _y) {
 	draw_set(c_white, 1);
 	text_align(fa_left, fa_middle);
 	var _display = (_value == "") ? "(click to set)" : _value;       // show placeholder when empty
-	draw_text(dd_field_x + 10, _y, _display);
+	draw_text(dd_field_x + 2, _y, _display);
 };
 
 // -- Helper: draw a horizontal separator line --
 var _draw_separator = function(_y) {
 	draw_set(c_gray, 0.5);
-	draw_line(panel_x + 10, _y, panel_x + panel_w - 10, _y);       // thin gray line across the panel
+	draw_line(panel_x + 2, _y, panel_x + panel_w - 2, _y);         // thin gray line across the panel (10→2)
 };
 
 // -- Helper: draw an action button --
@@ -200,19 +200,19 @@ if (dropdown_open != -1) {
 		// Item text
 		draw_set((_actual == _sel) ? c_yellow : c_white, 1);
 		text_align(fa_left, fa_middle);
-		draw_text(dd_field_x + 10, _item_y + dd_item_h / 2, _options[_actual]);
+		draw_text(dd_field_x + 2, _item_y + dd_item_h / 2, _options[_actual]);
 	}
 
 	// Scroll indicators (arrows at top/bottom of list if there are hidden items)
 	text_align(fa_center, fa_middle);
 	if (dropdown_scroll > 0) {
 		draw_set(c_yellow, 1);
-		draw_text(dd_field_x + dd_field_w / 2, _list_y + 8, "^ ^ ^"); // more items above
+		draw_text(dd_field_x + dd_field_w / 2, _list_y + 2, "^ ^ ^"); // more items above (8→2)
 	}
 	if (dropdown_scroll + _visible < _count) {
 		draw_set(c_yellow, 1);
 		var _bottom = _list_y + _visible * dd_item_h;
-		draw_text(dd_field_x + dd_field_w / 2, _bottom - 8, "v v v"); // more items below
+		draw_text(dd_field_x + dd_field_w / 2, _bottom - 2, "v v v"); // more items below (8→2)
 	}
 }
 

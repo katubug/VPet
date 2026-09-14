@@ -10,14 +10,14 @@ if (!global.dialog_open && _hover && mouse_check_button_pressed(mb_left)) {
         if (_stage >= 1) {
             if (garden_can_water(plot_index)) {
                 garden_water_plot(plot_index);
-                var _p = instance_create_depth(x + _half_w, y - sprite_height - 20, -9999, obj_popup_message);
+                var _p = instance_create_depth(x + _half_w, y - sprite_height - 5, -9999, obj_popup_message);
                 _p.message = "Watered! 2x growth for 1 hour.";
             } else {
                 // Plot is on cooldown — show remaining time and dismiss automatically
                 var _secs = garden_water_cooldown_remaining(plot_index);
                 var _mins = floor(_secs / 60);
                 var _sec2 = _secs mod 60;
-                var _p = instance_create_depth(x + _half_w, y - sprite_height - 20, -9999, obj_popup_message);
+                var _p = instance_create_depth(x + _half_w, y - sprite_height - 5, -9999, obj_popup_message);
                 _p.message = "Not ready! " + string(_mins) + "m " + string(_sec2) + "s left.";
             }
         }
@@ -29,7 +29,7 @@ if (!global.dialog_open && _hover && mouse_check_button_pressed(mb_left)) {
             var _msg = "Harvested " + string(_r.qty) + "x " + _r.fruit + "!";
             if (_r.corns > 0)  _msg += " +" + string(_r.corns) + " corns!";
             if (_r.bonus_seed) _msg += " +1 bonus seed!";
-            var _p = instance_create_depth(x + _half_w, y - sprite_height - 20, -9999, obj_popup_message);
+            var _p = instance_create_depth(x + _half_w, y - sprite_height - 5, -9999, obj_popup_message);
             _p.message = _msg;
         }
         // Stages 0-2 in normal mode: no action (drag to plant, toggle watering can to water)

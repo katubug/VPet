@@ -10,7 +10,7 @@ if (dino_hp <= 0 && !gameover){
     global.speed_modifier = 0;
     image_speed = 0;
     if (!instance_exists(obj_runner_replay)){
-        instance_create_layer(room_width/2, 300, "Instances", obj_runner_replay);
+        instance_create_layer(room_width/2, 75, "Instances", obj_runner_replay);
     }
 }
 

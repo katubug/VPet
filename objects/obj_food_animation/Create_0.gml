@@ -16,7 +16,7 @@ image_speed = 0; // Don't auto-animate, we'll control it manually
 
 // Position
 x = room_width / 2;
-y = 400;
+y = 100; // 400 ÷ 4 = 100
 
 // Animation timing (in frames, 60fps = 1 second)
 frame_duration = 30; // Each eating frame lasts 30 frames (0.5 seconds)

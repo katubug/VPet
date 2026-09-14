@@ -31,11 +31,11 @@ submitted       = false;
 // ── LAYOUT ───────────────────────────────────────────────────────────────────
 // Card dimensions — centered on screen
 // Adjust box_width/box_height to resize the whole panel
-box_width  = 580;
-box_height = 480;
+box_width  = 145;  // 580 ÷ 4
+box_height = 120;  // 480 ÷ 4
 // box_x/box_y are recalculated in Draw each frame — display_get_gui_width/height unreliable in Create on Android
-done_btn_width  = 200; // Width of the Done button on mobile — adjust freely
-done_btn_height = 70;  // Height of the Done button on mobile — adjust freely
+done_btn_width  = 50; // Width of the Done button on mobile (200 ÷ 4)
+done_btn_height = 18; // Height of the Done button on mobile (70 ÷ 4 ≈ 18)
 done_btn_color  = c_green; // Background color of the Done button
 done_btn_label  = "Done";  // Text shown on the Done button
 
