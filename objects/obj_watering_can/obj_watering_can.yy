@@ -1,13 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"obj_garden_plot",
+  "%Name":"obj_watering_can",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":13,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_garden_plot",
+  "name":"obj_watering_can",
   "overriddenProperties":[],
   "parent":{
     "name":"Gardening",
@@ -32,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_garden_plot",
-    "path":"sprites/spr_garden_plot/spr_garden_plot.yy",
+    "name":"spr_watering_can",
+    "path":"sprites/spr_watering_can/spr_watering_can.yy",
   },
   "spriteMaskId":null,
   "visible":true,

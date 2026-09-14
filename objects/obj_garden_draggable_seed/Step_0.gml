@@ -5,7 +5,7 @@ y = mouse_y;
 // When the player releases the mouse, try to drop onto a plot
 if (mouse_check_button_released(mb_left)) {
     // instance_position checks the plot's own mask at (x,y) — works even without a mask on this object
-    var _target = instance_position(x, y, obj_garden_plot);
+    var _target = instance_position(x, y, obj_garden_plot_parent);
     if (_target != noone) {
         // Check that the target plot is empty before planting
         var _plot = global.game.garden_plots[_target.plot_index];

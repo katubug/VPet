@@ -1,13 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"obj_garden_draggable_seed",
+  "%Name":"obj_garden_plot_parent",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_garden_draggable_seed",
+  "name":"obj_garden_plot_parent",
   "overriddenProperties":[],
   "parent":{
     "name":"Gardening",
@@ -27,11 +27,16 @@
   "physicsShape":1,
   "physicsShapePoints":[],
   "physicsStartAwake":true,
-  "properties":[],
+  "properties":[
+    {"$GMObjectProperty":"v2","%Name":"plot_index","filters":[],"listItems":[],"multiselect":false,"name":"plot_index","rangeEnabled":true,"rangeMax":8,"rangeMin":0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
+  ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_garden_plot_topleft",
+    "path":"sprites/spr_garden_plot_topleft/spr_garden_plot_topleft.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

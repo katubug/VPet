@@ -12,7 +12,7 @@ draw_set(c_white, 1);
 draw_rectangle(0, 0, _gui_w, _bar_h, false);
 
 // -- Dialogue text (typewriter effect, centered in the bar) --
-draw_set_font(fnt_Kubasta_lrg);         // larger font for readability
+draw_set_font(fnt_Kubasta_heading);         // larger font for readability
 draw_set(c_black, 1);
 text_align(fa_center, fa_middle);
 

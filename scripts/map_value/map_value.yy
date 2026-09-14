@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_garden_system",
+  "%Name":"map_value",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_garden_system",
+  "name":"map_value",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",
