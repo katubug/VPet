@@ -11,10 +11,11 @@ var str_score = string($"Your final score was {runner_score}, you earned {round(
 if (obj_runner_dino.gameover){  
     draw_set_valign(fa_top);
     draw_set_halign(fa_center);
-    draw_text(room_width/2, 200, str_gameover);
-    draw_text(room_width/2, 230, str_score);
-    
+    var _gw = display_get_gui_width(); // use GUI width instead of room_width for Draw_64
+    draw_text(_gw / 2, 50, str_gameover);
+    draw_text(_gw / 2, 58, str_score);
+
     if (new_high_score = true){
-    draw_text(room_width/2, 260, "You got a new high score!");
+    draw_text(_gw / 2, 65, "You got a new high score!");
     }
 }

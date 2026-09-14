@@ -26,28 +26,28 @@ quantity = 1;
 // ── PANEL DIMENSIONS ─────────────────────────────────────────────────────────
 // Adjust popup_w / popup_h to resize the whole panel.
 // pad is the inset margin between the panel edge and its content.
-popup_w = 700;  // total panel width  in GUI pixels
-popup_h = 540;  // total panel height in GUI pixels
-pad     = 30;   // inner padding on all sides
+popup_w = 175;  // total panel width  in GUI pixels (700 ÷ 4)
+popup_h = 135;  // total panel height in GUI pixels (540 ÷ 4)
+pad     = 8;    // inner padding on all sides (30 ÷ 4 ≈ 8)
 
 
 // ── SMALL +/- BUTTON SIZE ────────────────────────────────────────────────────
 // The source sprites (spr_btn_left_one etc.) are 20×20.
 // They're drawn at 3× scale to hit 60px — if the sprites are ever resized,
 // update the draw call in Draw_64.gml (the 3.0 multiplier on `scale`).
-sbtn_w   = 60;  // displayed width  of each +/- button (3× the 20px sprite)
-sbtn_h   = 60;  // displayed height of each +/- button
-sbtn_gap = 12;  // horizontal gap between buttons
+sbtn_w   = 15;  // displayed width  of each +/- button (60 ÷ 4)
+sbtn_h   = 15;  // displayed height of each +/- button (60 ÷ 4)
+sbtn_gap = 3;   // horizontal gap between buttons (12 ÷ 4)
 
 // Width of the quantity display box that sits between the - and + groups.
-qty_display_w = 80;
+qty_display_w = 20; // 80 ÷ 4 = 20
 
 
 // ── ACTION BUTTON SIZE ────────────────────────────────────────────────────────
 // Cancel and Confirm sit in the bottom row.
-abtn_w   = 150; // width  of Cancel / Confirm
-abtn_h   = 50;  // height of Cancel / Confirm
-abtn_gap = 16;  // horizontal gap between Cancel and Confirm
+abtn_w   = 37;  // width  of Cancel / Confirm (150 ÷ 4 ≈ 37)
+abtn_h   = 12;  // height of Cancel / Confirm (50 ÷ 4 ≈ 12)
+abtn_gap = 4;   // horizontal gap between Cancel and Confirm (16 ÷ 4 = 4)
 
 
 // ── LAYOUT RECTS (computed every Step, read by Draw) ─────────────────────────

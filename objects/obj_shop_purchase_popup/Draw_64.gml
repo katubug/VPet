@@ -40,17 +40,16 @@ draw_rectangle(_sx(1),   _sy(1),   _sx(popup_w-1), _sy(popup_h-1), true);
 
 // ── DIVIDER LINE ─────────────────────────────────────────────────────────────
 // Sits between the content area (sprite + info) and the quantity row.
-// Local Y = 360: qty_y1(380) - 20 breathing room = 360.
-// Change this value if the layout above or below shifts.
+// Local Y = 90: qty_y1(95) - 5 breathing room = 90.
 draw_set_color(make_color_rgb(70, 70, 90));
-draw_line(_sx(pad), _sy(360), _sx(popup_w - pad), _sy(360));
+draw_line(_sx(pad), _sy(90), _sx(popup_w - pad), _sy(90)); // 360 ÷ 4 = 90
 
 
 // ── ITEM SPRITE ───────────────────────────────────────────────────────────────
-// Fills the left side of the content area, 300×300 local px from (pad, pad).
+// Fills the left side of the content area, 75×75 local px from (pad, pad).
 // spr_sc scales the sprite to fill 80% of that box, then scales again with
 // the panel's pop-in animation.
-var sprite_area_size = 300; // local px — change this if I resize the icon area
+var sprite_area_size = 75; // local px (300 ÷ 4 = 75)
 
 if (item_data != undefined && sprite_exists(item_data.sprite)) {
     var spr     = item_data.sprite;
@@ -71,15 +70,13 @@ if (item_data != undefined && sprite_exists(item_data.sprite)) {
 
 // ── ITEM INFO ─────────────────────────────────────────────────────────────────
 // Name, price, total, stock, and description sit to the right of the sprite.
-// Text is drawn at 2× scale via draw_text_transformed / draw_text_ext_transformed.
-// info_x: local X where the text column starts (pad + sprite + gap = 30+300+20 = 350).
-// line_h: vertical gap between lines at 2× scale (~22 font px × 2 = 44 screen px local).
-// info_w: available column width in local px; halved when passed to draw_text_ext_transformed
-//         because the font measures in unscaled px but renders at 2×.
-var txt_scale = 1.5;  // render text at this multiple of the base font size (1.5 ≈ 75% of 2×)
-var info_x    = 350;  // local X of the text column (pad=30 + sprite=300 + gap=20)
-var line_h    = 33;   // local-px line spacing at 1.5× text scale (22 * 1.5 = 33)
-var info_w    = popup_w - pad - info_x; // available column width in local px (= 320)
+// info_x: local X where the text column starts (pad + sprite + gap = 8+75+5 = 88).
+// line_h: vertical gap between lines at txt_scale.
+// info_w: available column width in local px.
+var txt_scale = 1.5;  // render text at this multiple of the base font size
+var info_x    = 88;   // local X of the text column (350 ÷ 4 ≈ 88)
+var line_h    = 8;    // local-px line spacing (33 ÷ 4 ≈ 8)
+var info_w    = popup_w - pad - info_x; // available column width in local px
 
 draw_set_font(fnt_Quicksand);
 draw_set_halign(fa_left);
@@ -109,8 +106,6 @@ if (item_data != undefined) {
     draw_text_transformed(_sx(info_x), _sy(pad + line_h * 3), stock_str, txt_scale, txt_scale, 0);
 
     // Description — wraps to fit the column.
-    // Pass info_w/txt_scale so the wrap boundary is in unscaled font px,
-    // which draw_text_ext_transformed then renders at txt_scale on screen.
     draw_set_color(c_white);
     draw_set_alpha(0.85);
     draw_text_ext_transformed(
@@ -130,35 +125,34 @@ if (item_data != undefined) {
 
 
 // ── QUANTITY ROW ─────────────────────────────────────────────────────────────
-// Five elements centered horizontally in popup_w=700.
-// Local Y: qty_y1=380, qty_y2=440  (kept in sync with Step_0.gml)
-// Local X: qx=166 — total row = 60*4+12*3+80 = 368, centered at 350.
+// Five elements centered horizontally in popup_w=175.
+// Local Y: qy1=95, qy2=110  (kept in sync with Step_0.gml)
+// Local X: qx=43 — total row = 15*4+3*3+20 = 89, centered at 87.5.
 //
-// The source sprites are 20×20; drawing them at 3×scale renders them at 60px.
+// The source sprites are 20×20; the btn_sc below renders them to the right size.
 
-var qy1 = 380; // local Y top    of quantity row
-var qy2 = 440; // local Y bottom of quantity row
-var qx  = 166; // local X of leftmost qty button
-var btn_sc = 3.0 * scale; // 20px sprite × 3 = 60px display, × anim scale for pop-in
+var qy1 = 95;  // local Y top    of quantity row (380 ÷ 4)
+var qy2 = 110; // local Y bottom of quantity row (440 ÷ 4)
+var qx  = 43;  // local X of leftmost qty button (166 ÷ 4 ≈ 43)
+var btn_sc = (sbtn_w / 20.0) * scale; // scale 20px sprite to sbtn_w display, × anim scale
 
 // Draw the four sprite buttons — X offsets match rect_* in Step_0.gml.
-// Tints orange on hover. Inlined to avoid GML lambda capture issues.
-draw_sprite_ext(spr_btn_left_ten,  0, _sx(qx + 30),       _sy(qy1 + 30), btn_sc, btn_sc, 0, hov_m10 ? c_orange : c_white, 1); // [-10] center at local (196, 410)
-draw_sprite_ext(spr_btn_left_one,  0, _sx(qx + 102),      _sy(qy1 + 30), btn_sc, btn_sc, 0, hov_m1  ? c_orange : c_white, 1); // [-1]  center at local (268, 410) (72+30=102)
-draw_sprite_ext(spr_btn_right_one, 0, _sx(qx + 266),      _sy(qy1 + 30), btn_sc, btn_sc, 0, hov_p1  ? c_orange : c_white, 1); // [+1]  center at local (432, 410) (236+30=266)
-draw_sprite_ext(spr_btn_right_ten, 0, _sx(qx + 338),      _sy(qy1 + 30), btn_sc, btn_sc, 0, hov_p10 ? c_orange : c_white, 1); // [+10] center at local (504, 410) (308+30=338)
+// Tints orange on hover.
+draw_sprite_ext(spr_btn_left_ten,  0, _sx(qx + 7),  _sy(qy1 + 7), btn_sc, btn_sc, 0, hov_m10 ? c_orange : c_white, 1); // [-10] center
+draw_sprite_ext(spr_btn_left_one,  0, _sx(qx + 25), _sy(qy1 + 7), btn_sc, btn_sc, 0, hov_m1  ? c_orange : c_white, 1); // [-1]  center
+draw_sprite_ext(spr_btn_right_one, 0, _sx(qx + 66), _sy(qy1 + 7), btn_sc, btn_sc, 0, hov_p1  ? c_orange : c_white, 1); // [+1]  center
+draw_sprite_ext(spr_btn_right_ten, 0, _sx(qx + 84), _sy(qy1 + 7), btn_sc, btn_sc, 0, hov_p10 ? c_orange : c_white, 1); // [+10] center
 
 // Quantity display box — sits between the - and + groups.
-// Local X: qx+144=310 to qx+224=390  (matched from Step_0.gml rect_disp)
 draw_set_color(col_disp);
-draw_rectangle(_sx(qx + 144), _sy(qy1), _sx(qx + 224), _sy(qy2), false);
+draw_rectangle(_sx(qx + 36), _sy(qy1), _sx(qx + 56), _sy(qy2), false);
 draw_set_color(col_border);
-draw_rectangle(_sx(qx + 144), _sy(qy1), _sx(qx + 224), _sy(qy2), true);
+draw_rectangle(_sx(qx + 36), _sy(qy1), _sx(qx + 56), _sy(qy2), true);
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 draw_set_color(c_white);
 draw_text_transformed(
-    (_sx(qx + 144) + _sx(qx + 224)) * 0.5,
+    (_sx(qx + 36) + _sx(qx + 56)) * 0.5,
     (_sy(qy1) + _sy(qy2)) * 0.5,
     string(quantity), // current quantity the player has selected
     txt_scale, txt_scale, 0
@@ -166,33 +160,33 @@ draw_text_transformed(
 
 
 // ── ACTION BUTTONS (Cancel / Confirm) ────────────────────────────────────────
-// Local Y: act_y1=460, act_y2=510  (matched from Step_0.gml)
-// Local X: cancel 192–342, confirm 358–508  (centered in 700px panel)
+// Local Y: act_y1=115, act_y2=127  (matched from Step_0.gml)
+// Local X: cancel 48–85, confirm 89–126  (centered in 175px panel)
 
 // Cancel button
 draw_set_color(hov_can ? col_cancel_h : col_cancel);
-draw_rectangle(_sx(192), _sy(460), _sx(342), _sy(510), false);
+draw_rectangle(_sx(48), _sy(115), _sx(85), _sy(127), false);
 draw_set_color(col_border);
-draw_rectangle(_sx(192), _sy(460), _sx(342), _sy(510), true);
+draw_rectangle(_sx(48), _sy(115), _sx(85), _sy(127), true);
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 draw_set_color(c_white);
-draw_text_transformed((_sx(192) + _sx(342)) * 0.5, (_sy(460) + _sy(510)) * 0.5, "Cancel", txt_scale, txt_scale, 0);
+draw_text_transformed((_sx(48) + _sx(85)) * 0.5, (_sy(115) + _sy(127)) * 0.5, "Cancel", txt_scale, txt_scale, 0);
 
 // Confirm button — dims when the player can't afford even 1 unit
 var can_buy   = (item_data != undefined && global.game.corns >= item_data.buy_price);
 var con_alpha = can_buy ? 1.0 : 0.45;
 draw_set_alpha(con_alpha);
 draw_set_color(hov_con ? col_confirm_h : col_confirm);
-draw_rectangle(_sx(358), _sy(460), _sx(508), _sy(510), false);
+draw_rectangle(_sx(89), _sy(115), _sx(126), _sy(127), false);
 draw_set_color(col_border);
-draw_rectangle(_sx(358), _sy(460), _sx(508), _sy(510), true);
+draw_rectangle(_sx(89), _sy(115), _sx(126), _sy(127), true);
 draw_set_alpha(1);
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 draw_set_color(can_buy ? c_white : c_ltgray);
 draw_set_alpha(con_alpha);
-draw_text_transformed((_sx(358) + _sx(508)) * 0.5, (_sy(460) + _sy(510)) * 0.5, "Buy x" + string(quantity), txt_scale, txt_scale, 0);
+draw_text_transformed((_sx(89) + _sx(126)) * 0.5, (_sy(115) + _sy(127)) * 0.5, "Buy x" + string(quantity), txt_scale, txt_scale, 0);
 draw_set_alpha(1);
 
 

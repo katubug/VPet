@@ -31,7 +31,7 @@ var _total_btn_w = btn_w * _btn_count + btn_gap * (_btn_count - 1);
 panel_base_w = max(panel_min_w, _text_w + panel_padding * 2, _total_btn_w + panel_padding * 2);
 
 // Height: top padding + text + gap + button row + bottom margin.
-panel_base_h = max(panel_min_h, _text_h + panel_padding + 8 + btn_h + btn_margin_bottom + panel_padding);
+panel_base_h = max(panel_min_h, _text_h + panel_padding + 2 + btn_h + btn_margin_bottom + panel_padding); // gap 8 ÷ 4 = 2
 
 
 // ── ANIMATION ─────────────────────────────────────────────────────────────────

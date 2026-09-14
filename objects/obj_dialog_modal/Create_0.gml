@@ -35,9 +35,9 @@ cy    = gui_h / 2;   // vertical center of the screen
 //   Increase this to give everything more breathing room.
 // panel_min_w / panel_min_h: the dialog won't shrink below these sizes,
 //   even for very short messages.
-panel_padding = 24;
-panel_min_w   = 220;
-panel_min_h   = 130;
+panel_padding = 6;    // 24 ÷ 4 = 6
+panel_min_w   = 55;   // 220 ÷ 4 = 55
+panel_min_h   = 32;   // 130 ÷ 4 ≈ 32
 
 
 // ── BUTTON SETTINGS ──────────────────────────────────────────────────────────
@@ -45,10 +45,10 @@ panel_min_h   = 130;
 //   spr_ui_button is nine-sliced so it stretches cleanly to any dimensions.
 // btn_gap: horizontal space between buttons.
 // btn_margin_bottom: how far the button row sits from the panel's bottom edge.
-btn_w             = 90;
-btn_h             = 30;
-btn_gap           = 12;
-btn_margin_bottom = 14;
+btn_w             = 22;  // 90 ÷ 4 ≈ 22
+btn_h             = 8;   // 30 ÷ 4 ≈ 8
+btn_gap           = 3;   // 12 ÷ 4 = 3
+btn_margin_bottom = 4;   // 14 ÷ 4 ≈ 4
 
 
 // ── BUTTONS ARRAY ─────────────────────────────────────────────────────────────

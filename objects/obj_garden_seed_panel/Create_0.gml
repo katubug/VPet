@@ -1,12 +1,12 @@
 // Position of the panel — adjust to fit your room layout
-panel_x  = 32;
-panel_y  = 229;
+panel_x  = 8;   // 32 ÷ 4 = 8
+panel_y  = 57;  // 229 ÷ 4 ≈ 57
 
 // Width of each seed slot in pixels (also used as height — square slots)
-slot_w   = 20;
+slot_w   = 5;   // 20 ÷ 4 = 5
 
 // Gap between slots in pixels
-slot_gap = 10;
+slot_gap = 2;   // 10 ÷ 4 ≈ 2
 
 // Auto-populate from the item database — scan for every item with category "seed"
 // To add a new plant: just add its seed entry to scr_inventory_system; nothing to change here

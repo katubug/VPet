@@ -3,11 +3,11 @@ runner_score = 0;
 
 global.speed_modifier = 1;
 
-button_width = 100;
-button_height = 50;
-jump_button_x = 160;
-button_y = 460
-crouch_button_x = jump_button_x + button_width + 20;
+button_width = 25;   // 100 ÷ 4 — width of each virtual button
+button_height = 12;  // 50 ÷ 4 — height of each virtual button
+jump_button_x = 40;  // 160 ÷ 4 — x position of the jump button
+button_y = 115;      // 460 ÷ 4 — y position of both buttons
+crouch_button_x = jump_button_x + button_width + 5; // 5px gap between buttons
 game_ending = false;
 
 alarm[0] = game_get_speed(gamespeed_fps) * 3;

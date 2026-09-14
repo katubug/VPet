@@ -2,11 +2,11 @@
 randomize();
 var coin_count = irandom_range(1, 2);
 
-var coin = instance_create_layer(room_width+100, y, "Instances", obj_pickup_coin);
+var coin = instance_create_layer(room_width + 25, y, "Instances", obj_pickup_coin); // spawn offscreen right
 
 if (global.speed_modifier > 1.5){
     if (coin_count == 2){
-        var coin_2 = instance_create_layer(room_width+100, y, "Instances", obj_pickup_coin);
+        var coin_2 = instance_create_layer(room_width + 25, y, "Instances", obj_pickup_coin);
     }
 }
 

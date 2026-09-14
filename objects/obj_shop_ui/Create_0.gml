@@ -6,15 +6,15 @@ ui_title = "Shop";
 // Grid Layout
 grid_columns = 5;
 grid_rows = 5;
-slot_size = 100;
-slot_padding = 20;
+slot_size = 25;    // 100 ÷ 4 = 25
+slot_padding = 5;  // 20 ÷ 4 = 5
 slot_border = 0;
 
 // Position
-ui_x = 50;
-ui_y = 150;
+ui_x = 12;  // 50 ÷ 4 ≈ 12
+ui_y = 37;  // 150 ÷ 4 ≈ 37
 ui_width = (grid_columns * (slot_size + slot_padding)) + slot_padding;
-ui_height = (grid_rows * (slot_size + slot_padding)) + slot_padding + 150; // +150 for title/info
+ui_height = (grid_rows * (slot_size + slot_padding)) + slot_padding + 37; // +37 for title/info (150 ÷ 4)
 
 // Colors
 color_background = c_dkgray;
@@ -64,9 +64,9 @@ update_max_scroll();
 
 // Close button
 show_close_button = false;
-close_button_x = ui_x + ui_width - 40;
-close_button_y = ui_y + 10;
-close_button_size = 30;
+close_button_x = ui_x + ui_width - 10; // 40 ÷ 4 = 10
+close_button_y = ui_y + 2;             // 10 ÷ 4 ≈ 2
+close_button_size = 8;                  // 30 ÷ 4 ≈ 8
 
 // Purchase confirmation
 pending_purchase = undefined;
@@ -96,7 +96,7 @@ function update_max_scroll() {
 /// @function get_slot_at_position(mx, my)
 function get_slot_at_position(_mx, _my) {
     var grid_start_x = ui_x + slot_padding;
-    var grid_start_y = ui_y + 80 + slot_padding;
+    var grid_start_y = ui_y + 20 + slot_padding; // 80 ÷ 4 = 20
     
     for (var row = 0; row < grid_rows; row++) {
         for (var col = 0; col < grid_columns; col++) {

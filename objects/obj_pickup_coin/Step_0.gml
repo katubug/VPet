@@ -1,6 +1,6 @@
-speed = -20 * global.speed_modifier;
+speed = -5 * global.speed_modifier; // 20 ÷ 4 = 5 — scroll speed at 180px resolution
 
-if (x < -100){
+if (x < -25){ // destroy once fully offscreen left
     instance_destroy();
 }
 

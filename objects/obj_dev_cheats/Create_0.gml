@@ -35,52 +35,52 @@ for (var _i = 0; _i < array_length(species_options); _i++) {
 // -- Dropdown state --
 dropdown_open = -1;    // which dropdown is open: -1 = none, 0 = age, 1 = species
 dropdown_scroll = 0;   // scroll offset (in items) for the open dropdown
-max_visible = 25;      // max items visible at once (fits comfortably on a 1280-tall screen)
+max_visible = 25;      // max items visible at once (count, not pixels)
 
-// -- Layout constants (GUI coordinates) --
-panel_w = 420;                                          // panel width
-panel_h = 700;                                          // panel height (tall enough for all controls)
-panel_x = display_get_gui_width() - panel_w - 20;      // anchored to the right side with a margin
-panel_y = 120;                                          // below the top menu row
-dd_field_w = 240;                                       // width of each dropdown field
-dd_field_h = 36;                                        // height of each dropdown field
-dd_item_h = 32;                                         // height of each item in the open list
-dd_field_x = panel_x + panel_w - dd_field_w - 15;      // right-aligned inside the panel
-row1_y = panel_y + 55;                                  // Y of the Age dropdown field
-row2_y = row1_y + 50;                                   // Y of the Species dropdown field
+// -- Layout constants (GUI coordinates, scaled for 180×320 resolution) --
+panel_w = 105;                                          // panel width (420 ÷ 4)
+panel_h = 175;                                          // panel height (700 ÷ 4)
+panel_x = display_get_gui_width() - panel_w - 5;       // anchored to the right side with a margin (20 ÷ 4 = 5)
+panel_y = 30;                                           // below the top menu row (120 ÷ 4)
+dd_field_w = 60;                                        // width of each dropdown field (240 ÷ 4)
+dd_field_h = 9;                                         // height of each dropdown field (36 ÷ 4)
+dd_item_h = 8;                                          // height of each item in the open list (32 ÷ 4)
+dd_field_x = panel_x + panel_w - dd_field_w - 4;       // right-aligned inside the panel (15 ÷ 4 ≈ 4)
+row1_y = panel_y + 14;                                  // Y of the Age dropdown field (55 ÷ 4 ≈ 14)
+row2_y = row1_y + 12;                                   // Y of the Species dropdown field (50 ÷ 4 ≈ 12)
 
 // -- New controls layout (below the dropdowns) --
-row_spacing = 36;                                       // vertical gap between each control row
-needs_start_y = row2_y + 60;                            // first need stat row starts here
+row_spacing = 9;                                        // vertical gap between each control row (36 ÷ 4)
+needs_start_y = row2_y + 15;                            // first need stat row starts here (60 ÷ 4)
 // Row Y positions — each row is row_spacing apart
 hunger_row_y = needs_start_y;                           // hunger ‹ value ›
 happiness_row_y = hunger_row_y + row_spacing;           // happiness ‹ value ›
 health_row_y = happiness_row_y + row_spacing;           // health ‹ value ›
 separator1_y = health_row_y + row_spacing;              // visual divider
-joy_row_y = separator1_y + 14;                          // joy (read-only + last source)
+joy_row_y = separator1_y + 4;                           // joy (read-only + last source) (14 ÷ 4 ≈ 4)
 nonsense_row_y = joy_row_y + row_spacing;               // nonsense (read-only + last source)
 selfesteem_row_y = nonsense_row_y + row_spacing;        // self-esteem (read-only + last source)
 enthusiasm_row_y = selfesteem_row_y + row_spacing;      // enthusiasm (read-only + last source)
 separator2_y = enthusiasm_row_y + row_spacing;          // visual divider
-corns_row_y = separator2_y + 14;                        // corns ‹ value ›
+corns_row_y = separator2_y + 4;                         // corns ‹ value › (14 ÷ 4 ≈ 4)
 ownername_row_y = corns_row_y + row_spacing;            // player name [click to edit]
 petname_row_y = ownername_row_y + row_spacing;          // pet name [click to edit]
 separator3_y = petname_row_y + row_spacing;             // visual divider
-evolve_btn_y = separator3_y + 14;                       // queue evolution button
-kill_btn_y = evolve_btn_y + row_spacing + 4;            // kill pet button
+evolve_btn_y = separator3_y + 4;                        // queue evolution button (14 ÷ 4 ≈ 4)
+kill_btn_y = evolve_btn_y + row_spacing + 1;            // kill pet button (4 ÷ 4 = 1)
 
 // Arrow button dimensions for ‹ value › controls
-arrow_w = 28;                                           // width of each < > arrow button
-arrow_h = 28;                                           // height of each < > arrow button
-value_field_w = 60;                                     // width of the value display between arrows
-label_x = panel_x + 15;                                 // left edge of labels
+arrow_w = 7;                                            // width of each < > arrow button (28 ÷ 4)
+arrow_h = 7;                                            // height of each < > arrow button (28 ÷ 4)
+value_field_w = 15;                                     // width of the value display between arrows (60 ÷ 4)
+label_x = panel_x + 4;                                  // left edge of labels (15 ÷ 4 ≈ 4)
 value_center_x = dd_field_x + dd_field_w / 2;           // center of the value area (aligned with dropdowns)
 arrow_left_x = value_center_x - value_field_w / 2 - arrow_w; // left arrow x
 arrow_right_x = value_center_x + value_field_w / 2;    // right arrow x
 
 // Button dimensions for action buttons
-btn_w = 200;                                            // width of action buttons
-btn_h = 32;                                             // height of action buttons
+btn_w = 50;                                             // width of action buttons (200 ÷ 4)
+btn_h = 8;                                              // height of action buttons (32 ÷ 4)
 btn_x = panel_x + panel_w / 2 - btn_w / 2;             // centered horizontally in the panel
 
 // Async dialog tracking for name editing
