@@ -29,7 +29,7 @@ for (var i = 0; i < border_width; i++) {
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 draw_set_color(text_color);
-draw_set_font(fnt_Quicksand);
+draw_set_font(fnt_Kubasta);
 
 // Draw prompt text
 var prompt_y = box_y + 12; // 50 ÷ 4 ≈ 12

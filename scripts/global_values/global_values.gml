@@ -78,6 +78,11 @@ global.dialog_open = false;
 // Objects that should freeze during talk should guard with: if (!global.talk_active) { ... }
 global.talk_active = false;
 
+// display_area_top/bottom are set in game_controller_object Create
+// after display_set_gui_size — placeholder values until then
+global.display_area_top = 0;
+global.display_area_bottom = 0;
+
 starter_pet = irandom_range(0, 2);
 if (global.game.current_pet_type == "") {
 	if (starter_pet == 0) global.game.current_pet_type = "chobo";

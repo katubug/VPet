@@ -43,7 +43,7 @@ draw_rectangle(
 );
 
 //set font
-draw_set_font(fnt_Quicksand);
+draw_set_font(fnt_Kubasta);
 text_align(fa_left, fa_top);
 
 //text shadow

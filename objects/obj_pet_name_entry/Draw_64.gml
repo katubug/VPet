@@ -46,7 +46,7 @@ if (sprite_exists(pet_spr)) {
 // ── TEXT SETUP ───────────────────────────────────────────────────────────────
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
-draw_set_font(fnt_Quicksand);
+draw_set_font(fnt_Kubasta);
 var _cx = box_x + (box_width / 2); // Horizontal center of the card
 
 

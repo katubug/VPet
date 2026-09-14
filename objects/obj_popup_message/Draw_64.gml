@@ -1,7 +1,7 @@
 /// @description Draw popup message
 
 // Measure text size
-draw_set_font(fnt_Quicksand);
+draw_set_font(fnt_Kubasta);
 var text_width = string_width(message);
 var text_height = string_height(message);
 
