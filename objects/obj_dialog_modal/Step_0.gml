@@ -13,25 +13,39 @@ cx    = gui_w / 2;
 cy    = gui_h / 2;
 
 
-// ── MEASURE TEXT ─────────────────────────────────────────────────────────────
-// Set the font before measuring so string_width/height are accurate.
+// ── MEASURE TEXT & BUTTONS ───────────────────────────────────────────────────
 draw_set_font(fnt_Kubasta);
-var _text_w = string_width(message);
-var _text_h = string_height(message);
 
+// Size each button to its label text + padding
+var _btn_pad = 9;
+for (var i = 0; i < _btn_count; i++) {
+    buttons[i]._w = string_width(buttons[i].label) + _btn_pad * 2;
+    buttons[i]._h = btn_h;
+}
+
+// Total button row width based on individual button sizes
+var _total_btn_w = 0;
+for (var i = 0; i < _btn_count; i++) {
+    _total_btn_w += buttons[i]._w;
+}
+_total_btn_w += btn_gap * max(0, _btn_count - 1);
 
 // ── PANEL BASE SIZE ───────────────────────────────────────────────────────────
-// Unscaled target size — what the panel looks like at scale 1.
-// Must be wide enough for both the text and all buttons.
-//
-// Total button row width: (btn_w * count) + (btn_gap * gaps between them)
-var _total_btn_w = btn_w * _btn_count + btn_gap * (_btn_count - 1);
+// Panel width is 85% of screen width, but no smaller than minimum or button row
+var _max_panel_w = gui_w * 0.85;
+panel_base_w = clamp(
+    max(panel_min_w, _total_btn_w + panel_padding * 2),
+    panel_min_w,
+    _max_panel_w
+);
 
-// Panel is as wide as whichever is widest: minimum, text, or all buttons.
-panel_base_w = max(panel_min_w, _text_w + panel_padding * 2, _total_btn_w + panel_padding * 2);
+// Wrap text within available content width
+content_w = panel_base_w - panel_padding * 2;
+text_h    = string_height_ext(message, -1, content_w);
 
-// Height: top padding + text + gap + button row + bottom margin.
-panel_base_h = max(panel_min_h, _text_h + panel_padding + 2 + btn_h + btn_margin_bottom + panel_padding); // gap 8 ÷ 4 = 2
+// Height: top padding + wrapped text + gap + button row + bottom margin
+var _gap = 2;
+panel_base_h = max(panel_min_h, panel_padding + text_h + _gap + btn_h + btn_margin_bottom + panel_padding);
 
 
 // ── ANIMATION ─────────────────────────────────────────────────────────────────
@@ -62,23 +76,24 @@ if (state == "closing") {
 
 panel_draw_w = panel_base_w * scale;
 panel_draw_h = panel_base_h * scale;
-btn_draw_w   = btn_w * scale;
 btn_draw_h   = btn_h * scale;
 
-// Button row Y: near the bottom of the panel.
+// Button row Y: near the bottom of the panel
 var _btn_row_y = cy + (panel_base_h / 2 - btn_margin_bottom - btn_h / 2) * scale;
 
-// Distribute buttons evenly across the row, centered on cx.
-// Start x is the center of the leftmost button.
-//   total row width = _total_btn_w (unscaled)
-//   leftmost button center = cx - (total_row_width / 2 - btn_w / 2) * scale
-var _row_start_x = cx - (_total_btn_w / 2 - btn_w / 2) * scale;
+// Distribute variable-width buttons centered on cx
+// First calculate total scaled row width
+var _scaled_row_w = _total_btn_w * scale;
+var _cur_x = cx - _scaled_row_w / 2; // left edge of the row
 
 for (var i = 0; i < _btn_count; i++) {
-    // Each button steps one (btn_w + btn_gap) to the right of the previous.
-    buttons[i].cx    = _row_start_x + i * (btn_w + btn_gap) * scale;
-    buttons[i].cy    = _btn_row_y;
-    buttons[i].hover = false;   // reset hover each frame before checking below
+    var _bw = buttons[i]._w * scale;
+    buttons[i].cx       = _cur_x + _bw / 2; // center of this button
+    buttons[i].cy       = _btn_row_y;
+    buttons[i].draw_w   = _bw;
+    buttons[i].draw_h   = btn_draw_h;
+    buttons[i].hover    = false;
+    _cur_x += _bw + btn_gap * scale;
 }
 
 
@@ -93,8 +108,8 @@ if (state == "idle") {
     for (var i = 0; i < _btn_count; i++) {
         var _b = buttons[i];
         _b.hover = point_in_rectangle(_mx, _my,
-            _b.cx - btn_draw_w / 2, _b.cy - btn_draw_h / 2,
-            _b.cx + btn_draw_w / 2, _b.cy + btn_draw_h / 2);
+            _b.cx - _b.draw_w / 2, _b.cy - _b.draw_h / 2,
+            _b.cx + _b.draw_w / 2, _b.cy + _b.draw_h / 2);
 
         // Keep keyboard focus synced with mouse hover.
         if (_b.hover) focused_btn = i;

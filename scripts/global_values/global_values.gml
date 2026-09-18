@@ -70,14 +70,6 @@ global.pet.touch_counter = 0;
 // last touch_counter value for each stat; higher = more recently incremented
 global.pet.touched = { nonsense: 0, selfesteem: 0, joy: 0, enthusiasm: 0 };
 
-// --- new helper; ALL hidden stat changes need to go through this or the tie rule won't see them TODO: implement this everywhere
-function stat_add(_stat, _amount)
-{
-    global.pet[$ _stat] += _amount;                       // apply the change to the stat itself
-    global.pet.touch_counter += 1;                        // incremeent the counter so this touch is newest
-    global.pet.touched[$ _stat] = global.pet.touch_counter; // mark this stat as the most recently touched
-}
-
 // Watering mode toggle — set true when the player activates the watering can in the garden
 // Plots check this to decide whether a click should water or harvest
 global.garden_watering_mode = false;

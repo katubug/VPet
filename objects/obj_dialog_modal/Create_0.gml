@@ -35,20 +35,19 @@ cy    = gui_h / 2;   // vertical center of the screen
 //   Increase this to give everything more breathing room.
 // panel_min_w / panel_min_h: the dialog won't shrink below these sizes,
 //   even for very short messages.
-panel_padding = 6;    // 24 ÷ 4 = 6
+panel_padding = 11;
 panel_min_w   = 55;   // 220 ÷ 4 = 55
 panel_min_h   = 32;   // 130 ÷ 4 ≈ 32
 
 
 // ── BUTTON SETTINGS ──────────────────────────────────────────────────────────
-// btn_w / btn_h: size of every button. All buttons share the same size.
+// btn_h: height of every button. Width is calculated per-button from label text.
 //   spr_ui_button is nine-sliced so it stretches cleanly to any dimensions.
 // btn_gap: horizontal space between buttons.
 // btn_margin_bottom: how far the button row sits from the panel's bottom edge.
-btn_w             = 22;  // 90 ÷ 4 ≈ 22
-btn_h             = 8;   // 30 ÷ 4 ≈ 8
+btn_h             = 18;  // must be >= 16 for nine-slice (8px top + 8px bottom borders)
 btn_gap           = 3;   // 12 ÷ 4 = 3
-btn_margin_bottom = 4;   // 14 ÷ 4 ≈ 4
+btn_margin_bottom = 9;
 
 
 // ── BUTTONS ARRAY ─────────────────────────────────────────────────────────────
@@ -80,12 +79,14 @@ message = "Are you sure?";   // default fallback — always override this
 // ── LAYOUT CACHE ─────────────────────────────────────────────────────────────
 // Recomputed every Step and shared between Step (input) and Draw GUI.
 // You don't need to set these — they update automatically.
+// Per-button widths are stored on each button struct as _w, draw_w, draw_h.
 panel_base_w = 0;   // unscaled panel width  (derived from text + buttons + padding)
 panel_base_h = 0;   // unscaled panel height
 panel_draw_w = 0;   // actual drawn width  = panel_base_w * scale
 panel_draw_h = 0;   // actual drawn height = panel_base_h * scale
-btn_draw_w   = 0;   // drawn button width  = btn_w * scale
 btn_draw_h   = 0;   // drawn button height = btn_h * scale
+content_w    = 0;   // text wrap width (panel_base_w minus padding)
+text_h       = 0;   // wrapped text height in pixels
 
 
 // ── ANIMATION ────────────────────────────────────────────────────────────────

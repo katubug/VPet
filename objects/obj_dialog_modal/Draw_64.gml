@@ -21,7 +21,7 @@ draw_rectangle(0, 0, gui_w, gui_h, false);
 // corners stay crisp, middle stretches. c_white = no color tint.
 draw_set_alpha(1);
 draw_set_color(c_white);
-draw_sprite_stretched(spr_ui_back, 0,
+draw_sprite_stretched(spr_btn_base_cyan, 0,
     cx - panel_draw_w / 2,
     cy - panel_draw_h / 2,
     panel_draw_w,
@@ -38,13 +38,14 @@ if (scale > 0.6) {
     draw_set_font(fnt_Kubasta);
     draw_set_alpha(_text_alpha);
     draw_set_halign(fa_center);
-    draw_set_valign(fa_middle);
+    draw_set_valign(fa_top);
     draw_set_color(c_white);
 
-    // Positioned in the upper portion of the panel.
-    // Adjust 0.25 if the text feels too high or too low.
-    var _text_y = cy - (panel_base_h * 0.25) * scale;
-    draw_text(cx, _text_y, message);
+    // Anchor text to the top of the panel + padding
+    var _panel_top = cy - panel_draw_h / 2;
+    var _text_y = _panel_top + panel_padding * scale;
+    var _wrap_w = content_w * scale;
+    draw_text_ext(cx, _text_y, message, -1, _wrap_w);
 }
 
 
@@ -58,11 +59,11 @@ for (var i = 0; i < _btn_count; i++) {
     var _tint = (focused_btn == i) ? make_color_rgb(255, 230, 100) : c_white;
 
     draw_set_color(_tint);
-    draw_sprite_stretched(spr_ui_button, 0,
-        _b.cx - btn_draw_w / 2,
-        _b.cy - btn_draw_h / 2,
-        btn_draw_w,
-        btn_draw_h);
+    draw_sprite_stretched(spr_btn_base_dkblue, 0,
+        _b.cx - _b.draw_w / 2,
+        _b.cy - _b.draw_h / 2,
+        _b.draw_w,
+        _b.draw_h);
 }
 
 
