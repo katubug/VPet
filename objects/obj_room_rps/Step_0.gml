@@ -1,118 +1,85 @@
-if (input_check_pressed("rock")) {
-        destroy_sequences();
-        player_choice = 0;
-        round_end = true;
-        round_end2 = true;
-        
-    }
-    if (input_check_pressed("paper")) {
-        destroy_sequences();
-        player_choice = 1;
-        round_end = true;
-        round_end2 = true;
-    }
-    if (input_check_pressed("scissors")) {
-        destroy_sequences();
-        player_choice = 2;
-        round_end = true;
-        round_end2 = true;
-    }
+/// @description State machine + input
 
-    if (player_choice !=-1)
-        {
-            computer_choice = irandom_range(0, 2);
-          
-          if (computer_choice == player_choice) {
-            result = "Draw";
-          }
-          else {
-          result = (computer_choice == (player_choice +1) mod 3)?"Lose":"Win"; 
-            round_number++;
-            if (result == "Win") player_score++;
-            else if (result == "Lose") computer_score++;    
-          } 
+state_timer++;
+frames_alive++;
+
+switch (state) {
+
+    // ── CHOOSING ─────────────────────────────────────────────────────────────
+    case "choosing":
+        if (global.dialog_open) break;
+
+        // Mouse hover keeps keyboard focus in sync, same as obj_dialog_modal
+        var _mx = device_mouse_x_to_gui(0);
+        var _my = device_mouse_y_to_gui(0);
+        for (var i = 0; i < array_length(buttons); i++) {
+            var _b = buttons[i];
+            _b.hover = point_in_rectangle(_mx, _my,
+                _b.cx - btn_w / 2, _b.cy - btn_h / 2,
+                _b.cx + btn_w / 2, _b.cy + btn_h / 2);
+            if (_b.hover) focused_btn = i;
         }
 
-if (game_complete == 1) {
-    destroy_sequences();
-    input_virtual_destroy_all();
-        if (player_score > computer_score) {
-            var _dlg = instance_create_layer(0, 0, "Instances", obj_dialog_modal);   
-            _dlg.message    = "You have won your pet back!";                                                                                              _dlg.message = "What do you want to do?";
-              array_push(_dlg.buttons, { label: "YAY",   callback: function() {
-                global.game.living = 1;
-                global.game.limbo = 0;
-                room_goto(rm_main)
-                 } });
-            
-        }
-        else if (player_score < computer_score) {
-            global.game.living = 1;
-            global.game.limbo = 0;
-            // Reset needs and set up the new egg BEFORE time_reset() so the save it writes
-            // captures health=20 and evolution_phase="egg", not the dead pet's state.
-            reset_needs();
-            global.game.evolution_phase = "egg"; // Start a new egg instead of skipping straight to baby
+        // Left/right move focus, accept fires it. Each choice's own verb
+        // (R/P/S key or its touch button) fires it directly.
+        var _count = array_length(buttons);
+        if (input_check_pressed("left"))  focused_btn = (focused_btn - 1 + _count) mod _count;
+        if (input_check_pressed("right")) focused_btn = (focused_btn + 1) mod _count;
 
-            var starter_pet = irandom_range(0, 2);
-
-                if (starter_pet == 0) global.game.current_pet_type = "chobo";
-                if (starter_pet == 1) global.game.current_pet_type = "pomba";
-                if (starter_pet == 2) global.game.current_pet_type = "dodati";
-
-            time_reset();
-
-             var _dlg = instance_create_layer(0, 0, "Instances", obj_dialog_modal);
-            _dlg.message    = "I'm sorry, you lost and your pet has gone to heaven.";                                                                                               _dlg.message = "What do you want to do?";
-              array_push(_dlg.buttons, { label: "Awwww",   callback: function() {
-                    room_goto(rm_main); // Go straight to rm_main; obj_pet_spawner will create the egg
-                } });
-
+        var _picked = -1;
+        if (input_check_pressed("accept")) _picked = focused_btn;
+        for (var i = 0; i < _count; i++) {
+            if (input_check_pressed(buttons[i].verb)) _picked = i;
         }
-    }
+        if (_picked != -1) {
+            focused_btn = _picked;
+            play_round(_picked);
+        }
+        break;
 
-if (round_end == true && player_choice != -1){
-        if (player_choice == 0) {
-            round_end = false;
-            player_rock = layer_sequence_create("Instances", room_width/2, 50, seq_player_rock);
-            player_choice = -1;
-            // Don't check round yet - wait for animation
+    // ── SHAKE ────────────────────────────────────────────────────────────────
+    // Fists pump for shake_frames, then the reveal pop plays. Draw GUI derives
+    // all the motion from state_timer; this just fires the matching sounds and
+    // waits it out.
+    case "shake":
+        // One "woom" at the start of each pump. state_timer is 1 on the first
+        // frame we ever see "shake" (see set_state), so pump starts land on
+        // 1, 1+shake_pump_frames, 1+2*shake_pump_frames, ...
+        if (state_timer < shake_frames && (state_timer - 1) mod shake_pump_frames == 0) {
+            audio_play_sound(snd_woom, 1, false);
         }
-        if (player_choice == 1){
-            round_end = false;
-            player_paper = layer_sequence_create("Instances", room_width/2, 50, seq_player_paper);
-            player_choice = -1;
-            // Don't check round yet - wait for animation
+        // Impact the instant the fists swap to the real hands
+        if (state_timer == shake_frames) {
+            audio_play_sound(snd_impact, 1, false);
         }
-        if (player_choice == 2){
-            round_end = false;
-            player_scissors = layer_sequence_create("Instances", room_width/2, 50, seq_player_scissors);
-            player_choice = -1;
-            // Don't check round yet - wait for animation
-        }       
-    }
-    
-    if (round_end2 == true && computer_choice != -1){
-        
-        if (computer_choice == 0) {
-            round_end2 = false;
-            death_rock = layer_sequence_create("Instances", room_width/2, 50, seq_death_rock);
-            
-            // Check if game should end AFTER starting animation
-            alarm[0] = 60; // Wait 1 second for animation, then check
+        if (state_timer >= shake_frames + reveal_pop_frames) {
+            if (round_result == "win")  player_score++;
+            if (round_result == "lose") death_score++;
+            set_state("result");
         }
-        if (computer_choice == 1){
-            round_end2 = false;
-            death_paper = layer_sequence_create("Instances", room_width/2, 50, seq_death_paper);
-            
-            // Check if game should end AFTER starting animation
-            alarm[0] = 60; // Wait 1 second for animation, then check
+        break;
+
+    // ── RESULT ───────────────────────────────────────────────────────────────
+    case "result":
+        if (state_timer >= result_frames) {
+            if (player_score >= wins_needed) {
+                match_result = "win";
+                set_state("game_over");
+            } else if (death_score >= wins_needed) {
+                // Death might take pity and let the pet go anyway
+                match_result = (random(1) < pity_chance) ? "pity" : "lose";
+                set_state("game_over");
+            } else {
+                if (round_result != "draw") round_number++;
+                player_choice = -1;
+                death_choice  = -1;
+                set_state("choosing");
+            }
         }
-        if (computer_choice == 2){
-            round_end2 = false;
-            death_scissors = layer_sequence_create("Instances", room_width/2, 50, seq_death_scissors);
-            
-            // Check if game should end AFTER starting animation
-            alarm[0] = 60; // Wait 1 second for animation, then check
-        }          
-    }
+        break;
+
+    // ── GAME OVER ────────────────────────────────────────────────────────────
+    case "game_over":
+        finish_match(); // guarded internally so the dialog only spawns once
+        break;
+}

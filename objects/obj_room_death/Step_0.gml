@@ -1,6 +1,7 @@
 // Spawn the dialog on the first Step instead of Create so the UI layer is ready.
 if (!dialog_spawned && global.game.living == 0) {
     dialog_spawned = true;
+    audio_play_sound(snd_death, 1, false); // Death's arrival sting
     var _dlg = instance_create_layer(0, 0, "Instances", obj_dialog_modal);
     _dlg.message = "Your pet has been claimed by death. Do you want to try to revive them?";
     array_push(_dlg.buttons, { label: "omg yes", callback: function() {

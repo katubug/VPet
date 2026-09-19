@@ -100,6 +100,12 @@ function pre_load() {
 			global.game.thirst = 10;
 		}
 
+		// limbo only means "the RPS challenge is in progress right now" and can't survive a
+		// restart. If it's left at 1 in the save, game_controller never redirects a dead pet to
+		// rm_death, so the pet wanders the house dead and the die button looks broken.
+		// Clearing it here means quitting mid-challenge just puts you back at the death dialog.
+		global.game.limbo = 0;
+
 		// Make sure item database is initialized
 		inventory_init_database();
 

@@ -55,15 +55,15 @@ if (scale > 0.6) {
 draw_set_alpha(scale);
 
 for (var i = 0; i < _btn_count; i++) {
-    var _b    = buttons[i];
-    var _tint = (focused_btn == i) ? make_color_rgb(255, 230, 100) : c_white;
+    var _b   = buttons[i];
+    var _spr = (focused_btn == i) ? spr_btn_base_pink : spr_btn_base_dkblue;
 
-    draw_set_color(_tint);
-    draw_sprite_stretched(spr_btn_base_dkblue, 0,
+    draw_sprite_stretched_ext(_spr, 0,
         _b.cx - _b.draw_w / 2,
         _b.cy - _b.draw_h / 2,
         _b.draw_w,
-        _b.draw_h);
+        _b.draw_h,
+        c_white, 1);
 }
 
 

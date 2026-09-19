@@ -31,10 +31,13 @@ for (var i = 0; i < _btn_count; i++) {
 _total_btn_w += btn_gap * max(0, _btn_count - 1);
 
 // ── PANEL BASE SIZE ───────────────────────────────────────────────────────────
-// Panel width is 85% of screen width, but no smaller than minimum or button row
+// Panel grows to fit the message on one line or the button row, whichever is
+// wider, capped at 85% of screen width. Long messages hit the cap and wrap there
+// instead of wrapping inside a button-width column.
 var _max_panel_w = gui_w * 0.85;
+var _text_w      = string_width(message) + panel_padding * 2;
 panel_base_w = clamp(
-    max(panel_min_w, _total_btn_w + panel_padding * 2),
+    max(panel_min_w, _total_btn_w + panel_padding * 2, _text_w),
     panel_min_w,
     _max_panel_w
 );
